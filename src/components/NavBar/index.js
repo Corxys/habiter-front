@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './styles.scss';
 
@@ -10,24 +11,40 @@ const NavBar = () => {
     <div className="container__navbar">
       <div className="container__navbar__list">
         <div className="container__navbar__list__item container__navbar__list__item--home">
-          <a className="container__navbar__list__item__link" href="/">
+          <NavLink
+            exact to="/"
+            className="container__navbar__list__item__link"
+            activeClassName="container__navbar__list__item__link container__navbar__list__item__link--active"
+          >
             Habiter
-          </a>
+          </NavLink>
         </div>
         <div className="container__navbar__list__item">
-          <a className="container__navbar__list__item__link" href="/a-propos-du-projet">
+          <NavLink
+            exact to="/a-propos-du-projet"
+            className="container__navbar__list__item__link"
+            activeClassName="container__navbar__list__item__link container__navbar__list__item__link--active"
+          >
             À propos du projet
-          </a>
+          </NavLink>
         </div>
         <div className="container__navbar__list__item">
-          <a className="container__navbar__list__item__link" href="/a-propos-des-artistes">
+          <NavLink
+            exact to="/a-propos-des-artistes"
+            className="container__navbar__list__item__link"
+            activeClassName="container__navbar__list__item__link container__navbar__list__item__link--active"
+          >
             À propos des artistes
-          </a>
+          </NavLink>
         </div>
         <div className="container__navbar__list__item">
-          <a className="container__navbar__list__item__link" href="/ressources">
+          <NavLink
+            exact to="/ressources"
+            className="container__navbar__list__item__link"
+            activeClassName="container__navbar__list__item__link container__navbar__list__item__link--active"
+          >
             Ressources
-          </a>
+          </NavLink>
         </div>
         <div className="container__navbar__list__icons">
           <div className="container__navbar__list__icon">
