@@ -1,0 +1,8 @@
+@use '../../node_modules/destyle.css/destyle.css';
+@use './vars';
+
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: vars.$font-secondary;
+}
