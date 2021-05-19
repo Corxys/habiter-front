@@ -1,15 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { render } from 'react-dom';
+
+import './styles.scss';
+
+import Habiter from './components/Habiter';
+
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const rootReactElement = (
+  <Habiter />
 );
+
+const target = document.querySelector('#root');
+render(rootReactElement, target);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
