@@ -9,7 +9,9 @@ import Habiter from './components/Habiter';
 import reportWebVitals from './reportWebVitals';
 
 const rootReactElement = (
-  <Habiter />
+  <BrowserRouter>
+    <Habiter />
+  </BrowserRouter>
 );
 
 const target = document.querySelector('#root');
