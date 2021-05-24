@@ -6,3 +6,17 @@ body {
   color: #FFFFFF;
   font-family: vars.$font-secondary;
 }
+
+body::-webkit-scrollbar {
+  width: 18px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: vars.$color-primary;
+  border-radius: 20px;
+  border: 5px solid #000000;
+}

@@ -1,0 +1,52 @@
+@use 'src/styles/vars';
+
+.container__interview {
+  max-width: 222px;
+  min-height: 670px;
+  margin: 0px 42px;
+
+  &:first-child {
+    margin-left: 0px;
+  }
+
+  &:last-child {
+    margin-right: 0px;
+  }
+
+  &--invert {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  &__image {
+    background-color: vars.$color-primary;
+    
+    & img {
+      width: 222px;
+      height: 167px;
+      transition: 0.2s opacity;
+      filter: grayscale(100%);
+      
+      &:hover {
+        filter: grayscale(100%);
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__text {
+    margin: 17px 10px;
+    font-family: vars.$font-primary;
+
+    &__title {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    &__location {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  }
+}

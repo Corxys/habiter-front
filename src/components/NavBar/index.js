@@ -1,13 +1,18 @@
+// import
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+// styles
 import './styles.scss';
 
+// icons
 import { ReactComponent as SwitchLanguage } from '../../assets/icons/navbar-langue.svg';
 import { ReactComponent as OpenCall } from '../../assets/icons/navbar-open-call.svg';
 
+// component
 const NavBar = () => {
   return (
+    // NAVBAR
     <div className="container__navbar">
       <div className="container__navbar__list">
         <div className="container__navbar__list__item container__navbar__list__item--home">
@@ -50,9 +55,15 @@ const NavBar = () => {
           <div className="container__navbar__list__icon">
             <SwitchLanguage className="container__navbar__list__icon__item" />
           </div>
-          <div className="container__navbar__list__icon">
-            <OpenCall fill='red' className="container__navbar__list__icon__item" />
-          </div>
+            <a
+              href="mailto:habiter.project@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+            <div className="container__navbar__list__icon">
+              <OpenCall fill='red' className="container__navbar__list__icon__item" />
+            </div>
+          </a>
         </div>
       </div>
     </div>

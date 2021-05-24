@@ -1,17 +1,25 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 import './styles/index.scss';
 
+import store from './store';
 import Habiter from './components/Habiter';
 
 import reportWebVitals from './reportWebVitals';
 
+store.dispatch({
+  type: 'INIT_DATAS',
+});
+
 const rootReactElement = (
-  <BrowserRouter>
-    <Habiter />
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <Habiter />
+    </BrowserRouter>
+  </Provider>
 );
 
 const target = document.querySelector('#root');
