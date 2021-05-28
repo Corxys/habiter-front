@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Spectral';
+  src: url('../assets/fonts/Spectral/Spectral-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spectral';
+  src: url('../assets/fonts/Spectral/Spectral-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neuzeit S';
+  src: url('../assets/fonts/Neuzeit-S/NeuzeitS-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-weight: normal;
+}
+
+$color-primary: #0000FF;
+$color-secondary: #FF2519;
+$font-primary: 'Spectral', sans-serif;
+$font-secondary: 'Neuzeit S', serif;

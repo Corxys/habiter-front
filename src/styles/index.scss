@@ -1,0 +1,34 @@
+@use '../../node_modules/destyle.css/destyle.css';
+@use './vars';
+
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: vars.$font-secondary;
+}
+
+body::-webkit-scrollbar {
+  width: 18px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: vars.$color-primary;
+  border-radius: 20px;
+  border: 5px solid #000000;
+}
+
+h1 {
+  font-family: vars.$font-primary;
+  font-size: 97px;
+  font-weight: bold;
+  color: vars.$color-primary;
+}
+
+h2 {
+  font-family: vars.$font-primary;
+  font-size: 64px
+}

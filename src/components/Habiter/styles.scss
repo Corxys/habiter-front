@@ -1,0 +1,16 @@
+.container__content {
+  // padding: 50px 0px;
+  margin-left: 125px;
+  border-left: 1px solid #FFFFFF;
+  padding-bottom: 100px;
+}
+
+.line {
+  z-index: 10;
+  position: absolute;
+  top: 0px;
+  left: 125px;
+  width: 1px;
+  height: 150px;
+  background-color: #FFFFFF;
+}
