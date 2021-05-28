@@ -2,10 +2,11 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 import './styles/index.scss';
 
-import store from './store';
+import { store, persistor } from './store';
 import Habiter from './components/Habiter';
 
 import reportWebVitals from './reportWebVitals';
@@ -16,9 +17,11 @@ store.dispatch({
 
 const rootReactElement = (
   <Provider store={store}>
-    <BrowserRouter>
-      <Habiter />
-    </BrowserRouter>
+    <PersistGate loading={null} persistor={persistor}>
+      <BrowserRouter>
+        <Habiter />
+      </BrowserRouter>
+    </PersistGate>
   </Provider>
 );
 

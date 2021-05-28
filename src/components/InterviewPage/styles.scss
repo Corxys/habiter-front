@@ -1,0 +1,117 @@
+@use 'src/styles/vars';
+
+.interview-page {
+  &__header {
+    margin: 0px 135px 0px 110px;
+
+    // balise qui contient l'auteur, la localisation et une image de l'interview
+    &__intro {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 23px;
+      
+      &__author {
+        max-width: 50%;
+
+        &__location {
+          font-family: vars.$font-primary;
+          font-size: 24.5px;
+          margin-top: 50px;
+        }
+      }
+
+      &__image {
+        width: 100%;
+        padding-left: 25px;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &__text {
+      font-size: 18px;
+      columns: 2;
+      margin-left: 95px;
+    }
+  }
+
+  &__content {
+    margin-top: 150px;
+    background-color: vars.$color-primary;
+    padding: 25px 0px;
+
+    &__media {
+      display: flex;
+      flex-direction: row;
+      margin: 25px;
+      padding-right: 133px;
+
+      &__source {
+        // width: 100%;
+      }
+
+      &__quote {
+        font-family: vars.$font-primary;
+        font-size: 32px;
+        padding: 0px 25px;
+      }
+    }
+  }
+
+  // container of the "audio" section of an interview
+  &__audio {
+    &__title {
+      font-family: vars.$font-primary;
+      font-size: 64px;
+      min-width: 450px;
+      margin: 0px 50px 50px 50px;
+    }
+
+    &__files {
+      display: flex;
+      flex-direction: column;
+      margin: 0px 160px 0px 40px;
+    }
+  }
+
+  &__ressources, &__copyright {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 150px;
+
+    &__title {
+      min-width: 450px;
+      margin: 0px 280px 0px 50px;
+    }
+
+    &__name {
+      font-size: 32px;
+      padding-top: calc(73px / 3.5);
+    }
+
+    &__link {
+      font-size: 32px;
+      padding-top: calc(73px / 3.5);
+      padding-bottom: 40px;
+
+      &:last-child {
+        padding-bottom: 0px;
+      }
+
+      &__source {
+        text-decoration: underline;
+        transition: 0.2s color;
+
+        &:hover {
+          color: vars.$color-secondary;
+        }
+      }
+    }
+
+    
+  }
+}

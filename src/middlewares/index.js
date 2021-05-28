@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const HOST = 'https://habiter-back.herokuapp.com';
+const HOST = 'https://habiterproject.herokuapp.com';
 
 const habiter = (store) => (next) => (action) => {
   switch (action.type) {
@@ -8,7 +8,6 @@ const habiter = (store) => (next) => (action) => {
       (async () => {
         try {
           const response = await axios.get(`${HOST}/interviews`);
-          console.log(response.data);
 
           store.dispatch({
             type: 'INTERVIEWS_SUCCESS',
@@ -20,7 +19,26 @@ const habiter = (store) => (next) => (action) => {
         catch (error) {
           console.log(error);
         }
-      })()
+      })();
+      break;
+    case 'SEND_INTERVIEW_REQUEST':
+      (async () => {
+        try {
+          const response = await axios.get(`${HOST}/interviews/${action.payload.id}`);
+
+          // console.log(response);
+
+          store.dispatch({
+            type: 'INTERVIEW_SUCCESS',
+            payload: {
+              interview: response.data,
+            }
+          });
+        }
+        catch (error) {
+          console.log(error);
+        }
+      })();
     break;
     default: 
       next(action);

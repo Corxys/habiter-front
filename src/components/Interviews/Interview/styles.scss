@@ -5,10 +5,12 @@
   min-height: 670px;
   margin: 0px 42px;
 
+  // the first one has no margin on the left
   &:first-child {
     margin-left: 0px;
   }
 
+  // and the last child has no margin on the right
   &:last-child {
     margin-right: 0px;
   }
@@ -21,7 +23,7 @@
   
   &__image {
     background-color: vars.$color-primary;
-    
+
     & img {
       width: 222px;
       height: 167px;
@@ -36,8 +38,13 @@
   }
 
   &__text {
-    margin: 17px 10px;
+    padding: 17px 0px;
     font-family: vars.$font-primary;
+    transition: 0.2s color;
+
+    &:hover {
+      color: vars.$color-primary;
+    }
 
     &__title {
       font-size: 26px;

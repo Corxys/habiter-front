@@ -1,13 +1,9 @@
 @use 'src/styles/vars';
 
-.container__ressources {
+.ressources {
   &__title {
-    font-family: vars.$font-primary;
-      font-size: 95px;
-      font-weight: bold;
-      color: vars.$color-primary;
-      margin-bottom: 30px;
-      padding-left: 30px;
+    padding-left: 30px;
+    margin-bottom: 30px;
   }
 
   &__list {
@@ -15,6 +11,7 @@
     padding-left: 210px;
     max-width: 605px;
     padding-bottom: 130px;
+    font-size: 18px;
   }
 
   &__item {

@@ -1,6 +1,6 @@
 @use 'src/styles/vars';
 
-.container__about {
+.about {
   padding-left: 30px;
 
   &__artists {
@@ -12,25 +12,21 @@
     &--eliana {
       max-width: 750px;
       padding-right: 90px;
+      padding-top: 90px;
     }
 
     &--sita {
       max-width: 392px;
       border-left: 1px solid #FFFFFF;
       padding-left: 30px;
-      padding-top: 109px;
+      padding-top: 200px;
       padding-bottom: 85px;
     }
 
-    &__name {
-      font-family: vars.$font-primary;
-      font-size: 95px;
-      font-weight: bold;
-      color: vars.$color-primary;
-      margin-bottom: 30px;
-    }
-
     &__text {
+      font-size: 18px;
+      line-height: 1.4;
+
       &--eliana {
         max-width: 500px;
         columns: 2;
@@ -40,23 +36,25 @@
 
   &__since {
     position: relative;
-    width: 90%;
-    height: 390px;
+    min-height: 390px;
     font-family: vars.$font-primary;
     font-size: 29px;
-    margin-bottom: 30px;
-
+    margin-bottom: 45px;
+    
     &__background {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       z-index: -10;
       position: absolute;
-      width: 103%;;
-      height: 390px;
+      width: 100%;;
+      height: 100%;
       left: -156px;
       background-color: vars.$color-primary;
     }
 
     &__text {
-      padding: 96px 160px 96px 430px;
+      padding: 0px 160px 0px 430px;
     }
   }
 
@@ -93,19 +91,27 @@
       &__mail {
         font-size: 25px;
         text-decoration: underline;
+        transition: 0.2s color;
+
+        &:hover {
+          color: vars.$color-secondary;
+        }
       }
     }
   }
 
   &__opencall {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     position: relative;
-    padding-bottom: 140px;
+    min-height: 803px;
     
     &__background {
       z-index: -10;
       position: absolute;
-      width: 103%;;
-      height: 666px;
+      width: 105%;;
+      height: 803px;
       right: 0px;
       background-color: vars.$color-primary;
     }
@@ -114,6 +120,7 @@
       &__title {
         font-family: vars.$font-primary;
         font-size: 64px;
+        padding-bottom: 95px;
         
         &--bold {
           font-weight: bold;
@@ -124,10 +131,9 @@
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        padding: 80px 350px 150px 255px;
 
         &__icon {
-          width: 650px;
+          width: 225px;
           fill: #FFFFFF;
           margin-right: 55px;
         }
@@ -137,6 +143,7 @@
           font-size: 32px;
           display: flex;
           flex-direction: column;
+          max-width: 500px;
           
           &--underline {
             margin: 20px 0px;

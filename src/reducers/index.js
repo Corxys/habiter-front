@@ -1,21 +1,7 @@
-const initialState = {
-  interviews: [],
-};
+import { combineReducers } from 'redux';
 
-const reducer = (oldState = initialState, action) => {
-  console.log('State :', oldState);
+import interviewReducer from './interview';
 
-  switch (action.type) {
-    case 'INTERVIEWS_SUCCESS':
-      return {
-        ...oldState,
-        interviews: action.payload.interviews,
-      };
-    default: 
-      return {
-        ...oldState,
-      };
-  };
-};
-
-export default reducer;
+export default combineReducers({
+  interview: interviewReducer,
+});

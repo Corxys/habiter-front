@@ -1,6 +1,6 @@
 @use 'src/styles/vars';
 
-.container__project {
+.project {
   padding-bottom: 150px;
 
   &__title {
@@ -13,9 +13,6 @@
   }
 
   &__content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     position: relative;
     padding-left: 192px;
 
@@ -28,21 +25,20 @@
       background-color: vars.$color-primary;
     }
 
-    &--acknowledgements {
-      max-width: 1000px;
-      padding-left: 615px;
+    &__texts {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 60px 0px;
     }
 
     &__text {
       width: 40%;
-      padding: 50px 0px;
+      font-size: 18px;
     }
   }
 
   &__subtitle {
-    font-family: vars.$font-primary;
-    font-size: 34px;
-    font-weight: bold;
     margin: 35px 0px;
   }
 }

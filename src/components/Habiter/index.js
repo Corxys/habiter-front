@@ -8,6 +8,7 @@ import Interviews from '../Interviews';
 import AboutTheProject from '../AboutTheProject';
 import AboutTheArtists from '../AboutTheArtists';
 import Ressources from '../Ressources';
+import InterviewPage from '../InterviewPage';
 
 const Habiter = () => {
   return (
@@ -26,6 +27,9 @@ const Habiter = () => {
         </Route>
         <Route exact path="/ressources">
           <Ressources />
+        </Route>
+        <Route exact path="/interviews/:id">
+          <InterviewPage />
         </Route>
       </div>
     </div>

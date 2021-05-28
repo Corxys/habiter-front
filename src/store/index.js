@@ -1,19 +1,31 @@
 // import 
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import thunk from 'redux-thunk';
 
 // reducer
-import reducer from '../reducers';
+import rootReducer from '../reducers';
 
 import habiterMiddleware from '../middlewares';
 
-const store = createStore(
-  reducer,
-  composeWithDevTools(
-    applyMiddleware(
-      habiterMiddleware
-    ),
+const persistConfig = {
+  key: 'root',
+  storage: storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const middleware = composeWithDevTools(
+  applyMiddleware(
+    thunk,
+    habiterMiddleware
   ),
 );
 
-export default store;
+const store = createStore(persistedReducer, middleware);
+
+const persistor = persistStore(store);
+
+export { store, persistor };

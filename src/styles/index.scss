@@ -20,3 +20,15 @@ body::-webkit-scrollbar-thumb {
   border-radius: 20px;
   border: 5px solid #000000;
 }
+
+h1 {
+  font-family: vars.$font-primary;
+  font-size: 97px;
+  font-weight: bold;
+  color: vars.$color-primary;
+}
+
+h2 {
+  font-family: vars.$font-primary;
+  font-size: 64px
+}
