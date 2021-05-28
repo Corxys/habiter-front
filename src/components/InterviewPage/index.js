@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import './styles.scss';
 
 import AudioPlayer from './AudioPlayer';
-import { OneMedia } from './Media';
+// import { OneMedia } from './Media';
 
 let reference = 0;
 
@@ -51,6 +51,7 @@ const InterviewPage = ({ interview }) => {
           className="interview-page__content"
         >
           {
+            // eslint-disable-next-line array-callback-return
             interview.media.map((image) => {
               if (reference === 0) {
                 reference += 1;
