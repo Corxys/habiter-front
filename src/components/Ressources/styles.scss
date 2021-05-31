@@ -15,9 +15,13 @@
   }
 
   &__item {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     margin: 35px 0px;
+
+    &--italic {
+      font-style: oblique;
+    }
     
     &__link {
       color: vars.$color-primary;

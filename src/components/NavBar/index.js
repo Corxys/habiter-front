@@ -1,67 +1,58 @@
 // import
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 // styles
 import './styles.scss';
 
+// components
+import Link from './Link';
+import SwitchLanguage from './SwitchLanguage';
+
 // icons
-import { ReactComponent as SwitchLanguage } from '../../assets/icons/navbar-langue.svg';
 import { ReactComponent as OpenCall } from '../../assets/icons/navbar-open-call.svg';
 
 // component
 const NavBar = () => {
+  const itemMenu = [ 'home', 'about-the-project', 'about-the-artists', 'resources' ];
+
+  const { t } = useTranslation();
+
   return (
     // NAVBAR
-    <div className="container__navbar">
-      <div className="container__navbar__list">
-        <div className="container__navbar__list__item container__navbar__list__item--home">
-          <NavLink
-            exact to="/"
-            className="container__navbar__list__item__link"
-            activeClassName="container__navbar__list__item__link container__navbar__list__item__link--active"
+    <div className="navbar">
+      <div className="navbar__list">
+        {
+          itemMenu.map((item) => {
+            if (item === 'home') {
+              return (
+                <Link 
+                  className={ "navbar__list__item navbar__list__item--home" }
+                  route={ t(`routes.${item}`) }
+                  title={ t(`navbar.${item}`) }
+                />
+              )
+            } else {
+              return (
+                <Link 
+                  className={ "navbar__list__item" }
+                  route={ t(`routes.${item}`) }
+                  title={ t(`navbar.${item}`) }
+                />
+              )
+            }
+          })
+        }
+        {/* ICONS => switch language & open call */}
+        <div className="navbar__list__icons">
+          <SwitchLanguage />
+          <a
+            href="mailto:habiter.project@gmail.com"
+            target="_blank"
+            rel="noreferrer"
           >
-            Habiter
-          </NavLink>
-        </div>
-        <div className="container__navbar__list__item">
-          <NavLink
-            exact to="/a-propos-du-projet"
-            className="container__navbar__list__item__link"
-            activeClassName="container__navbar__list__item__link container__navbar__list__item__link--active"
-          >
-            À propos du projet
-          </NavLink>
-        </div>
-        <div className="container__navbar__list__item">
-          <NavLink
-            exact to="/a-propos-des-artistes"
-            className="container__navbar__list__item__link"
-            activeClassName="container__navbar__list__item__link container__navbar__list__item__link--active"
-          >
-            À propos des artistes
-          </NavLink>
-        </div>
-        <div className="container__navbar__list__item">
-          <NavLink
-            exact to="/ressources"
-            className="container__navbar__list__item__link"
-            activeClassName="container__navbar__list__item__link container__navbar__list__item__link--active"
-          >
-            Ressources
-          </NavLink>
-        </div>
-        <div className="container__navbar__list__icons">
-          <div className="container__navbar__list__icon">
-            <SwitchLanguage className="container__navbar__list__icon__item" />
-          </div>
-            <a
-              href="mailto:habiter.project@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-            <div className="container__navbar__list__icon">
-              <OpenCall fill='red' className="container__navbar__list__icon__item" />
+            <div className="navbar__list__icon">
+              <OpenCall fill='red' className="navbar__list__icon__item" />
             </div>
           </a>
         </div>

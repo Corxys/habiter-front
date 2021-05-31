@@ -10,7 +10,63 @@ const Ressources = () => {
       </h1>
       <div className="ressources__list">
         <div className="ressources__item">
+          <span className="ressources__item--italic">Agenda for the protection of cross-border displaced persons in the context of disasters and climate change.</span> The Nansen Initiative, 5 Oct. 2015,
+          <br />
+          <a href="https://www.nanseninitiative.org/wp-content/uploads/2015/10/Agenda-Final-Draft.pdf "
+            target="_blank"
+            rel="noreferrer"
+            className="ressources__item__link"
+          >
+            www.nanseninitiative.org/wp-content/uploads/2015/10/Agenda-Final-Draft.pdf 
+          </a>
+        </div>
+        <div className="ressources__item">
+          The Anthropocene Atlas of Geneva (TAAG), <span className="ressources__item--italic">Hannah Entwisle Chapuisat</span>,
+          <br />
+          <a href="https://head.hesge.ch/taag/en/interview/hannah-entwisle-chapuisat-2/#the-impetus-for-the-nansen-initiative"
+            target="_blank"
+            rel="noreferrer"
+            className="ressources__item__link"
+          >
+            www.head.hesge.ch/taag/en/interview/hannah-entwisle-chapuisat-2/#the-impetus-for-the-nansen-initiative
+          </a>
+        </div>
+        <div className="ressources__item">
+          Displacement: Uncertain Journeys,
+          <br />
+          <a href="https://www.displacementjourneys.org"
+            target="_blank"
+            rel="noreferrer"
+            className="ressources__item__link"
+          >
+            www.displacementjourneys.org
+          </a>
+        </div>
+        <div className="ressources__item">
+          Environmental migration portal,
+          <br />
+          <a href="https://environmentalmigration.iom.int"
+            target="_blank"
+            rel="noreferrer"
+            className="ressources__item__link"
+          >
+            www.environmentalmigration.iom.int
+          </a>
+        </div>
+        <div className="ressources__item">
+        Global Protection Cluster, <span className="ressources__item--italic">Protection in Natural Disasters</span>,
+          <br />
+          <a href="https://www.globalprotectioncluster.org/themes/protection-in-natural-disasters/ "
+            target="_blank"
+            rel="noreferrer"
+            className="ressources__item__link"
+          >
+            www.globalprotectioncluster.org/themes/protection-in-natural-disasters
+          </a>
+        </div>
+        <div className="ressources__item">
           Internal Displacement Monitoring Centre,
+          <br />
           <a href="https://www.internal-displacement.org/"
             target="_blank"
             rel="noreferrer"

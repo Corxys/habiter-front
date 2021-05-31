@@ -1,0 +1,15 @@
+{
+  "routes": {
+      "home": "/",
+      "about-the-project": "/uber-das-projekt",
+      "about-the-artists": "/uber-die-kunstlerinnen",
+      "resources": "/ressourcen",
+      "interview": "interviews/:id"
+    },
+  "navbar": {
+      "home": "Habiter",
+      "about-the-project": "Über das Projekt", 
+      "about-the-artists": "Über die Künstlerinnen",
+      "resources": "Ressourcen"
+    }
+}
