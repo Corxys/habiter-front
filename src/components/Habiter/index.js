@@ -12,8 +12,6 @@ import Ressources from '../Ressources';
 import InterviewPage from '../InterviewPage';
 
 const Habiter = () => {
-  const { t } = useTranslation();
-
   return (
     <div className="container">
       <NavBar />
