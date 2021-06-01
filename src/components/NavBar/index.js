@@ -1,12 +1,12 @@
 // import
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 // styles
 import './styles.scss';
 
 // components
-import Link from './Link';
 import SwitchLanguage from './SwitchLanguage';
 
 // icons
@@ -14,35 +14,61 @@ import { ReactComponent as OpenCall } from '../../assets/icons/navbar-open-call.
 
 // component
 const NavBar = () => {
-  const itemMenu = [ 'home', 'about-the-project', 'about-the-artists', 'resources' ];
-
   const { t } = useTranslation();
 
   return (
     // NAVBAR
     <div className="navbar">
       <div className="navbar__list">
-        {
-          itemMenu.map((item) => {
-            if (item === 'home') {
-              return (
-                <Link 
-                  className={ "navbar__list__item navbar__list__item--home" }
-                  route={ t(`routes.${item}`) }
-                  title={ t(`navbar.${item}`) }
-                />
-              )
-            } else {
-              return (
-                <Link 
-                  className={ "navbar__list__item" }
-                  route={ t(`routes.${item}`) }
-                  title={ t(`navbar.${item}`) }
-                />
-              )
-            }
-          })
-        }
+        {/* NAVBAR => home */}
+        <div
+          className="navbar__list__item navbar__list__item--home"
+        >
+          <NavLink
+            exact to="/"
+            className="navbar__list__item__link"
+            activeClassName="navbar__list__item__link--active"
+          >
+            Habiter
+          </NavLink>
+        </div>
+        {/* NAVBAR => about the project */}
+        <div
+          className="navbar__list__item"
+        >
+          <NavLink
+            exact to="/about-the-project"
+            className="navbar__list__item__link"
+            activeClassName="navbar__list__item__link--active"
+          >
+            { t('navbar.about-the-project') }
+          </NavLink>
+        </div>
+        {/* NAVBAR => about the artists */}
+        <div
+          className="navbar__list__item"
+        >
+          <NavLink
+            exact to="/about-the-artists"
+            className="navbar__list__item__link"
+            activeClassName="navbar__list__item__link--active"
+          >
+            { t('navbar.about-the-artists') }
+          </NavLink>
+        </div>
+        {/* NAVBAR => resources */}
+        <div
+          className="navbar__list__item"
+        >
+          <NavLink
+            exact to="/resources"
+            className="navbar__list__item__link"
+            activeClassName="navbar__list__item__link--active"
+          >
+            { t('navbar.resources') }
+          </NavLink>
+        </div>
+
         {/* ICONS => switch language & open call */}
         <div className="navbar__list__icons">
           <SwitchLanguage />

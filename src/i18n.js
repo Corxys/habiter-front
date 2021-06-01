@@ -8,16 +8,24 @@ import translationDE from './assets/locales/de/translation.json';
 i18n
   .use(initReactI18next) // pas the i18n instance to react-i18next
   .init({
-    resources: {
-      fr: { translation: translationFR },
-      en: { translation: translationEN },
-      de: { translation: translationDE },
-    },
     lng: 'fr',
     fallbackLng: 'fr',
-    interpolation: {
-      escapeValue: false, // no need for react, it escapes by default
+    resources: {
+      fr: { 
+        translation: translationFR
+      },
+      en: { 
+        translation: translationEN
+      },
+      de: { 
+        translation: translationDE
+      },
     },
+    detection: {
+      order: ['path'],
+      lookupFromPathIndex: 0,
+      checkWhitelist: false
+    }
   });
 
 export default i18n;

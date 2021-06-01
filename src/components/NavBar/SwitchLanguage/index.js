@@ -13,6 +13,25 @@ const SwitchLanguage = () => {
 
   const { i18n } = useTranslation();
 
+  // const changeLanguage = ( nextLanguage ) => {
+  //   const routes = i18n.getResourceBundle(i18n.language, 'routes');
+  //   console.log('Current language :', i18n.language + '.');
+  //   console.log('Current routes :', routes);
+
+  //   const nextRoutes = i18n.getResourceBundle(nextLanguage, 'routes');
+  //   console.log('Next language :', nextLanguage + '.');
+  //   console.log('Next routes :', nextRoutes);
+
+  //   const currentPathname = window.location.pathname;
+  //   console.log('Actual pathname :', currentPathname);
+
+  //   const currentRouteKey = Object.keys(routes).find((key) => routes[key] === currentPathname);
+  //   console.log('Current route key :', currentRouteKey);
+
+    
+  //   window.location.replace( t(`routes:${currentRouteKey}`) );
+  // };
+
   return (
     <div className="navbar__list__icon">
       <SwitchLanguageIcon 

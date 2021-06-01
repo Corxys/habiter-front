@@ -22,16 +22,16 @@ const Habiter = () => {
         <Route exact path="/">
           <Interviews />
         </Route>
-        <Route exact path={ t('routes.about-the-project') }>
+        <Route exact path="/about-the-project">
           <AboutTheProject />
         </Route>
-        <Route exact path={ t('routes.about-the-artists') }>
+        <Route exact path="/about-the-artists">
           <AboutTheArtists />
         </Route>
-        <Route exact path={ t('routes.resources') }>
+        <Route exact path="/resources">
           <Ressources />
         </Route>
-        <Route exact path={ t('routes.interviews') }>
+        <Route exact path="/interviews/:id">
           <InterviewPage />
         </Route>
       </div>

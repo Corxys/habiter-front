@@ -9,6 +9,39 @@
   padding-top: calc(150px - 109px);
 
   &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__item {
+      height: 109px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px 45px;
+      font-size: 18px;
+
+      &--home {
+        font-family: "Spectral", serif;
+        font-weight: 700;
+        font-size: 34px;
+      }
+
+      &__link {
+        transition: 0.2s color, font-weight;
+
+        &:hover {
+          color: vars.$color-primary;
+        }
+
+        &--active {
+          color: vars.$color-primary;
+          font-weight: bold;
+        }
+      }
+    }
+
     &__icons {
       height: 109px;
       display: flex;

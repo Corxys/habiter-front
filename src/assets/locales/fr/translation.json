@@ -1,15 +1,31 @@
 {
-  "routes": {
-      "home": "/",
-      "about-the-project": "/a-propos-du-projet",
-      "about-the-artists": "/a-propos-des-artistes",
-      "resources": "/ressources",
-      "interview": "interviews/:id"
-    },
   "navbar": {
       "home": "Habiter",
       "about-the-project": "À propos du projet", 
       "about-the-artists": "À propos des artistes",
       "resources": "Ressources"
+    },
+  "about-the-project": {
+    "text": "HABITER est une exposition interactive, disponible en ligne de juin 2021 à juin 2022. Elle rassemble divers témoignages de personnes affectées par les effets du changement climatique à travers le monde. Les artistes ont localisé et interviewé ces différentes personnes, au sujet de leurs observations et expériences des effets du changement climatique au niveau local, mais aussi au sujet de leurs perspectives d’adaptations. HABITER invite les spectateurs à réfléchir à ce que signifie habiter une planète au climat changeant, et aux responsabilités que nous partageons en tant qu'habitants de la Terre. \n \nNous sommes confrontés à des bouleversements mondiaux sans précédent. \n \n\"Les émissions anthropiques de gaz à effet de serre ont augmenté depuis l'ère préindustrielle, en grande partie sous l'effet de la croissance économique et démographique, et sont aujourd'hui plus élevées que jamais. Leurs effets, parmi d'autres facteurs anthropiques, ont été détectés dans tout le système climatique et il est extrêmement probable qu'ils aient été la cause principale du réchauffement observé depuis le milieu du 20e siècle.\" \n- Groupe d'experts intergouvernemental sur l'évolution du climat, 2014 \n \nLe GIEC (Groupe d'experts intergouvernemental sur l'évolution du climat) est un organisme intergouvernemental qui évalue et synthétise les recherches internationales sur le climat. Dans son dernier rapport, en 2014, le GIEC a constaté une augmentation des températures depuis 1950, dont les conséquences sont encore débattues. Cependant, il est presque certain que cette augmentation des températures devrait provoquer des événements météorologiques extrêmes plus intenses et plus fréquents, tels que des sécheresses, des pluies torrentielles ou des ouragans. Ces changements météorologiques transforment le mode de vie des populations et entraînent souvent des déplacements humains, temporaires ou permanents. \n \nHABITER expose les témoignages de personnes déjà affectées par ces changements. Leurs témoignages pointent la gravité et la complexité des effets du changement climatique, des effets auxquels s’ajoutent des inégalités techniques, sociales et économiques, notamment des disparités dans la surveillance, la préparation, la réponse, la réhabilitation et l'adaptation aux catastrophes. Ces témoignages exposent différentes stratégies d’adaptations plus ou moins précaires, et forment ensemble les bribes d’un futur proche.",
+    "acknowledgments": {
+      "title": "Remerciements",
+      "text": "HABITER a été réalisé avec le généreux soutien du Master TRANS- de la HEAD-Genève. Nous remercions nos professeurs Claude-Hubert Tatot, Marianne Guarino-Huet, Olivier Desvoignes et Mathilde Chenin qui nous ont soutenus et aidés tout au long du projet. Merci à Anna Barseghian, Hannah Entwisle Chapuisat, Leonardo Milano, Julia Dao, Markus Stoffel, Markus Zimmermann et Bernhard Aufdereggen pour leurs conseils et partages de précieuses informations. L'exposition en ligne n'aurait pas été possible sans le travail de Jean Muller, graphiste, et de Jenny-Lee Boulanger, programmeuse web. Enfin et surtout, nous sommes infiniment reconnaissantes à toutes les personnes qui ont accepté de nous partager leurs histoires, expériences, observations et conseils. \n \nMerci à tous !"
     }
+  },
+  "about-the-artists": {
+    "eliana-jacobs": "Eliana Pliskin Jacobs est une artiste visuelle, chanteuse et artiste de cirque. Elle est titulaire d'un bachelor en histoire de l'art indigène et en arts visuels de l'Université de la Colombie-Britannique, à Vancouver. En 2018, elle a été artiste en résidence en Finlande, à Haihatus (Joutsa) et à Kemijärvi. En 2019, Eliana a été artiste résidente au Pilotenkueche International Art Program (Leipzig) en tant que lauréate du prix de développement de début de carrière du British Columbia Arts Council. Les pratiques pluridisciplinaires d'Eliana examinent la culture mémorielle au regard de l'histoire des lieux, et plaident pour la préservation de la diversité culturelle et la durabilité environnementale. Ses principaux médias sont les installations “site-specific” et la performance, par les mouvements et la musique.",
+    "sita-subias": "Diplômée d’un bachelor en design graphique et d’espace de l’ESADSE (Ecole supérieure d’art et de design de Saint-Etienne - France), Sîta Subias a une pratique entre design et art visuel. Elle travaille sur la production de matériaux expérimentaux bio-sourcés, par lesquels elle tente de rendre compte des processus biologiques et être vivants impliqués. À l'heure du changement climatique et de l'effacement de la frontière nature/culture, elle s'intéresse à la façon dont les humains perçoivent, comprennent et s'adaptent à leur environnement changeant.",
+    "text": "Depuis 2019, Eliana et Sîta travaillent ensemble dans le cadre du Master d’art visuel TRANS-, à la HEAD - Genève. Elles étudient le changement climatique à travers des prismes à la fois individuels et multi-culturels, mais aussi scientifiques. Le duo travaille directement avec les individus, en recueillant et publiant les témoignages de personnes qui attestent des effets du changement climatique sur les populations du monde entier.",
+    "contact": {
+      "title": "Contact"
+    },
+    "open-call": {
+      "title": "Appel à témoignages",
+      "part-1": "Si vous vivez ou que vous avez vécu certaines conséquences du changement climatique et que vous souhaitez partager votre témoignage en ligne, nous serions ravies de vous écouter. Merci de nous écrire à l'adresse",
+      "part-2": "en décrivant brièvement votre histoire et nous vous contacterons dès que possible pour organiser un entretien à distance."
+    }
+  },
+  "resources": {
+    "title": "Ressources"
+  }
 }
