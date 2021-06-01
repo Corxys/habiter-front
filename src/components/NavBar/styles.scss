@@ -2,7 +2,7 @@
 @use 'src/styles/vars';
 
 // NAVBAR
-.container__navbar {
+.navbar {
   height: 150px;
   border-bottom: 1px solid #FFFFFF;
   padding: 0px 125px;
@@ -21,26 +21,27 @@
       align-items: center;
       padding: 0px 45px;
       font-size: 18px;
-      
+
+      &--home {
+        font-family: "Spectral", serif;
+        font-weight: 700;
+        font-size: 34px;
+      }
+
       &__link {
         transition: 0.2s color, font-weight;
-
-        &--active {
-          font-weight: bold;
-          color: vars.$color-primary;
-        }
 
         &:hover {
           color: vars.$color-primary;
         }
-      }
-      
-      &--home {
-        font-family: 'Spectral', serif;
-        font-weight: bold;
-        font-size: 34px;
+
+        &--active {
+          color: vars.$color-primary;
+          font-weight: bold;
+        }
       }
     }
+
     &__icons {
       height: 109px;
       display: flex;
@@ -51,6 +52,7 @@
     }
 
     &__icon {
+      position: relative;
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -73,6 +75,32 @@
 
         &:hover {
           fill: vars.$color-secondary;
+        }
+      }
+      
+      &__item {
+        &__select {
+          position: absolute;
+          top: 74px;
+          cursor: pointer;
+          color: #000000;
+        }
+        
+        &__option {
+          user-select: none;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          height: 35px;
+          width: 90px;
+          background-color: #FFFFFF;
+          transition: 0.2s background-color;
+          
+          &:hover {
+            background-color: vars.$color-secondary;
+            font-weight: bold;
+          }
         }
       }
     }

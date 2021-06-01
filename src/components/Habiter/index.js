@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import './styles.scss';
 
@@ -11,6 +12,8 @@ import Ressources from '../Ressources';
 import InterviewPage from '../InterviewPage';
 
 const Habiter = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="container">
       <NavBar />
@@ -19,13 +22,13 @@ const Habiter = () => {
         <Route exact path="/">
           <Interviews />
         </Route>
-        <Route exact path="/a-propos-du-projet">
+        <Route exact path="/about-the-project">
           <AboutTheProject />
         </Route>
-        <Route exact path="/a-propos-des-artistes">
+        <Route exact path="/about-the-artists">
           <AboutTheArtists />
         </Route>
-        <Route exact path="/ressources">
+        <Route exact path="/resources">
           <Ressources />
         </Route>
         <Route exact path="/interviews/:id">

@@ -6,10 +6,13 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import './styles/index.scss';
 
-import { store, persistor } from './store';
 import Habiter from './components/Habiter';
 
+import { store, persistor } from './store';
+import './i18n';
+
 import reportWebVitals from './reportWebVitals';
+
 
 store.dispatch({
   type: 'INIT_DATAS',

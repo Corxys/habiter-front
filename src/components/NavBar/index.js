@@ -1,67 +1,84 @@
 // import
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 // styles
 import './styles.scss';
 
+// components
+import SwitchLanguage from './SwitchLanguage';
+
 // icons
-import { ReactComponent as SwitchLanguage } from '../../assets/icons/navbar-langue.svg';
 import { ReactComponent as OpenCall } from '../../assets/icons/navbar-open-call.svg';
 
 // component
 const NavBar = () => {
+  const { t } = useTranslation();
+
   return (
     // NAVBAR
-    <div className="container__navbar">
-      <div className="container__navbar__list">
-        <div className="container__navbar__list__item container__navbar__list__item--home">
+    <div className="navbar">
+      <div className="navbar__list">
+        {/* NAVBAR => home */}
+        <div
+          className="navbar__list__item navbar__list__item--home"
+        >
           <NavLink
             exact to="/"
-            className="container__navbar__list__item__link"
-            activeClassName="container__navbar__list__item__link container__navbar__list__item__link--active"
+            className="navbar__list__item__link"
+            activeClassName="navbar__list__item__link--active"
           >
             Habiter
           </NavLink>
         </div>
-        <div className="container__navbar__list__item">
+        {/* NAVBAR => about the project */}
+        <div
+          className="navbar__list__item"
+        >
           <NavLink
-            exact to="/a-propos-du-projet"
-            className="container__navbar__list__item__link"
-            activeClassName="container__navbar__list__item__link container__navbar__list__item__link--active"
+            exact to="/about-the-project"
+            className="navbar__list__item__link"
+            activeClassName="navbar__list__item__link--active"
           >
-            À propos du projet
+            { t('navbar.about-the-project') }
           </NavLink>
         </div>
-        <div className="container__navbar__list__item">
+        {/* NAVBAR => about the artists */}
+        <div
+          className="navbar__list__item"
+        >
           <NavLink
-            exact to="/a-propos-des-artistes"
-            className="container__navbar__list__item__link"
-            activeClassName="container__navbar__list__item__link container__navbar__list__item__link--active"
+            exact to="/about-the-artists"
+            className="navbar__list__item__link"
+            activeClassName="navbar__list__item__link--active"
           >
-            À propos des artistes
+            { t('navbar.about-the-artists') }
           </NavLink>
         </div>
-        <div className="container__navbar__list__item">
+        {/* NAVBAR => resources */}
+        <div
+          className="navbar__list__item"
+        >
           <NavLink
-            exact to="/ressources"
-            className="container__navbar__list__item__link"
-            activeClassName="container__navbar__list__item__link container__navbar__list__item__link--active"
+            exact to="/resources"
+            className="navbar__list__item__link"
+            activeClassName="navbar__list__item__link--active"
           >
-            Ressources
+            { t('navbar.resources') }
           </NavLink>
         </div>
-        <div className="container__navbar__list__icons">
-          <div className="container__navbar__list__icon">
-            <SwitchLanguage className="container__navbar__list__icon__item" />
-          </div>
-            <a
-              href="mailto:habiter.project@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-            <div className="container__navbar__list__icon">
-              <OpenCall fill='red' className="container__navbar__list__icon__item" />
+
+        {/* ICONS => switch language & open call */}
+        <div className="navbar__list__icons">
+          <SwitchLanguage />
+          <a
+            href="mailto:habiter.project@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="navbar__list__icon">
+              <OpenCall fill='red' className="navbar__list__icon__item" />
             </div>
           </a>
         </div>
