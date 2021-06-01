@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 
 import './styles.scss';
 
