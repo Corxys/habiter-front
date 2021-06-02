@@ -5,21 +5,19 @@ const HOST = 'https://habiterproject.herokuapp.com';
 const habiter = (store) => (next) => (action) => {
   switch (action.type) {
     case 'INIT_DATAS':
-      (async () => {
-        try {
-          const response = await axios.get(`${HOST}/interviews`);
+      try {
+        const response = axios.get(`${HOST}/interviews`);
 
-          store.dispatch({
-            type: 'INTERVIEWS_SUCCESS',
-            payload: {
-              interviews: response.data,
-            },
-          });
-        }
-        catch (error) {
-          console.log(error);
-        }
-      })();
+        store.dispatch({
+          type: 'INTERVIEWS_SUCCESS',
+          payload: {
+            interviews: response.data,
+          },
+        });
+      }
+      catch (error) {
+        console.log(error);
+      }
       break;
     case 'SEND_INTERVIEW_REQUEST':
       (async () => {

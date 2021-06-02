@@ -1,105 +1,110 @@
 // import
 @use 'src/styles/vars';
 
-// NAVBAR
-.navbar {
+// header => contains navbar
+header {
   height: 150px;
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid vars.$color-line;
   padding: 0px 125px;
   padding-top: calc(150px - 109px);
 
-  &__list {
+  nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
-    &__item {
-      height: 109px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 0px 45px;
-      font-size: 18px;
-
-      &--home {
-        font-family: "Spectral", serif;
-        font-weight: 700;
-        font-size: 34px;
-      }
-
-      &__link {
-        transition: 0.2s color, font-weight;
-
-        &:hover {
-          color: vars.$color-primary;
-        }
-
-        &--active {
-          color: vars.$color-primary;
-          font-weight: bold;
-        }
-      }
-    }
-
-    &__icons {
-      height: 109px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0px 45px;
-    }
-
-    &__icon {
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      margin: 30px;
-
-      &:first-child {
-        margin-left: 0px;
-      }
-
-      &:last-child {
-        margin-right: 0px;
-      }
-      
-      & svg {
-        width: 39px;
-        cursor: pointer;
-        fill: vars.$color-primary;
-        transition: 0.2s fill;
-
-        &:hover {
-          fill: vars.$color-secondary;
-        }
-      }
-      
+    .navbar {
       &__item {
-        &__select {
-          position: absolute;
-          top: 74px;
-          cursor: pointer;
-          color: #000000;
+        height: 109px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 45px;
+        font-size: 18px;
+
+        &--home {
+          font-family: vars.$font-primary;
+          font-weight: 700;
+          font-size: 34px;
+        }
+  
+        &__link {
+          transition: 0.2s color, font-weight;
+  
+          &:hover {
+            color: vars.$color-primary;
+          }
+  
+          &--active {
+            color: vars.$color-primary;
+            font-weight: bold;
+          }
+        }
+      }
+
+      &__icons {
+        height: 109px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 45px;
+      }
+  
+      &__icon {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        a {
+          height: 28.3px;
+        }
+  
+        &:first-child {
+          margin-right: 15px;
+        }
+  
+        &:last-child {
+          margin-left: 15px;
         }
         
-        &__option {
-          user-select: none;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          height: 35px;
-          width: 90px;
-          background-color: #FFFFFF;
-          transition: 0.2s background-color;
-          
+        & svg {
+          width: 39px;
+          cursor: pointer;
+          fill: vars.$color-primary;
+          transition: 0.2s fill;
+  
           &:hover {
-            background-color: vars.$color-secondary;
-            font-weight: bold;
+            fill: vars.$color-secondary;
+          }
+        }
+        
+        &__item {
+          &__select {
+            position: absolute;
+            top: 74px;
+            cursor: pointer;
+            color: #000000;
+          }
+          
+          &__option {
+            user-select: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 35px;
+            width: 90px;
+            background-color: #FFFFFF;
+            transition: 0.2s background-color;
+            
+            &:hover {
+              background-color: vars.$color-secondary;
+              font-weight: bold;
+            }
           }
         }
       }

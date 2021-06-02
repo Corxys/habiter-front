@@ -22,11 +22,11 @@ const InterviewInvert = ({
 
   return (
     <div
-      className="container__interview container__interview--invert"
+      className="interview interview--invert"
       style={{ paddingBottom: randomPadding }}
     >
       <div
-        className="container__interview__text"
+        className="interview__text"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         style={textStyle}
@@ -36,13 +36,13 @@ const InterviewInvert = ({
           >
           <div
             id={id}
-            className="container__interview__text__title"
+            className="interview__text__title"
             onClick={getInterviewById}
           >
             { author }
           </div>
         </Link>
-        <div className="container__interview__text__location">
+        <div className="interview__text__location">
           { location }
           <br />
           <br />
@@ -50,7 +50,7 @@ const InterviewInvert = ({
         </div>
       </div>
       
-      <div className="container__interview__image">
+      <div className="interview__image">
         {
           miniature &&
           <Link

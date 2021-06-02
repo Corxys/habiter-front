@@ -1,21 +1,25 @@
+// import
 import React from 'react';
 import { Route } from 'react-router-dom';
 
+// styles
 import './styles.scss';
 
+// components import
 import NavBar from '../NavBar';
 import Interviews from '../Interviews';
 import AboutTheProject from '../AboutTheProject';
 import AboutTheArtists from '../AboutTheArtists';
-import Ressources from '../Ressources';
+import Resources from '../Resources';
 import InterviewPage from '../InterviewPage';
 
-const Habiter = () => {
+// component
+const Habiter = () => {  
   return (
-    <div className="container">
+    <div className="habiter">
       <NavBar />
       <div className="line"></div>
-      <div className="container__content">
+      <main className="habiter__content">
         <Route exact path="/">
           <Interviews />
         </Route>
@@ -26,14 +30,15 @@ const Habiter = () => {
           <AboutTheArtists />
         </Route>
         <Route exact path="/resources">
-          <Ressources />
+          <Resources />
         </Route>
         <Route exact path="/interviews/:id">
           <InterviewPage />
         </Route>
-      </div>
+      </main>
     </div>
   )
 };
 
+// export
 export default Habiter;

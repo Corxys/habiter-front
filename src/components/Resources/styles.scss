@@ -1,22 +1,20 @@
 @use 'src/styles/vars';
 
-.ressources {
+.resources {
   &__title {
-    padding-left: 30px;
+    padding-top: 30px;
     margin-bottom: 30px;
   }
 
   &__list {
     font-family: vars.$font-primary;
     padding-left: 210px;
-    max-width: 605px;
+    max-width: 37%;
     padding-bottom: 130px;
     font-size: 18px;
   }
 
   &__item {
-    // display: flex;
-    // flex-direction: column;
     margin: 35px 0px;
 
     &--italic {

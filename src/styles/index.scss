@@ -1,3 +1,4 @@
+// import
 @use '../../node_modules/destyle.css/destyle.css';
 @use './vars';
 
@@ -20,6 +21,7 @@ body::-webkit-scrollbar-thumb {
   border: 5px solid #000000;
 }
 
+// semantic markup
 h1 {
   font-family: vars.$font-primary;
   font-size: 97px;
@@ -29,5 +31,16 @@ h1 {
 
 h2 {
   font-family: vars.$font-primary;
-  font-size: 64px
+  font-size: 64px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.project, .about, .resources, .interview-page {
+  padding-left: 45px;
 }

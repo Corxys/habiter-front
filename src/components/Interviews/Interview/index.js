@@ -17,25 +17,25 @@ const Interview = ({
 }) => {
   const [hovered, setHovered] = useState(false);
 
-  const textStyle = hovered ? { color: '#0000FF' } : {};
-  const imageStyle = hovered ? { filter: 'grayscale(100%)', opacity: '0.5' } : {};
+  const textStyle = hovered ? { color: '#0000FF' } : { };
+  const imageStyle = hovered ? { filter: 'grayscale(100%)', opacity: '0.5' } : { };
 
   return (
       <div
-        className="container__interview"
+        className="interview"
         style={{ paddingTop: randomPadding }}
       >
-          <div className="container__interview__image">
+          <div className="interview__image">
             {
               // if "miniature" is true, the tag "img" is displayed
               miniature && 
                 <Link
-                  to={author ? buildInterviewUrl(author) : author}
+                  to={ author ? buildInterviewUrl(author) : author }
                 >
                 <img
-                  id={id}
-                  onClick={getInterviewById}
-                  src={miniature.url}
+                  id={ id }
+                  onClick={ getInterviewById }
+                  src={ miniature.url }
                   alt=""
                   onMouseEnter={() => setHovered(true)}
                   onMouseLeave={() => setHovered(false)}
@@ -45,23 +45,23 @@ const Interview = ({
             }
           </div>
           <div
-            className="container__interview__text"
+            className="interview__text"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             style={textStyle}
           >
             <Link
-              to={author ? buildInterviewUrl(author) : author}
+              to={ author ? buildInterviewUrl(author) : author }
             >
               <div
-                id={id}
-                className="container__interview__text__title"
-                onClick={getInterviewById}
+                id={ id }
+                className="interview__text__title"
+                onClick={ getInterviewById }
               >
                 { author } 
               </div>
             </Link>
-            <div className="container__interview__text__location">
+            <div className="interview__text__location">
               { location }
               <br />
               <br />
@@ -74,7 +74,6 @@ const Interview = ({
 
 const mapDispatchToProps = (dispatch) => ({
   getInterviewById: (event) => {
-    console.log(event.target);
     const id = parseInt(event.target.id, 10);
 
     dispatch({
