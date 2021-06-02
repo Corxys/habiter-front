@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import './styles.scss';
@@ -9,8 +9,6 @@ import AudioPlayer from './AudioPlayer';
 let reference = 0;
 
 const InterviewPage = ({ interview }) => {
-  const [legendDisplayed, setLegendDisplayed] = useState('interview-page__header__intro__image__legend');
-
   console.log('interview :', interview);
 
   const randomWidth = () => {
