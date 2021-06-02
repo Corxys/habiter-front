@@ -15,7 +15,7 @@ import InterviewInvert from './InterviewInvert';
 let reference = 0;
 
 const randomPadding = () => {
-  return Math.floor(Math.random() * (150 - 0)) + 0;
+  return Math.floor(Math.random() * (100 - 0)) + 0;
 };
 
 // component
