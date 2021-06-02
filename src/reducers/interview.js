@@ -4,17 +4,24 @@ const initialState = {
 };
 
 const reducer = (oldState = initialState, action) => {
+  console.log(action);
+
   switch (action.type) {
     case 'INTERVIEWS_SUCCESS':
       return {
         ...oldState,
         interviews: action.payload.interviews,
       };
-    case 'INTERVIEW_SUCCESS':
-      return {
-        ...oldState,
-        interview: action.payload.interview,
-      };
+      case 'GET_INTERVIEW':
+        const interview = oldState.interviews.find((interview) => {
+          return interview.id === action.payload.id;
+        });
+
+        return {
+          ...oldState,
+          interview: interview,
+        }
+
     default: 
       return oldState;
   };

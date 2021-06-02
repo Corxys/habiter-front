@@ -20,6 +20,7 @@ const Habiter = () => {
       <NavBar />
       <div className="line"></div>
       <main className="habiter__content">
+        <div className="line line--bottom"></div>
         <Route exact path="/">
           <Interviews />
         </Route>

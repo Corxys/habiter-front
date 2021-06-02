@@ -39,7 +39,7 @@ const Interview = ({
                   alt=""
                   onMouseEnter={() => setHovered(true)}
                   onMouseLeave={() => setHovered(false)}
-                  style={imageStyle}
+                  style={ imageStyle }
                   />
                 </Link>
             }
@@ -48,7 +48,7 @@ const Interview = ({
             className="interview__text"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            style={textStyle}
+            style={ textStyle }
           >
             <Link
               to={ author ? buildInterviewUrl(author) : author }
@@ -77,7 +77,7 @@ const mapDispatchToProps = (dispatch) => ({
     const id = parseInt(event.target.id, 10);
 
     dispatch({
-      type: 'SEND_INTERVIEW_REQUEST',
+      type: 'GET_INTERVIEW',
       payload: {
         id: id,
       },

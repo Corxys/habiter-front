@@ -4,18 +4,21 @@
   &__artists {
     display: flex;
     flex-direction: row;
-    
   }
   
   &__artist {
+    &__name {
+      margin-bottom: 30px;
+    }
+    
     &--eliana {
       max-width: 45%;
-      padding: 30px 90px 0px 0px;
+      padding: 30px 90px 00px 0px;
+      border-right: 1px solid #FFFFFF;
     }
 
     &--sita {
       max-width: 24%;
-      border-left: 1px solid #FFFFFF;
       padding: 140px 0px 85px 30px;
     }
 
@@ -23,12 +26,12 @@
       &--eliana {
         max-width: 85%;
         columns: 2;
+        padding-bottom: 85px;
       }
     }
   }
 
   &__since {
-    z-index: -10;
     position: relative;
     left: -157px;
     font-family: vars.$font-primary;
@@ -78,7 +81,6 @@
   }
 
   &__opencall {
-    // z-index: -10;
     position: relative;
     left: -90px;
     font-size: 29px;

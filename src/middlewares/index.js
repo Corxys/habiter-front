@@ -19,25 +19,6 @@ const habiter = (store) => (next) => (action) => {
         console.log(error);
       }
       break;
-    case 'SEND_INTERVIEW_REQUEST':
-      (async () => {
-        try {
-          const response = await axios.get(`${HOST}/interviews/${action.payload.id}`);
-
-          // console.log(response);
-
-          store.dispatch({
-            type: 'INTERVIEW_SUCCESS',
-            payload: {
-              interview: response.data,
-            }
-          });
-        }
-        catch (error) {
-          console.log(error);
-        }
-      })();
-    break;
     default: 
       next(action);
   }

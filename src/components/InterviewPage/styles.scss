@@ -2,27 +2,44 @@
 
 .interview-page {
   &__header {
-    margin: 0px 135px 0px 110px;
+    margin: 0px 135px 0px 0px;
 
     // balise qui contient l'auteur, la localisation et une image de l'interview
     &__intro {
       display: flex;
       flex-direction: row;
-      margin-bottom: 23px;
+      margin-bottom: 50px;
       
       &__author {
+        min-width: 30%;
         max-width: 50%;
+
+        &__name {
+          margin: 30px 0px 50px 0px;
+        }
 
         &__location {
           font-family: vars.$font-primary;
           font-size: 24.5px;
-          margin-top: 50px;
         }
       }
 
       &__image {
+        position: relative;
         width: 100%;
-        padding-left: 25px;
+        padding-left: 50px;
+
+        &__legend {
+          display: none;
+          position: absolute;
+          bottom: 10px;
+          right: 20px;
+          transition: 0.2s display;
+        }
+
+        &:hover &__legend {
+          display: block;
+        }
 
         img {
           width: 100%;
@@ -34,14 +51,18 @@
     &__text {
       font-size: 18px;
       columns: 2;
-      margin-left: 95px;
+      margin-left: auto;
+      max-width: 75%;
     }
   }
 
   &__content {
+    position: relative;
+    left: -45px;
     margin-top: 150px;
     background-color: vars.$color-primary;
     padding: 25px 0px;
+    width: 105.2%;
 
     &__media {
       display: flex;
@@ -55,25 +76,25 @@
 
       &__quote {
         font-family: vars.$font-primary;
-        font-size: 32px;
+        font-size: 29px;
         padding: 0px 25px;
+        max-width: 35%;
       }
     }
   }
 
   // container of the "audio" section of an interview
   &__audio {
+    width: 60%;
+
     &__title {
-      font-family: vars.$font-primary;
-      font-size: 64px;
       min-width: 450px;
-      margin: 0px 50px 50px 50px;
+      margin: 0px 50px 50px 0px;
     }
 
     &__files {
       display: flex;
       flex-direction: column;
-      margin: 0px 160px 0px 40px;
     }
   }
 
@@ -85,7 +106,7 @@
 
     &__title {
       min-width: 450px;
-      margin: 0px 280px 0px 50px;
+      margin: 0px 280px 0px 0px;
     }
 
     &__name {
@@ -111,7 +132,5 @@
         }
       }
     }
-
-    
   }
 }

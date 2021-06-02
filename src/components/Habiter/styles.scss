@@ -2,12 +2,17 @@
 
 .habiter {
   min-height: 100%;
+
+  &__content {
+    display: flex;
+    align-items: stretch;
+  }
   
   main {
+    position: relative;
     margin-left: 125px;
-    border-left: 1px solid vars.$color-line;
     padding-bottom: 100px;
-    height: calc(100vh - 150px);
+    min-height: calc(100vh - 150px);
   }
 
   // line next to the navbar
@@ -19,5 +24,12 @@
     width: 1px;
     height: 150px;
     background-color: vars.$color-line;
-  }
+
+    // line next to the content
+    &--bottom {
+      top: 0px;
+      left: 0px;
+      height: 100%;
+    }
+  }  
 }

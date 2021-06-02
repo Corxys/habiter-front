@@ -30,6 +30,7 @@
       height: 167px;
       transition: 0.2s opacity;
       filter: grayscale(100%);
+      object-fit: cover;
       
       &:hover {
         filter: grayscale(100%);

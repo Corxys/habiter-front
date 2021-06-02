@@ -84,6 +84,7 @@ header {
         
         &__item {
           &__select {
+            z-index: 10;
             position: absolute;
             top: 74px;
             cursor: pointer;

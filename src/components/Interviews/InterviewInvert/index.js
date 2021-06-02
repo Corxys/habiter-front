@@ -32,12 +32,12 @@ const InterviewInvert = ({
         style={textStyle}
       >
         <Link
-          to={author ? buildInterviewUrl(author) : author}
+          to={ author ? buildInterviewUrl(author) : author }
           >
           <div
-            id={id}
+            id={ id }
             className="interview__text__title"
-            onClick={getInterviewById}
+            onClick={ getInterviewById }
           >
             { author }
           </div>
@@ -54,16 +54,16 @@ const InterviewInvert = ({
         {
           miniature &&
           <Link
-          to={author ? buildInterviewUrl(author) : author}
+          to={ author ? buildInterviewUrl(author) : author }
           >
             <img
-              id={id}
-              onClick={getInterviewById}
-              src={miniature.url}
+              id={ id }
+              onClick={ getInterviewById }
+              src={ miniature.url }
               alt=""
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
-              style={imageStyle}
+              style={ imageStyle }
             />
           </Link>
         }
@@ -77,7 +77,7 @@ const mapDispatchToProps = (dispatch) => ({
     const id = parseInt(event.target.id, 10);
     
     dispatch({
-      type: 'SEND_INTERVIEW_REQUEST',
+      type: 'GET_INTERVIEW',
       payload: {
         id: id,
       },
