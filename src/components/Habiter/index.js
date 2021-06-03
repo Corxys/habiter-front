@@ -22,7 +22,7 @@ const Habiter = () => {
       <main className="habiter__content">
         <div className="line line--bottom"></div>
         <Route exact path="/">
-          <Interviews />
+            <Interviews />
         </Route>
         <Route exact path="/about-the-project">
           <AboutTheProject />

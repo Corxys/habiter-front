@@ -9,7 +9,7 @@ import Play from './Play';
 import Stop from './Stop';
 import TimeBar from './TimeBar';
 
-import useAudioPlayer from '../../../utils/useAudioPlayer';
+import useAudioPlayer from '../../../../utils/useAudioPlayer';
 
 const AudioPlayer = ({ id, caption, source }) => {
   const {

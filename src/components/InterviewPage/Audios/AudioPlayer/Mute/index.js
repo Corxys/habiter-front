@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReactComponent as IconUnMute } from '../../../../assets/icons/interview-page-unmute.svg';
+import { ReactComponent as IconUnMute } from '../../../../../assets/icons/interview-page-unmute.svg';
 
 const Mute = ({ handleClick }) => {
   return (

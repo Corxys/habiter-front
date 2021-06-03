@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 import './styles.scss';
 
-import AudioPlayer from './AudioPlayer';
+import Audios from './Audios';
+import References from './References';
 // import { OneMedia } from './Media';
 
 let reference = 0;
@@ -147,66 +148,15 @@ const InterviewPage = ({ interview }) => {
       }
       {/* IMAGES - END */}
 
-      {/* AUDIO - START */}
       {
         interview.audio.length >= 1 &&
-        ( 
-          <div className="interview-page__audio">
-            <h2 className="interview-page__audio__title">
-              Citations sonores :
-            </h2>
-            <div className="interview-page__audio__files">
-              {
-                interview.audio.map((file) => {
-                  return (
-                    <AudioPlayer
-                      id={ file.id }
-                      caption={ file.caption }
-                      source={ file.source }
-                    />
-                  )
-                })
-              }
-            </div>
-          </div>
-        )
+        <Audios audios={interview.audio} />
       }
-      {/* AUDIO - END */}
 
-      {/* RESSOURCES - START */}
       {
-        interview.reference.length >= 1 &&
-        (
-          <div className="interview-page__ressources">
-            <h2 className="interview-page__ressources__title">
-              Ressources :
-            </h2>
-            <div className="interview-page__ressources__links">
-              {
-                interview.reference.map((ref) => {
-                  return (
-                    <div className="interview-page__ressources__link">
-                      <div className="interview-page__ressources__link__title">
-                        { ref.name }
-                      </div>
-                      <div className="interview-page__ressources__link__source">
-                        <a
-                          href={ ref.link }
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          { ref.link }          
-                        </a>
-                      </div>
-                    </div>
-                  )
-                })
-              }
-            </div>
-          </div>
-        )
+        interview.reference.length >= 1 && 
+        <References references={interview.reference} />
       }
-      {/* RESSOURCES - END */}
     </div>
   )
 };

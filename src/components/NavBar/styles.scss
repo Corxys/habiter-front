@@ -15,18 +15,25 @@ header {
     align-items: center;
 
     .navbar {
+      &__items {
+        display: flex;
+        flex-direction: row;
+      }
+
       &__item {
         height: 109px;
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 0px 45px;
-        font-size: 18px;
+        margin: 0px 40px;
+        font-size: 15px;
 
-        &--home {
+        &__home {
           font-family: vars.$font-primary;
           font-weight: 700;
-          font-size: 34px;
+          font-size: 36px;
+          margin: 0px 40px;
+          flex-grow: 1;
         }
   
         &__link {
@@ -49,7 +56,7 @@ header {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0px 45px;
+        padding: 0px 40px;
       }
   
       &__icon {

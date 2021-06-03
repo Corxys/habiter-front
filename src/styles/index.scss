@@ -25,23 +25,23 @@ body::-webkit-scrollbar-thumb {
 // semantic markup
 h1 {
   font-family: vars.$font-primary;
-  font-size: 97px;
+  font-size: 85px;
   font-weight: bold;
   color: vars.$color-primary;
 }
 
 h2 {
   font-family: vars.$font-primary;
-  font-size: 64px;
+  font-size: 60px;
   font-weight: bold;
 }
 
 p {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.4;
   white-space: pre-wrap;
 }
 
-.project, .about, .resources, .interview-page {
-  padding-left: 45px;
+.project, .resources, .interview-page {
+  padding: 0px 45px 100px 45px;
 }

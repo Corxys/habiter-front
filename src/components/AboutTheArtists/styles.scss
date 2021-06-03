@@ -1,9 +1,12 @@
 @use 'src/styles/vars';
 
 .about {
+  padding-bottom: 100px;
+  
   &__artists {
     display: flex;
     flex-direction: row;
+    padding: 0px 45px;
   }
   
   &__artist {
@@ -12,19 +15,19 @@
     }
     
     &--eliana {
-      max-width: 45%;
-      padding: 30px 90px 00px 0px;
+      max-width: 55%;
+      padding: 30px 80px 00px 0px;
       border-right: 1px solid #FFFFFF;
     }
 
     &--sita {
-      max-width: 24%;
-      padding: 140px 0px 85px 30px;
+      padding: 127px 0px 85px 45px;
     }
 
     &__text {
+      margin-left: 70px;
+
       &--eliana {
-        max-width: 85%;
         columns: 2;
         padding-bottom: 85px;
       }
@@ -35,31 +38,27 @@
     position: relative;
     left: -157px;
     font-family: vars.$font-primary;
-    font-size: 29px;
-    margin-bottom: 45px;
+    font-size: 25px;
+    line-height: 1.2;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
     background-color: vars.$color-primary;
-    padding: 100px 200px 100px 40%;
+    padding: 100px 100px 100px 30%;
   }
 
   &__contact {
     display: flex;
     flex-direction: row;
     margin-bottom: 130px;
+    padding-left: 45px;
     
     &__text {
       font-family: vars.$font-primary;
       max-width: 450px;
       margin-left: 60px;
-      padding-top: 106px;
-
-      &__name {
-        font-size: 42px;
-        font-weight: bold;
-        color: vars.$color-primary;
-      }
+      padding-top: 8px;
 
       &__line {
         width: 50px;
@@ -82,32 +81,26 @@
 
   &__opencall {
     position: relative;
-    left: -90px;
-    font-size: 29px;
+    right: 0px;
+    font-size: 25px;
+    line-height: 1.2;
     display: flex;
     flex-direction: row;
     align-items: center;
     background-color: vars.$color-primary;
     padding: 100px 0px 100px 90px;
-    width: 105.2%;
     
     &__wrapper {
       &__title {
         margin-bottom: 95px;
         max-width: 650px;
+        white-space: pre-wrap;
       }
       
       &__content {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        margin-left: 200px;
-
-        &__icon {
-          width: 175px;
-          fill: #FFFFFF;
-          margin-right: 55px;
-        }
     
         &__text {
           font-family: vars.$font-primary;

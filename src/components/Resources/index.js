@@ -11,9 +11,6 @@ const Resources = () => {
 
   return (
     <article className="resources">
-      <h1 className="resources__title">
-        { t('resources.title') }
-      </h1>
       <section className="resources__list">
         <div className="resources__item">
           <span className="resources__item--italic">Agenda for the protection of cross-border displaced persons in the context of disasters and climate change.</span> The Nansen Initiative, 5 Oct. 2015.
@@ -186,7 +183,7 @@ const Resources = () => {
           </a>
         </div>
         <div className="resources__item">
-          Piguet, Etienne. Asile et réfugiés, Repenser la protection. PPUR, 2019.
+          Piguet, Etienne. <span className="resources__item--italic">Asile et réfugiés, Repenser la protection.</span> PPUR, 2019.
         </div>
         <div className="resources__item">
           Platform on Disaster Displacement.
@@ -333,18 +330,6 @@ const Resources = () => {
           </a>
         </div>
         <div className="resources__item">
-          UN International Covenant on Civil and Political Rights, <span className="resources__item--italic">Views adopted by the Committee under article 5 (4) of the Optional Protocol, concerning communication No. 2728/2016</span>, UN Human Rights Committee, CCPR/C/127/D/2728/2016 (23 September 2020).
-          <br />
-          <a
-            href="https://tbinternet.ohchr.org/_layouts/15/treatybodyexternal/Download.aspx?symbolno=CCPR%2fC%2f127%2fD%2f2728%2f2016&Lang=en/"
-            target="_blank"
-            rel="noreferrer"
-            className="resources__item__link"
-          >
-            www.tbinternet.ohchr.org/_layouts/15/treatybodyexternal/Download.aspx?symbolno=CCPR%2fC%2f127%2fD%2f2728%2f2016&Lang=en
-          </a>
-        </div>
-        <div className="resources__item">
           UNOCHA, Centre for Humanitarian Data.
           <br />
           <a
@@ -357,7 +342,7 @@ const Resources = () => {
           </a>
         </div>
         <div className="resources__item">
-          UNOCHA, Global Humanitarian Overview 2021.
+          UNOCHA, <span className="resources__item--italic">Global Humanitarian Overview 2021</span>.
           <br />
           <a
             href="https://www.unocha.org/global-humanitarian-overview-2021/"

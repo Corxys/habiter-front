@@ -8,7 +8,7 @@
 }
 
 .interviews::-webkit-scrollbar {
-  width: 18px;
+  width: 15px;
 }
 
 .interviews::-webkit-scrollbar-track {
@@ -17,6 +17,5 @@
 
 .interviews::-webkit-scrollbar-thumb {
   background-color: vars.$color-primary;
-  border-radius: 20px;
-  border: 5px solid #000000;
+  border: 6px solid #000000;
 }

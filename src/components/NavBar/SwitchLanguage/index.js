@@ -1,12 +1,13 @@
 // import
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 // icons
 import { ReactComponent as SwitchLanguageIcon } from '../../../assets/icons/navbar-langue.svg';
 
 // component
-const SwitchLanguage = () => {
+const SwitchLanguage = ({ changeLanguage }) => {
   const [displayed, setDisplayed] = useState(false);
 
   const languages = ['fr', 'en', 'de'];
@@ -32,6 +33,7 @@ const SwitchLanguage = () => {
                 key={language}
                 className="navbar__icon__item__option"
                 onClick={() => {
+                  changeLanguage(language);
                   i18n.changeLanguage(language);
                   setDisplayed(false);
                 }}
@@ -49,5 +51,11 @@ const SwitchLanguage = () => {
   )
 };
 
+const mapDispatchToProps = (dispatch) => ({
+  changeLanguage: (language) => {
+    localStorage.setItem('langue', language)
+  },
+});
+
 // export
-export default SwitchLanguage;
+export default connect(null, mapDispatchToProps)(SwitchLanguage);

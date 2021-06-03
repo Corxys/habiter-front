@@ -11,29 +11,19 @@ const AboutTheProject = () => {
 
   return (
     <article className="project">
-      <section className="project__header">
-        {/* PROJECT => title */}
-        <h1 className="project__title">
-          Habiter
-        </h1>
+      <section className="project__text">
+        <p className="project__text__content">
+          { t('aboutTheProject:text') }
+        </p>
       </section>
-      <section className="project__content">
-        <div className="project__content__text-container">
-          {/* PROJECT => introduction */}
-          <p className="project__content__text">
-            { t('about-the-project.text') }
+      <section className="project__acknowledgments">
+        <div className="project__acknowledgments__text">
+          <h2 className="project__acknowledgments__subtitle">
+            { t('aboutTheProject:acknowledgments.title') }
+          </h2>
+          <p className="project__acknowledgments__text__content">
+            { t('aboutTheProject:acknowledgments.text') }
           </p>
-          <div className="project__content__text"></div>
-          <div className="project__content__text"></div>
-          {/* PROJECT => acknowledgments */}
-          <div className="project__content__text">
-            <h2 className="project__subtitle">
-              { t('about-the-project.acknowledgments.title') }
-            </h2>
-            <p className="project__text container__project__text">
-              { t('about-the-project.acknowledgments.text') }
-            </p>
-          </div>
         </div>
       </section>
     </article>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles.scss';
 
-import { ReactComponent as IconPause } from '../../../../assets/icons/interview-page-pause.svg';
+import { ReactComponent as IconPause } from '../../../../../assets/icons/interview-page-pause.svg';
 
 const Pause = ({ playerStatus, handleClick }) => { 
   return (

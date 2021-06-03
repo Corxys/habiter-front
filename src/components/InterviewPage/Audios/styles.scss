@@ -1,0 +1,18 @@
+@use 'src/styles/vars';
+
+.interview-page {
+  &__audios {
+    padding-left: 45px;
+    width: 70%;
+    margin-top: 150px;
+
+    &__title {
+      margin: 0px 50px 50px 0px;
+    }
+
+    &__files {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

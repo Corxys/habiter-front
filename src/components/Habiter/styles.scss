@@ -2,17 +2,18 @@
 
 .habiter {
   min-height: 100%;
-
-  &__content {
-    display: flex;
-    align-items: stretch;
-  }
+  // à cause de la barre de défilement, lorsqu'on changeait d'onglet, tout le contenu de la page se décalait
+  // pour éviter ce problème, j'ai défini la largeur de la page à 100vw + 29px (taille de la barre de défilement) et ajouté un padding à droite équivalent
+  width: calc(100vw + 29px);
+  padding-right: 29px;
   
   main {
     position: relative;
     margin-left: 125px;
-    padding-bottom: 100px;
+    // padding-bottom: 100px;
     min-height: calc(100vh - 150px);
+    display: flex;
+    align-items: stretch;
   }
 
   // line next to the navbar

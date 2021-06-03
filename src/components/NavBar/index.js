@@ -20,52 +20,52 @@ const NavBar = () => {
     <header className="header">
       <nav className="navbar">
         {/* NAVBAR => home */}
-        <div
-          className="navbar__item navbar__item--home"
-        >
-          <NavLink
-            exact to="/"
-            className="navbar__item__link"
-            activeClassName="navbar__item__link--active"
-          >
-            Habiter
-          </NavLink>
+        <div className="navbar__item__home">
+            <NavLink
+              exact to="/"
+              className="navbar__item__link"
+              activeClassName="navbar__item__link--active"
+            >
+              Habiter
+            </NavLink>
         </div>
         {/* NAVBAR => about the project */}
-        <div
-          className="navbar__item"
-        >
-          <NavLink
-            exact to="/about-the-project"
-            className="navbar__item__link"
-            activeClassName="navbar__item__link--active"
+        <div className="navbar__items">
+          <div
+            className="navbar__item"
           >
-            { t('navbar.about-the-project') }
-          </NavLink>
-        </div>
-        {/* NAVBAR => about the artists */}
-        <div
-          className="navbar__item"
-        >
-          <NavLink
-            exact to="/about-the-artists"
-            className="navbar__item__link"
-            activeClassName="navbar__item__link--active"
+            <NavLink
+              exact to="/about-the-project"
+              className="navbar__item__link"
+              activeClassName="navbar__item__link--active"
+            >
+              { t('navbar:about-the-project') }
+            </NavLink>
+          </div>
+          {/* NAVBAR => about the artists */}
+          <div
+            className="navbar__item"
           >
-            { t('navbar.about-the-artists') }
-          </NavLink>
-        </div>
-        {/* NAVBAR => resources */}
-        <div
-          className="navbar__item"
-        >
-          <NavLink
-            exact to="/resources"
-            className="navbar__item__link"
-            activeClassName="navbar__item__link--active"
+            <NavLink
+              exact to="/about-the-artists"
+              className="navbar__item__link"
+              activeClassName="navbar__item__link--active"
+            >
+              { t('navbar:about-the-artists') }
+            </NavLink>
+          </div>
+          {/* NAVBAR => resources */}
+          <div
+            className="navbar__item"
           >
-            { t('navbar.resources') }
-          </NavLink>
+            <NavLink
+              exact to="/resources"
+              className="navbar__item__link"
+              activeClassName="navbar__item__link--active"
+            >
+              { t('navbar:resources') }
+            </NavLink>
+          </div>
         </div>
 
         {/* ICONS => switch language & open call */}

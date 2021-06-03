@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReactComponent as IconPlay } from '../../../../assets/icons/interview-page-play.svg';
+import { ReactComponent as IconPlay } from '../../../../../assets/icons/interview-page-play.svg';
 
 const Play = ({ handleClick }) => { 
   return (

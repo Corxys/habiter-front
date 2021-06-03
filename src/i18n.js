@@ -1,31 +1,58 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-import translationFR from './assets/locales/fr/translation.json';
-import translationEN from './assets/locales/en/translation.json';
-import translationDE from './assets/locales/de/translation.json';
+import navbarFR from './assets/locales/fr/navbar.json';
+import navbarEN from './assets/locales/en/navbar.json';
+import navbarDE from './assets/locales/de/navbar.json';
+
+import aboutTheProjectFR from './assets/locales/fr/about-the-project.json';
+import aboutTheProjectEN from './assets/locales/en/about-the-project.json';
+import aboutTheProjectDE from './assets/locales/de/about-the-project.json';
+
+import aboutTheArtistsFR from './assets/locales/fr/about-the-artists.json';
+import aboutTheArtistsEN from './assets/locales/en/about-the-artists.json';
+import aboutTheArtistsDE from './assets/locales/de/about-the-artists.json';
+
+import interviewPageFR from './assets/locales/fr/interview-page.json';
+import interviewPageEN from './assets/locales/en/interview-page.json';
+import interviewPageDE from './assets/locales/de/interview-page.json';
+
+let lng = localStorage.getItem('langue');
+
+const setLng = () => {
+  if (!lng) {
+    lng = 'fr';
+    return lng;
+  } else {
+    return lng;
+  }
+}
 
 i18n
   .use(initReactI18next) // pas the i18n instance to react-i18next
   .init({
-    lng: 'fr',
-    fallbackLng: 'fr',
+    lng: setLng(),
+    fallbackLng: setLng(),
     resources: {
       fr: { 
-        translation: translationFR
+        navbar: navbarFR,
+        aboutTheProject: aboutTheProjectFR,
+        aboutTheArtists: aboutTheArtistsFR,
+        interviewPage: interviewPageFR,
       },
       en: { 
-        translation: translationEN
+        navbar: navbarEN,
+        aboutTheProject: aboutTheProjectEN,
+        aboutTheArtists: aboutTheArtistsEN,
+        interviewPage: interviewPageEN,
       },
       de: { 
-        translation: translationDE
+        navbar: navbarDE,
+        aboutTheProject: aboutTheProjectDE,
+        aboutTheArtists: aboutTheArtistsDE,
+        interviewPage: interviewPageDE,
       },
     },
-    detection: {
-      order: ['path'],
-      lookupFromPathIndex: 0,
-      checkWhitelist: false
-    }
   });
 
 export default i18n;

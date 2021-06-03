@@ -5,9 +5,6 @@ import { useTranslation } from 'react-i18next';
 // styles
 import './styles.scss';
 
-// icon
-import { ReactComponent as OpenCall } from '../../assets/icons/navbar-open-call.svg';
-
 // component
 const AboutTheArtists = () => {
   const { t } = useTranslation();
@@ -23,7 +20,7 @@ const AboutTheArtists = () => {
             Pliskin Jacobs
           </h1>
           <p className="about__artist__text about__artist__text--eliana">
-            { t('about-the-artists.eliana-jacobs') }
+            { t('aboutTheArtists:eliana-jacobs') }
           </p>
         </div>
         {/* ARTISTS = SITA */}
@@ -34,23 +31,20 @@ const AboutTheArtists = () => {
             Subias
           </h1>
           <p className="about__artist__text">
-            { t('about-the-artists.sita-subias') }
+            { t('aboutTheArtists:sita-subias') }
           </p>
         </div>
       </section>
       <section className="about__since">
         <div className="about__since__text">
-          { t('about-the-artists.text') }
+          { t('aboutTheArtists:text') }
         </div> 
       </section>
       <section className="about__contact">
         <h2 className="about__contact__title">
-          { t('about-the-artists.contact.title') }
+          { t('aboutTheArtists:contact.title') }
         </h2>
         <div className="about__contact__text">
-          <div className="about__contact__text__name">
-            Eliana Pliskin Jacobs & Sîta Subias
-          </div>
           <div className="about__contact__text__line"></div>
           <div className="about__contact__text__mail">
             <a
@@ -66,12 +60,11 @@ const AboutTheArtists = () => {
       <section className="about__opencall">
         <div className="about__opencall__wrapper">
           <h2 className="about__opencall__wrapper__title">
-            { t('about-the-artists.open-call.title') }
+            { t('aboutTheArtists:open-call.title') }
           </h2>
           <div className="about__opencall__wrapper__content">
-            <OpenCall className="about__opencall__wrapper__content__icon" />
             <div className="about__opencall__wrapper__content__text">
-              { t('about-the-artists.open-call.part-1') }
+              { t('aboutTheArtists:open-call.first-part') }
               <div className="about__opencall__wrapper__content__text--underline">
                 <a
                   href="mailto:habiter.project@gmail.com"
@@ -81,7 +74,7 @@ const AboutTheArtists = () => {
                   habiter.project@gmail.com
                 </a>
               </div>
-              { t('about-the-artists.open-call.part-2') }
+              { t('aboutTheArtists:open-call.second-part') }
             </div>
           </div>
         </div>
