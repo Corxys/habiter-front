@@ -1,14 +1,11 @@
 // import
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
 // styles
 import './styles.scss';
 
 // component
 const Resources = () => {
-  const { t } = useTranslation();
-
   return (
     <article className="resources">
       <section className="resources__list">
