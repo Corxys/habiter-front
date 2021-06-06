@@ -8,18 +8,18 @@ import Audios from './Audios';
 import References from './References';
 // import { OneMedia } from './Media';
 
-let reference = 0;
+// let reference = 0;
 
 const InterviewPage = ({ interview }) => {
   console.log('interview :', interview);
 
-  const randomWidth = () => {
-    return Math.floor(Math.random() * (1050 - 750)) + 750;
-  };
+  // const randomWidth = () => {
+  //   return Math.floor(Math.random() * (1050 - 750)) + 750;
+  // };
 
-  const randomPadding = () => {
-    return Math.floor(Math.random() * (150 - 0)) + 0;
-  };
+  // const randomPadding = () => {
+  //   return Math.floor(Math.random() * (150 - 0)) + 0;
+  // };
 
   return (
     <div className="interview-page">
