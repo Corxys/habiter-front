@@ -21,8 +21,9 @@ const Interviews = ({ interviews }) => {
   let reference = 0;
 
   return (
-    <section className="interviews">      
+    <section className="interviews">
       {
+        interviews && 
         // eslint-disable-next-line array-callback-return
         interviews.map((interview, index) => {
           if (index === 0) {

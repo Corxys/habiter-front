@@ -1,0 +1,18 @@
+.interview-page {
+  &__media {
+    &__images {
+      &--one {
+        display: flex;
+        margin: 25px 0px;
+
+        img, video {
+          margin: 0px 25px;
+        }
+
+        div {
+          max-width: 25%;
+        }
+      }
+    }
+  }
+}

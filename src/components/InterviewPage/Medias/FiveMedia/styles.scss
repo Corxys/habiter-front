@@ -1,0 +1,31 @@
+.interview-page {
+  &__media {
+    &--five {
+      &__pictures {
+        &--two {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+
+          img {
+            max-width: 30%;
+            margin: 12.5px;
+          }
+        }
+
+        &--one {
+          display: flex;
+          flex-direction: row;
+
+          img {
+            max-width: 70%;
+          }
+
+          div {
+            max-width: 30%;
+          }
+        }
+      }
+    }
+  }
+}

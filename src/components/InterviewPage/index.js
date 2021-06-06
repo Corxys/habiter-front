@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import './styles.scss';
 
+import Medias from './Medias';
 import Audios from './Audios';
 import References from './References';
 // import { OneMedia } from './Media';
@@ -53,21 +54,29 @@ const InterviewPage = ({ interview }) => {
       </div>
       {/* HEADER - END */}
 
+
+      {
+        interview.media.length >= 1 &&
+        <Medias miniature={interview.media[0].source[0].id} medias={interview.media} />
+      }
+
       {/* IMAGES - START */}
-      { interview.media.length >= 1 &&
+      {/* { interview.media.length >= 1 &&
         <div
           className="interview-page__content"
         >
           {
             // eslint-disable-next-line array-callback-return
             interview.media.map((image, index) => {
-              console.log(image.source[0].ext);
+              // la première image de l'interview se trouve toujours dans le header
+              // pour éviter les doublons, on ne retourne pas la première image
               if (index === 0) {
                 return null;
               } else if (index !== 0) {
                 if (reference === 0) {
                   reference += 1;
                   if (image.source[0].ext === '.jpg') {
+                    console.log(image);
                     return (
                       <div
                         className="interview-page__content__media"
@@ -85,6 +94,7 @@ const InterviewPage = ({ interview }) => {
                       </div>
                     )
                   } else if (image.source[0].ext === '.mp4') {
+                    console.log(image);
                     return (
                       <div
                         className="interview-page__content__media"
@@ -106,6 +116,7 @@ const InterviewPage = ({ interview }) => {
                 else if (reference === 1) {
                   reference = 0;
                   if (image.source[0].ext === '.jpg') {
+                    console.log(image);
                     return (
                       <div
                         className="interview-page__content__media"
@@ -123,6 +134,7 @@ const InterviewPage = ({ interview }) => {
                       </div>
                     )
                   } else if (image.source[0].ext === '.mp4') {
+                    console.log(image);
                     return (
                       <div
                         className="interview-page__content__media"
@@ -145,7 +157,7 @@ const InterviewPage = ({ interview }) => {
             })
           }
         </div>
-      }
+      } */}
       {/* IMAGES - END */}
 
       {

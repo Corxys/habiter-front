@@ -45,7 +45,6 @@ const AboutTheArtists = () => {
           { t('aboutTheArtists:contact.title') }
         </h2>
         <div className="about__contact__text">
-          <div className="about__contact__text__line"></div>
           <div className="about__contact__text__mail">
             <a
               href="mailto:habiter.project@gmail.com"

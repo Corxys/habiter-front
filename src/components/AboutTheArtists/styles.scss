@@ -12,25 +12,21 @@
   &__artist {
     &__name {
       margin-bottom: 30px;
+      font-size: 60px;
     }
     
+    &__text {
+      padding-bottom: 85px;
+    }
+
     &--eliana {
       max-width: 55%;
-      padding: 30px 80px 00px 0px;
+      padding: 30px 80px 0px 0px;
       border-right: 1px solid #FFFFFF;
     }
 
     &--sita {
-      padding: 127px 0px 85px 45px;
-    }
-
-    &__text {
-      margin-left: 70px;
-
-      &--eliana {
-        columns: 2;
-        padding-bottom: 85px;
-      }
+      padding: 30px 0px 0px 45px;
     }
   }
 
@@ -40,7 +36,7 @@
     font-family: vars.$font-primary;
     font-size: 25px;
     line-height: 1.2;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -51,26 +47,19 @@
   &__contact {
     display: flex;
     flex-direction: row;
-    margin-bottom: 130px;
+    align-items: center;
+    margin-bottom: 100px;
     padding-left: 45px;
     
     &__text {
       font-family: vars.$font-primary;
-      max-width: 450px;
       margin-left: 60px;
-      padding-top: 8px;
-
-      &__line {
-        width: 50px;
-        height: 2px;
-        margin: 30px 0px;
-        background-color: #FFFFFF;
-      }
 
       &__mail {
         font-size: 25px;
         text-decoration: underline;
         transition: 0.2s color;
+        font-family: vars.$font-secondary;
 
         &:hover {
           color: vars.$color-secondary;
@@ -92,7 +81,7 @@
     
     &__wrapper {
       &__title {
-        margin-bottom: 95px;
+        margin-bottom: 35px;
         max-width: 650px;
         white-space: pre-wrap;
       }
@@ -110,6 +99,7 @@
           
           &--underline {
             margin: 20px 0px;
+            font-family: vars.$font-secondary;
           }
     
           & a {

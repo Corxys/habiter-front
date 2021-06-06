@@ -1,0 +1,26 @@
+.interview-page {
+  &__media {
+    &--two {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__images {
+      img, video {
+        width: 100%;
+      }
+
+      &--column {
+        margin-left: 25px;
+
+        img {
+          padding-right: 12.5px;
+        }
+
+        div {
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+}

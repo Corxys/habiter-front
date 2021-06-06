@@ -1,13 +1,16 @@
 @use 'src/styles/vars';
 
 .interview-page {
+  padding-bottom: 100px;
+
   &__header {
+    padding: 0px 45px;
+
     // balise qui contient l'auteur, la localisation et une image de l'interview
     &__intro {
       display: flex;
       flex-direction: row;
       margin-bottom: 50px;
-      padding-left: 45px;
       
       &__author {
         max-width: 50%;

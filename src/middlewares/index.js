@@ -5,19 +5,31 @@ const HOST = 'https://habiterproject.herokuapp.com';
 const habiter = (store) => (next) => (action) => {
   switch (action.type) {
     case 'INIT_DATAS':
-      try {
-        const response = axios.get(`${HOST}/interviews`);
+      axios.get(`${HOST}/interviews`)
+        .then((response) => {
+          const interviews = response.data.sort((a, b) => {
+            if (a.author < b.author) {
+              return -1;
+            } 
+            if (a.author > b.author) {
+              return 1;
+            }
 
-        store.dispatch({
-          type: 'INTERVIEWS_SUCCESS',
-          payload: {
-            interviews: response.data,
-          },
-        });
-      }
-      catch (error) {
-        console.log(error);
-      }
+            return 0;
+          });
+
+          // handle success
+          store.dispatch({
+            type: 'INTERVIEWS_SUCCESS',
+            payload: {
+              interviews: interviews,
+            },
+          });
+        })
+        .catch((error) => {
+          // handle error
+          console.log(error);
+        })
       break;
     default: 
       next(action);
