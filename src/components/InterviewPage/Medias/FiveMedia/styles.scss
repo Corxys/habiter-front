@@ -1,28 +1,44 @@
 .interview-page {
   &__media {
-    &--five {
-      &__pictures {
+    &__images {
+      &__five {
         &--two {
           display: flex;
           flex-direction: row;
           align-items: flex-end;
-
-          img {
+  
+          &:first-child {
+            margin-bottom: 25px;
+          }
+  
+          &:last-child {
+            margin-top: 25px;
+          }
+  
+          &--bottom {
+            padding-left: 10%;
+          }
+  
+          .interview-page__media__image {
             max-width: 30%;
-            margin: 12.5px;
+
+            &:first-child {
+              margin-right: 25px;
+            }
           }
         }
-
+  
         &--one {
           display: flex;
           flex-direction: row;
-
-          img {
-            max-width: 70%;
+          align-items: center;
+          
+          .interview-page__media__caption {
+            padding: 0px 25px;
           }
 
-          div {
-            max-width: 30%;
+          .interview-page__media__image {
+            max-width: 70%;
           }
         }
       }

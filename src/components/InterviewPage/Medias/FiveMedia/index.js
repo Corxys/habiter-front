@@ -2,22 +2,22 @@ import React from 'react';
 
 import './styles.scss';
 
-const FiveMedia = ({ images }) => {
+const FiveMedia = ({ images, checkTypeOfMedia }) => {
   return (
-    <div className="interview-page__media--five">
-      <div className="interview-page__media--five__pictures--two">
-        <img src={images.source[0].url} alt="" />
-        <img src={images.source[1].url} alt="" />
+    <div className="interview-page__media__images__five">
+      <div className="interview-page__media__images__five--two">
+        { checkTypeOfMedia(images.source[0]) }
+        { checkTypeOfMedia(images.source[1]) }
       </div>
-      <div      className="interview-page__media--five__pictures--one">
+      <div      className="interview-page__media__images__five--one">
         <div className="interview-page__media__caption">
           { images.caption }
         </div>
-        <img src={images.source[2].url} alt="" />
+        { checkTypeOfMedia(images.source[2]) }
       </div>
-      <div className="interview-page__media--five__pictures--two">
-        <img src={images.source[3].url} alt="" />
-        <img src={images.source[4].url} alt="" />
+      <div className="interview-page__media__images__five--two interview-page__media__images--two--bottom">
+      { checkTypeOfMedia(images.source[3]) }
+      { checkTypeOfMedia(images.source[4]) }
       </div>
     </div>
   )

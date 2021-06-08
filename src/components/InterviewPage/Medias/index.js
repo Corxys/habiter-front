@@ -7,14 +7,40 @@ import './styles.scss';
 // components import
 import OneMedia from './OneMedia';
 import TwoMedia from './TwoMedia';
+import ThreeMedia from './ThreeMedia';
+import FourMedia from './FourMedia';
 import FiveMedia from './FiveMedia';
+import SixMedia from './SixMedia';
 
 // component
-const Medias = ({ miniature, medias }) => {
+const Medias = ({ medias }) => {
   const getRandomValue = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min +1)) + min;
+  };
+
+  const checkTypeOfMedia = ( media, width ) => {
+    if (media.provider_metadata.resource_type === 'image') {
+      return (
+        <img 
+            className="interview-page__media__image"
+            src={media.url}
+            alt=""
+            style={{ maxWidth: `${width}%` }}
+          />
+      )
+    }
+    else if (media.provider_metadata.resource_type === 'video') {
+      return (
+        <video controls>
+          <source 
+            className="interview-page__media__video"
+            src={media.url}
+          />
+        </video>
+      ) 
+    }
   };
 
   return (
@@ -23,28 +49,52 @@ const Medias = ({ miniature, medias }) => {
         medias.map((media) => {
           return (
             <div className="interview-page__media">
-              {/* {
-                media.source.length === 3 &&
-                <TwoMedia miniature={miniature} images={media} />
-              } */}
               {
                 media.source.length === 1 &&
                 <OneMedia
-                  width={getRandomValue(50, 80)}
-                  flexDirection={getRandomValue(0, 1)}
-                  image={media}
+                  image={ media }
+                  width={ getRandomValue(50, 70) }
+                  flexDirection={ getRandomValue(0, 1) }
+                  checkTypeOfMedia= { checkTypeOfMedia }
                 />
               }
               {
                 media.source.length === 2 &&
                 <TwoMedia 
-                  images={media}
+                  images={ media }
+                  width={ getRandomValue(80, 100) }
+                  checkTypeOfMedia={ checkTypeOfMedia }
+                />
+              }
+              {
+                media.source.length === 3 &&
+                <ThreeMedia
+                  images={ media }
+                  getRandomValue={ getRandomValue }
+                  checkTypeOfMedia={ checkTypeOfMedia }
+                /> 
+              }
+              {
+                media.source.length === 4 &&
+                <FourMedia 
+                  images={ media }
+                  checkTypeOfMedia={ checkTypeOfMedia }
                 />
               }
               {
                 media.source.length === 5 &&
                 <FiveMedia 
-                  images={media}
+                  images={ media }
+                  checkTypeOfMedia={ checkTypeOfMedia }
+                />
+              }
+              {
+                media.source.length === 6 &&
+                <SixMedia 
+                  images={ media }
+                  getRandomValue={ getRandomValue }
+                  flexDirection={ getRandomValue(0, 1) }
+                  checkTypeOfMedia={ checkTypeOfMedia }
                 />
               }
             </div>

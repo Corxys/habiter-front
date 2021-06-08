@@ -5,65 +5,24 @@ import React from 'react';
 import './styles.scss';
 
 // component
-const TwoMedia = ({ miniature, images }) => {
-  console.log('images :', images);  
-  console.log('miniature', miniature);
-
-  images.source.map((image) => {
-    console.log(image)
-    if (miniature === image.id) {
-      console.log('conflit miniature et image');
-    } 
-  })
-  
-
+const ThreeMedia = ({ images, getRandomValue, checkTypeOfMedia }) => {
   return (
-    <div className="interview-page__media interview-page__media--three">
-      <div className="interview-page__media__images">
-        <img 
-          className="interview-page__media__image"
-          src={images.source[0].url}
-          alt=""
-        />
+    <div className="interview-page__media__images__three">
+      <div className="interview-page__media__images__three--one">
+        { checkTypeOfMedia(images.source[0], getRandomValue(75, 95)) }
       </div>
-      <div className="interview-page__media__images interview-page__media__images--column">
+      <div className="interview-page__media__images__three--two">
         <div className="interview-page__media__caption">
           { images.caption }
         </div>
-        <img 
-          className="interview-page__media__image"
-          src={images.source[1].url}
-          alt=""
-        />
-        <img 
-          className="interview-page__media__image"
-          src={images.source[2].url}
-          alt=""
-        />
+        <div className="interview-page__media__images__three--two--column">
+          { checkTypeOfMedia(images.source[1], getRandomValue(80, 100)) }
+          { checkTypeOfMedia(images.source[2], getRandomValue(60, 70)) }
+        </div>
       </div>
-      
-      
-      {/* {
-        images.source.map((image, index) => {
-          console.log(image[index]);
-          if (images.source[0].id === image.id) {
-            return null;
-          }
-          else {
-            return (
-              <img 
-                className="interview-page__media__image"
-                src={image.url}
-                alt=""
-              />
-            )
-          }
-        })
-      } */}
-     
     </div>
   )
 };
 
 // export
-export default TwoMedia;
+export default ThreeMedia;

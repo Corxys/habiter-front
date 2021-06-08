@@ -3,6 +3,8 @@ import axios from 'axios';
 const HOST = 'https://habiterproject.herokuapp.com';
 
 const habiter = (store) => (next) => (action) => {
+  console.log('state :', store.getState());
+
   switch (action.type) {
     case 'INIT_DATAS':
       axios.get(`${HOST}/interviews`)
@@ -17,6 +19,8 @@ const habiter = (store) => (next) => (action) => {
 
             return 0;
           });
+
+          console.log('result of the request :', interviews);
 
           // handle success
           store.dispatch({

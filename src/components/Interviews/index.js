@@ -16,6 +16,8 @@ const randomPadding = () => {
 
 // component
 const Interviews = ({ interviews }) => {
+  console.log(interviews);
+  
   // we declare a reference variable, which will allow us to decide
   // if we want the component to be used Interview, or InterviewInvert
   let reference = 0;

@@ -1,24 +1,22 @@
 .interview-page {
   &__media {
-    &--two {
-      display: flex;
-      flex-direction: row;
-    }
-
     &__images {
-      img, video {
-        width: 100%;
-      }
+      &__two {
+        display: flex;
+        flex-direction: row;
 
-      &--column {
-        margin-left: 25px;
-
-        img {
-          padding-right: 12.5px;
+        &--one {
+          max-width: 55%;
         }
 
-        div {
-          margin-bottom: 25px;
+        &--column {
+          display: flex;
+          flex-direction: column;
+          margin-left: 25px;
+
+          .interview-page__media__caption {
+            margin-bottom: 25px;
+          }
         }
       }
     }

@@ -1,16 +1,13 @@
+@use 'src/styles/vars';
+
 .interview-page {
   &__media {
     &__images {
-      &--one {
+      &__one {
         display: flex;
-        margin: 25px 0px;
 
-        img, video {
-          margin: 0px 25px;
-        }
-
-        div {
-          max-width: 25%;
+        .interview-page__media__caption {
+          padding: 0px 25px;
         }
       }
     }

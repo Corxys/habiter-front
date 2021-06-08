@@ -24,14 +24,25 @@ const References = ({ references }) => {
                 <div className="interview-page__resources__link__title">
                   { reference.name }
                 </div>
-                <div className="interview-page__resources__link__source">
-                  <a
-                    href={ reference.link }
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    { reference.link }          
-                  </a>
+                <div className="interview-page__resources__link__sources">
+                  {
+                    reference.source.map((ref) => {
+                      return (
+                        <div 
+                          key={ ref.id }
+                          className="interview-page__resources__link__source"
+                        >
+                          <a
+                            href={ ref.link }
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            { ref.link }          
+                          </a>
+                        </div>
+                      )
+                    })
+                  }
                 </div>
               </div>
             )

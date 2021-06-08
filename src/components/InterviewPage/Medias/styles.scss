@@ -4,10 +4,30 @@
   &__medias {
     position: relative;
     right: 0px;
+    display: flex;
+    flex-direction: column;
     font-family: vars.$font-primary;
     font-size: 25px;
     background-color: vars.$color-primary;
-    padding: 1px 25px 1px 0px;
+    padding: 25px 40px 25px 0px;
     margin-top: 100px;
+    width: calc(100vw - 125px);
+  }
+
+  &__media {
+    margin-top: 25px;
+  
+    &:first-child {
+      margin-top: 0px;
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    &__caption {
+      min-width: 30%;
+      max-width: 40%;
+    }
   }
 }

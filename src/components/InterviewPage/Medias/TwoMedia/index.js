@@ -5,25 +5,17 @@ import React from 'react';
 import './styles.scss';
 
 // component
-const TwoMedia = ({ miniature, images }) => {
+const TwoMedia = ({ images, width, checkTypeOfMedia }) => {
   return (
-    <div className="interview-page__media--two">
-      <div className="interview-page__media__images">
-        <img 
-          className="interview-page__media__image"
-          src={images.source[0].url}
-          alt=""
-        />
+    <div className="interview-page__media__images__two">
+      <div className="interview-page__media__images__two--one">
+        { checkTypeOfMedia(images.source[0], width) }
       </div>
-      <div className="interview-page__media__images interview-page__media__images--column">
+      <div className="interview-page__media__images__two--column">
         <div className="interview-page__media__caption">
           { images.caption }
         </div>
-        <img 
-          className="interview-page__media__image"
-          src={images.source[1].url}
-          alt=""
-        />
+        { checkTypeOfMedia(images.source[1], width) }
       </div>
     </div>
   )

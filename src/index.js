@@ -13,7 +13,6 @@ import './i18n';
 
 import reportWebVitals from './reportWebVitals';
 
-
 store.dispatch({
   type: 'INIT_DATAS',
 });

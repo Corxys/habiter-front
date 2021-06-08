@@ -1,0 +1,42 @@
+.interview-page {
+  &__media {
+    &__images {
+      &__four {
+        display: flex;
+        flex-direction: column;
+
+        &--line {
+          display: flex;
+          flex-direction: row;
+
+          &:first-child {
+            margin-bottom: 25px;
+          }
+
+          &:last-child {
+            .interview-page__media__caption {
+              padding-left: 25px;
+              min-width: 30%;
+            }
+          }
+          
+          &--two {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+
+            img {
+              width: 50%;
+            }
+          }
+
+          .interview-page__media__image {  
+            &:first-child {
+              padding-right: 25px
+            }
+          }
+        }
+      }
+    }
+  }
+}
