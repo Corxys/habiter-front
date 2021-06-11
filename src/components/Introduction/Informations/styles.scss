@@ -1,0 +1,23 @@
+.introduction__informations {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 125px;
+
+  &__text {
+    font-weight: bold;
+    font-size: 19px;
+
+    &__line {
+      margin-top: 3px;
+
+      &--regular {
+        font-weight: normal;
+        font-style: oblique;
+        margin-top: 20px;
+      }
+    }
+  }
+}

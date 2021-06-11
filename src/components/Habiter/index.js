@@ -1,45 +1,34 @@
 // import
 import React from 'react';
+import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
 // styles
 import './styles.scss';
 
 // components import
-import NavBar from '../NavBar';
-import Interviews from '../Interviews';
-import AboutTheProject from '../AboutTheProject';
-import AboutTheArtists from '../AboutTheArtists';
-import Resources from '../Resources';
-import InterviewPage from '../InterviewPage';
+import Introduction from '../Introduction';
+import Content from '../Content';
 
 // component
-const Habiter = () => {  
+const Habiter = ({ showHabiter }) => {
   return (
     <div className="habiter">
-      <NavBar />
-      <div className="line"></div>
-      <main className="habiter__content">
-        <div className="line line--bottom"></div>
-        <Route exact path="/">
-            <Interviews />
-        </Route>
-        <Route exact path="/about-the-project">
-          <AboutTheProject />
-        </Route>
-        <Route exact path="/about-the-artists">
-          <AboutTheArtists />
-        </Route>
-        <Route exact path="/resources">
-          <Resources />
-        </Route>
-        <Route exact path="/interviews/:id">
-          <InterviewPage />
-        </Route>
-      </main>
+      <Route exact path="/">
+        {!showHabiter && (
+          <Introduction />
+          )}
+      </Route>
+      {showHabiter && (
+      <Content showHabiter={showHabiter} />
+      )}
     </div>
   )
 };
 
+const mapStateToProps = (state) => ({
+  showHabiter: state.habiter.showHabiter,
+});
+
 // export
-export default Habiter;
+export default connect(mapStateToProps, null)(Habiter);

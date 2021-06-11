@@ -1,6 +1,10 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
+import introductionFR from './assets/locales/fr/introduction.json' 
+import introductionEN from './assets/locales/en/introduction.json'
+import introductionDE from './assets/locales/de/introduction.json'
+
 import navbarFR from './assets/locales/fr/navbar.json';
 import navbarEN from './assets/locales/en/navbar.json';
 import navbarDE from './assets/locales/de/navbar.json';
@@ -17,7 +21,7 @@ import interviewPageFR from './assets/locales/fr/interview-page.json';
 import interviewPageEN from './assets/locales/en/interview-page.json';
 import interviewPageDE from './assets/locales/de/interview-page.json';
 
-let lng = localStorage.getItem('langue');
+let lng = localStorage.getItem('language');
 
 const setLng = () => {
   if (!lng) {
@@ -35,18 +39,21 @@ i18n
     fallbackLng: setLng(),
     resources: {
       fr: { 
+        introduction: introductionFR,
         navbar: navbarFR,
         aboutTheProject: aboutTheProjectFR,
         aboutTheArtists: aboutTheArtistsFR,
         interviewPage: interviewPageFR,
       },
       en: { 
+        introduction: introductionEN,
         navbar: navbarEN,
         aboutTheProject: aboutTheProjectEN,
         aboutTheArtists: aboutTheArtistsEN,
         interviewPage: interviewPageEN,
       },
       de: { 
+        introduction: introductionDE,
         navbar: navbarDE,
         aboutTheProject: aboutTheProjectDE,
         aboutTheArtists: aboutTheArtistsDE,

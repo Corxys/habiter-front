@@ -13,7 +13,7 @@ const Interview = ({
   miniature,
   language,
   randomPadding,
-  getInterviewById
+  getInterviewById,
 }) => {
   const [hovered, setHovered] = useState(false);
 

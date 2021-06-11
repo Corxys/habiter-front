@@ -1,16 +1,17 @@
 // import
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { animated } from 'react-spring';
 
 // styles
 import './styles.scss';
 
 // component
-const AboutTheProject = () => {
+const AboutTheProject = ({ fadeInContent }) => {
   const { t } = useTranslation();
 
   return (
-    <article className="project">
+    <animated.article className="project" style={ fadeInContent }>
       <section className="project__text">
         <p className="project__text__content">
           { t('aboutTheProject:text') }
@@ -26,7 +27,7 @@ const AboutTheProject = () => {
           </p>
         </div>
       </section>
-    </article>
+    </animated.article>
   );
 };
 

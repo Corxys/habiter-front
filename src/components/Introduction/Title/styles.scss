@@ -1,0 +1,27 @@
+.introduction {
+  &__title {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 125px;
+
+    &__content {
+      max-width: 50%;
+      margin: auto;
+
+      h1 {
+        color: #FFFFFF;
+        font-size: 150px;
+      }
+
+      &__intro {
+        font-weight: bold;
+        line-height: 1.5;
+        font-size: 18px;
+      }
+    }
+  }
+}

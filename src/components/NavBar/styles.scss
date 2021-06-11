@@ -3,10 +3,18 @@
 
 // header => contains navbar
 header {
+  position: relative;
   height: 150px;
-  border-bottom: 1px solid vars.$color-line;
   padding: 0px 125px;
   padding-top: calc(150px - 109px);
+
+  .line__horizontal {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 1px;
+    background-color: vars.$color-line;
+  }
 
   nav {
     display: flex;

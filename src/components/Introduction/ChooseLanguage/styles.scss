@@ -1,0 +1,33 @@
+@use 'src/styles/vars';
+
+.introduction__choose-langue {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__icon {
+    width: 13%;
+    fill: vars.$color-line;
+  }
+
+  &__langues {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+    font-size: 30px;
+    margin-top: 150px;
+  }
+
+  &__langue {
+    cursor: pointer;
+    transition: 0.2s color;
+
+    &:hover {
+      color: vars.$color-secondary;
+    }
+  }
+}

@@ -3,10 +3,23 @@ import axios from 'axios';
 const HOST = 'https://habiterproject.herokuapp.com';
 
 const habiter = (store) => (next) => (action) => {
-  console.log('state :', store.getState());
-
   switch (action.type) {
     case 'INIT_DATAS':
+      let showLanguages = true;
+      let showInformations = false;
+      let showTitle = false;
+      let showHabiter = false;
+
+      store.dispatch({
+        type: 'INIT_DATAS_SUCCESS',
+        payload: {
+          showLanguages: showLanguages,
+          showInformations: showInformations,
+          showTitle: showTitle,
+          showHabiter: showHabiter,
+        }
+      });
+
       axios.get(`${HOST}/interviews`)
         .then((response) => {
           const interviews = response.data.sort((a, b) => {
@@ -20,13 +33,15 @@ const habiter = (store) => (next) => (action) => {
             return 0;
           });
 
-          console.log('result of the request :', interviews);
-
           // handle success
           store.dispatch({
-            type: 'INTERVIEWS_SUCCESS',
+            type: 'INIT_DATAS_SUCCESS',
             payload: {
               interviews: interviews,
+              showLanguages: showLanguages,
+              showInformations: showInformations,
+              showTitle: showTitle,
+              showHabiter: showHabiter,
             },
           });
         })

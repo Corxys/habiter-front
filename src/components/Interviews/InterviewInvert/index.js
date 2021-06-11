@@ -13,7 +13,7 @@ const InterviewInvert = ({
   miniature,
   language,
   randomPadding,
-  getInterviewById
+  getInterviewById,
 }) => {
   const [hovered, setHovered] = useState(false);
   

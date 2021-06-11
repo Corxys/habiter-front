@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { animated } from 'react-spring';
 
 import './styles.scss';
 
@@ -9,9 +10,9 @@ import References from './References';
 
 // let reference = 0;
 
-const InterviewPage = ({ interview }) => {
+const InterviewPage = ({ fadeInContent, interview }) => {
   return (
-    <div className="interview-page">
+    <animated.div className="interview-page" style={ fadeInContent }>
       {/* HEADER - START */}
       <div className="interview-page__header">
         {/* INTRODUCTION => name, location, image */}
@@ -63,12 +64,12 @@ const InterviewPage = ({ interview }) => {
         interview.reference.length >= 1 && 
         <References references={interview.reference} />
       }
-    </div>
+    </animated.div>
   )
 };
 
 const mapStateToProps = (state) => ({
-  interview: state.interview.interview,
+  interview: state.habiter.interview,
 });
 
 export default connect(mapStateToProps, null)(InterviewPage);

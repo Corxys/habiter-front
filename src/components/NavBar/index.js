@@ -2,6 +2,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useSpring, animated } from 'react-spring';
 
 // styles
 import './styles.scss';
@@ -16,11 +17,48 @@ import { ReactComponent as OpenCall } from '../../assets/icons/navbar-open-call.
 const NavBar = () => {
   const { t } = useTranslation();
 
+  const fadeInHome = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: {
+      duration: 600,
+    },
+    delay: 1200,
+  });
+
+  const fadeInLinks = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: {
+      duration: 600,
+    },
+    delay: 1800,
+  });
+
+  const fadeInIcons = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: {
+      duration: 600,
+    },
+    delay: 2400,
+  })
+
+  const lineHorizontal = useSpring({
+    from: { opacity: 0, width: '0%' },
+    to: { opacity: 1, width: '100%' },
+    config: {
+      duration: 1200,
+    },
+    delay: 0,
+  });
+
   return (
     <header className="header">
+      <animated.div className="line__horizontal" style={ lineHorizontal }></animated.div>
       <nav className="navbar">
         {/* NAVBAR => home */}
-        <div className="navbar__item__home">
+        <animated.div className="navbar__item__home" style={ fadeInHome } >
             <NavLink
               exact to="/"
               className="navbar__item__link"
@@ -28,9 +66,9 @@ const NavBar = () => {
             >
               Habiter
             </NavLink>
-        </div>
+        </animated.div>
         {/* NAVBAR => about the project */}
-        <div className="navbar__items">
+        <animated.div className="navbar__items" style={ fadeInLinks }>
           <div
             className="navbar__item"
           >
@@ -66,10 +104,10 @@ const NavBar = () => {
               { t('navbar:resources') }
             </NavLink>
           </div>
-        </div>
+        </animated.div>
 
         {/* ICONS => switch language & open call */}
-        <div className="navbar__icons">
+        <animated.div className="navbar__icons" style={ fadeInIcons }>
           {/* switch language */}
           <SwitchLanguage />
           {/* open call */}
@@ -82,7 +120,7 @@ const NavBar = () => {
               <OpenCall fill='red' className="navbar__icon__item" />
             </a>
           </div>
-        </div>
+        </animated.div>
       </nav>
     </header>
   );

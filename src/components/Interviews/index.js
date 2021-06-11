@@ -1,6 +1,7 @@
 // import
 import React from 'react';
 import { connect } from 'react-redux';
+import { animated } from 'react-spring';
 import PropTypes from 'prop-types';
 
 // styles
@@ -15,15 +16,14 @@ const randomPadding = () => {
 };
 
 // component
-const Interviews = ({ interviews }) => {
-  console.log(interviews);
-  
+const Interviews = ({ fadeInContent, interviews }) => {
+  // localStorage.setItem('show_landing_animation', false)
   // we declare a reference variable, which will allow us to decide
   // if we want the component to be used Interview, or InterviewInvert
   let reference = 0;
 
   return (
-    <section className="interviews">
+    <animated.section className="interviews" style={ fadeInContent }>
       {
         interviews && 
         // eslint-disable-next-line array-callback-return
@@ -66,7 +66,7 @@ const Interviews = ({ interviews }) => {
           }
         })
       }
-    </section>
+    </animated.section>
   );
 };
 
@@ -76,7 +76,7 @@ Interviews.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  interviews: state.interview.interviews,
+  interviews: state.habiter.interviews,
 });
 
 // export

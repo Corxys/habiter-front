@@ -1,13 +1,14 @@
 // import
 import React from 'react';
+import { animated } from 'react-spring';
 
 // styles
 import './styles.scss';
 
 // component
-const Resources = () => {
+const Resources = ({ fadeInContent }) => {
   return (
-    <article className="resources">
+    <animated.article className="resources" style={ fadeInContent }>
       <section className="resources__list">
         <div className="resources__item">
           <span className="resources__item--italic">Agenda for the protection of cross-border displaced persons in the context of disasters and climate change.</span> The Nansen Initiative, 5 Oct. 2015.
@@ -351,7 +352,7 @@ const Resources = () => {
           </a>
         </div>
       </section>
-    </article>
+    </animated.article>
   );
 };
 

@@ -1,0 +1,20 @@
+@use 'src/styles/vars';
+
+.introduction {
+  &__skip {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 17px;
+    cursor: pointer;
+
+    svg {
+      fill: vars.$color-line;
+      transition: 0.2s fill;
+
+      &:hover {
+        fill: vars.$color-primary;
+      }
+    }
+  }
+}

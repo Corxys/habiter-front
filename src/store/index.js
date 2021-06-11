@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 // reducer
 import rootReducer from '../reducers';
 
+// middlewares
 import habiterMiddleware from '../middlewares';
 
 const persistConfig = {
@@ -24,7 +25,7 @@ const middleware = composeWithDevTools(
   ),
 );
 
-const store = createStore(persistedReducer, middleware);
+const store = createStore(persistedReducer, {}, middleware);
 
 const persistor = persistStore(store);
 

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import interviewReducer from './interview';
+import habiterReducer from './habiter';
 
 export default combineReducers({
-  interview: interviewReducer,
+  habiter: habiterReducer,
 });
