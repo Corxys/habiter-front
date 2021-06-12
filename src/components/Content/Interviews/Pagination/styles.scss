@@ -12,13 +12,12 @@
       justify-content: center;
       align-items: center;
       width: 20px;
-      height: 20px;
       margin: 0px 5px;
+      padding: 5px;
 
       &--active {
         font-weight: bold;
-        font-size: 21px;
-        color: vars.$color-primary;
+        background-color: vars.$color-primary;
       }
     }
   }
