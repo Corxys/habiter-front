@@ -1,0 +1,116 @@
+@use 'src/styles/vars';
+
+.about {
+  padding-bottom: 100px;
+  
+  &__artists {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 45px;
+  }
+  
+  &__artist {
+    &__name {
+      margin-bottom: 30px;
+    }
+    
+    &__text {
+      padding-bottom: 85px;
+    }
+
+    &--eliana {
+      max-width: 50%;
+      padding: 30px 45px 0px 0px;
+      border-right: 1px solid #FFFFFF;
+    }
+
+    &--sita {
+      padding: 30px 0px 0px 45px;
+    }
+  }
+
+  &__since {
+    position: relative;
+    left: -157px;
+    font-family: vars.$font-primary;
+    font-size: 25px;
+    line-height: 1.2;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: vars.$color-primary;
+    padding: 100px 100px 100px 30%;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 100px;
+    padding-left: 45px;
+    
+    &__text {
+      font-family: vars.$font-primary;
+      margin-left: 60px;
+
+      &__mail {
+        font-size: 25px;
+        text-decoration: underline;
+        transition: 0.2s color;
+        font-family: vars.$font-secondary;
+
+        &:hover {
+          color: vars.$color-secondary;
+        }
+      }
+    }
+  }
+
+  &__opencall {
+    position: relative;
+    right: 0px;
+    font-size: 25px;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: vars.$color-primary;
+    padding: 100px 0px 100px 90px;
+    
+    &__wrapper {
+      &__title {
+        margin-bottom: 35px;
+        max-width: 650px;
+        white-space: pre-wrap;
+      }
+      
+      &__content {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    
+        &__text {
+          font-family: vars.$font-primary;
+          display: flex;
+          flex-direction: column;
+          max-width: 500px;
+          
+          &--underline {
+            margin: 20px 0px;
+            font-family: vars.$font-secondary;
+          }
+    
+          & a {
+            text-decoration: underline;
+            transition: 0.2s color;
+
+            &:hover {
+              color: vars.$color-secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

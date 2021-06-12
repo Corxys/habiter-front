@@ -9,9 +9,10 @@
   &__text {
     font-weight: bold;
     font-size: 19px;
+    width: 65%;
 
     &__line {
-      margin-top: 3px;
+      line-height: 1.2;
 
       &--regular {
         font-weight: normal;

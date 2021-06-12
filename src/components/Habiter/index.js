@@ -17,10 +17,10 @@ const Habiter = ({ showHabiter }) => {
       <Route exact path="/">
         {!showHabiter && (
           <Introduction />
-          )}
+        )}
       </Route>
       {showHabiter && (
-      <Content showHabiter={showHabiter} />
+        <Content showHabiter={showHabiter} />
       )}
     </div>
   )

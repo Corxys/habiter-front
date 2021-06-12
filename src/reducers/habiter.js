@@ -1,6 +1,4 @@
 const initialState = {
-  interviews: [],
-  interview: {},
   language: '',
   showLanguages: true,
   showInformations: false,
@@ -19,7 +17,6 @@ const reducer = (oldState = initialState, action) => {
     case 'INIT_DATAS_SUCCESS':
       return {
         ...oldState,
-        interviews: action.payload.interviews,
         showLanguages: action.payload.showLanguages,
         showInformations: action.payload.showInformations,
         showTitle: action.payload.showTitle,
@@ -88,20 +85,11 @@ const reducer = (oldState = initialState, action) => {
             showParagraphFour: false,
           },
         showHabiter: true,
-    }
-    case 'GET_INTERVIEW':
-      const interview = oldState.interviews.find((interview) => {
-        return interview.id === action.payload.id;
-      });
-
-      return {
-        ...oldState,
-        interview: interview,
       }
     default: 
-      return {
-        ...oldState
-      };
+      // instead {...oldState}
+      // https://github.com/rt2zz/redux-persist/issues/1114
+      return oldState;
   };
 };
 

@@ -1,0 +1,110 @@
+@use 'src/styles/vars';
+
+.interview-page {
+  &__audio {
+    margin-top: 150px;
+
+    &__file {
+      margin-bottom: 50px;
+
+      &:last-child {
+        margin-bottom: 0px;
+
+        .interview-page__audio__file__controls {
+          margin-bottom: 0px;
+        }
+      }
+
+      &__name {
+        font-family: vars.$font-primary;
+        color: vars.$color-primary;
+        font-size: 29px;
+        margin-bottom: 45px;
+      }
+
+      &__bar {
+        user-select: none;
+
+        &__progress {
+          height: 4px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+      
+          &__knob {
+            position: relative;
+            height: 17px;
+            width: 17px;
+            border-radius: 100%;
+            background-color: vars.$color-primary;
+          }
+        }
+
+        &__time {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          font-size: 25px;
+          margin-top: 30px;
+      
+          &__current, &__end {
+            padding: 0px 10px;
+          }
+        }
+      }
+
+      &__controls {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+        margin: 20px 0px 50px 0px;
+  
+        &__buttons {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+  
+          &__sound {
+            position: absolute;
+            left: 55px;
+
+            &__unmute, &__mute {
+              svg {
+                width: 30px;
+                fill: #FFFFFF;
+              }
+            }
+          }
+        }
+  
+        &__separator {
+          background-color: #FFFFFF;
+          width: 1px;
+          height: 50px;
+        }
+
+        &__button {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          width: 55px;
+          height: 55px;
+          border-radius: 100%;
+          background-color: #f2f2f275;
+          margin: 0px 30px;
+          transition: 0.2s background-color;
+    
+          &:hover {
+            background-color: vars.$color-secondary;
+          }
+    
+          svg {
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}

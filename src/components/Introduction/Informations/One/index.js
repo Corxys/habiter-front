@@ -56,7 +56,6 @@ const ParagraphOne = ({
                 <div className="introduction__informations__text__line">
                   {
                     line.split('').map((char, index) => {
-                      console.log(char + '-' + index);
                       return (
                           <motion.span key={char + "-" + index} variants={ letter }>
                             { char }

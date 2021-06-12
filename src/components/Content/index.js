@@ -7,12 +7,12 @@ import { Route } from 'react-router-dom';
 import './styles.scss';
 
 // components import
-import NavBar from '../NavBar';
-import Interviews from '../Interviews';
-import AboutTheProject from '../AboutTheProject';
-import AboutTheArtists from '../AboutTheArtists';
-import Resources from '../Resources';
-import InterviewPage from '../InterviewPage';
+import NavBar from './NavBar';
+import Interviews from './Interviews';
+import AboutTheProject from './AboutTheProject';
+import AboutTheArtists from './AboutTheArtists';
+import Resources from './Resources';
+import InterviewPage from './InterviewPage';
 
 // component
 const Content = ({ showHabiter}) => {

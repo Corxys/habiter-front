@@ -25,7 +25,7 @@ const middleware = composeWithDevTools(
   ),
 );
 
-const store = createStore(persistedReducer, {}, middleware);
+const store = createStore(persistedReducer, middleware);
 
 const persistor = persistStore(store);
 

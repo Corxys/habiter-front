@@ -125,7 +125,7 @@ const Title = ({ titleShown }) => {
 
 const mapDispatchToProps = (dispatch) => ({
   titleShown: () => {
-    localStorage.setItem('title_shown', false);
+    localStorage.setItem('show_title', false);
     
     dispatch({
       type: 'HIDE_TITLE',

@@ -5,18 +5,13 @@ const HOST = 'https://habiterproject.herokuapp.com';
 const habiter = (store) => (next) => (action) => {
   switch (action.type) {
     case 'INIT_DATAS':
-      let showLanguages = true;
-      let showInformations = false;
-      let showTitle = false;
-      let showHabiter = false;
-
       store.dispatch({
         type: 'INIT_DATAS_SUCCESS',
         payload: {
-          showLanguages: showLanguages,
-          showInformations: showInformations,
-          showTitle: showTitle,
-          showHabiter: showHabiter,
+          showLanguages: true,
+          showInformations: false,
+          showTitle: false,
+          showHabiter: false,
         }
       });
 
@@ -35,13 +30,9 @@ const habiter = (store) => (next) => (action) => {
 
           // handle success
           store.dispatch({
-            type: 'INIT_DATAS_SUCCESS',
+            type: 'GET_INTERVIEWS_SUCCESS',
             payload: {
               interviews: interviews,
-              showLanguages: showLanguages,
-              showInformations: showInformations,
-              showTitle: showTitle,
-              showHabiter: showHabiter,
             },
           });
         })
