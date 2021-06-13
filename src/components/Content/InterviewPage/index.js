@@ -28,12 +28,12 @@ const InterviewPage = ({ fadeInContent, interview }) => {
         <Audios audios={ interview.audio } />
       }
       {
-        interview.reference.length >= 1 && 
-        <References references={ interview.reference } />
-      }
-      {
         interview.quote.length >= 1 &&
         <Quotes quotes={ interview.quote } />
+      }
+      {
+        interview.reference.length >= 1 && 
+        <References references={ interview.reference } />
       }
     </animated.div>
   )
