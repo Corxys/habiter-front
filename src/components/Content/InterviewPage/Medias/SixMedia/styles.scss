@@ -10,15 +10,13 @@
           flex-direction: column;
           justify-content: center;
           max-width: 50%;
+          margin-right: 25px;
+
 
           .interview-page__media__image {
             &:first-child {
-              padding-bottom: 25px;
+              margin-bottom: 25px;
             }
-          }
-
-          &:first-child {
-            padding-right: 25px;
           }
 
           .interview-page__media__caption {
@@ -32,7 +30,7 @@
 
             .interview-page__media__image {             
               &:first-child {
-                padding-bottom: 25px;
+                margin-bottom: 25px;
               }
             }
           }

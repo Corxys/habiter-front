@@ -7,15 +7,12 @@ import { buildInterviewUrl } from '../../../../utils/buildInterviewUrl';
 import './styles.scss';
 
 const InterviewInvert = ({
-  id,
-  author,
-  location,
-  miniature,
-  language,
+  interview,
   randomPadding,
   getInterviewById,
 }) => {
   const [hovered, setHovered] = useState(false);
+  const { id, miniature, author, location, language } = {...interview};
   
   const textStyle = hovered ? { color: '#0000FF' } : {};
   const imageStyle = hovered ? { filter: 'grayscale(100%)', opacity: '0.5' } : {};
@@ -37,7 +34,9 @@ const InterviewInvert = ({
           <div
             id={ id }
             className="interview__text__title"
-            onClick={ getInterviewById }
+            onClick={(event) => {
+              getInterviewById(event, interview);
+            }}
           >
             { author }
           </div>
@@ -58,7 +57,9 @@ const InterviewInvert = ({
           >
             <img
               id={ id }
-              onClick={ getInterviewById }
+              onClick={(event) => {
+                getInterviewById(event, interview);
+              }}
               src={ miniature.url }
               alt=""
               onMouseEnter={() => setHovered(true)}
@@ -73,13 +74,11 @@ const InterviewInvert = ({
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  getInterviewById: (event) => {
-    const id = parseInt(event.target.id, 10);
-    
+  getInterviewById: (event, interview) => {
     dispatch({
       type: 'GET_INTERVIEW',
       payload: {
-        id: id,
+        interview: interview,
       },
     });
   },

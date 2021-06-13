@@ -11,9 +11,10 @@ import ThreeMedia from './ThreeMedia';
 import FourMedia from './FourMedia';
 import FiveMedia from './FiveMedia';
 import SixMedia from './SixMedia';
+import SevenMedia from './SevenMedia';
 
 // component
-const Medias = ({ medias }) => {
+const Medias = ({ medias, mediaCopyright }) => {
   const getRandomValue = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -23,12 +24,16 @@ const Medias = ({ medias }) => {
   const checkTypeOfMedia = ( media, width ) => {
     if (media.provider_metadata.resource_type === 'image') {
       return (
-        <img 
-            className="interview-page__media__image"
+        <div className="interview-page__media__image" style={{ maxWidth: `${width}%` }}>
+          <div className="interview-page__media__image__legend">
+            Crédit photo : { mediaCopyright }
+          </div>
+          <img 
             src={media.url}
             alt=""
-            style={{ maxWidth: `${width}%` }}
+            style={{ width: '100%' }}
           />
+        </div>
       )
     }
     else if (media.provider_metadata.resource_type === 'video') {
@@ -94,6 +99,13 @@ const Medias = ({ medias }) => {
                   images={ media }
                   getRandomValue={ getRandomValue }
                   flexDirection={ getRandomValue(0, 1) }
+                  checkTypeOfMedia={ checkTypeOfMedia }
+                />
+              }
+              {
+                media.source.length === 7 &&
+                <SevenMedia 
+                  images={ media }
                   checkTypeOfMedia={ checkTypeOfMedia }
                 />
               }

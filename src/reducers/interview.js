@@ -1,13 +1,13 @@
 const initialState = {
-  interviews: [],
+  interview: {},
 };
 
 const reducer = (oldState = initialState, action) => {
   switch (action.type) {
-    case 'GET_INTERVIEWS_SUCCESS':
+    case 'GET_INTERVIEW':
       return {
         ...oldState,
-        interviews: action.payload.interviews,
+        interview: action.payload.interview,
       };
     default: 
       return oldState;

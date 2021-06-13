@@ -1,14 +1,14 @@
 const initialState = {
-  interviews: [],
+  currentPage: 1,
 };
 
 const reducer = (oldState = initialState, action) => {
   switch (action.type) {
-    case 'GET_INTERVIEWS_SUCCESS':
+    case 'CHANGE_CURRENT_PAGE':
       return {
         ...oldState,
-        interviews: action.payload.interviews,
-      };
+        currentPage: action.payload.currentPage,
+      }
     default: 
       return oldState;
   };

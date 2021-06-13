@@ -4,72 +4,43 @@ import { animated } from 'react-spring';
 
 import './styles.scss';
 
+import Header from './Header';
 import Medias from './Medias';
 import Audios from './Audios';
 import References from './References';
+import Quotes from './Quotes';
 
 // let reference = 0;
 
 const InterviewPage = ({ fadeInContent, interview }) => {
   return (
     <animated.div className="interview-page" style={ fadeInContent }>
-      {/* HEADER - START */}
-      <div className="interview-page__header">
-        {/* INTRODUCTION => name, location, image */}
-        <div className="interview-page__header__intro">
-          <div className="interview-page__header__intro__author">
-            <h1 className="interview-page__header__intro__author__name">
-              { interview.author }
-            </h1>
-            <div className="interview-page__header__intro__author__location">
-              { interview.location }
-            </div>
-            <div className="interview-page__header__intro__author__translated-from">
-              { interview.translated_from}
-            </div>
-          </div>          
-          { interview.media.length >= 1 &&
-            <div
-              className="interview-page__header__intro__image"
-            >
-              <div 
-                className="interview-page__header__intro__image__legend"
-              >
-                Crédit photo : { interview.media_copyright }
-              </div>
-              <img src={ interview.miniature.url } alt="" />
-            </div>
-          }
-        </div>
-        <p className="interview-page__header__text">
-          { interview.text }
-        </p>
-      </div>
-      {/* HEADER - END */}
-
-
+      <Header interview={ interview } />
       {
         interview.media.length >= 1 &&
         <Medias
           medias={ interview.media }
+          mediaCopyright={ interview.media_copyright }
         />
       }
-
       {
         interview.audio.length >= 1 &&
-        <Audios audios={interview.audio} />
+        <Audios audios={ interview.audio } />
       }
-
       {
         interview.reference.length >= 1 && 
-        <References references={interview.reference} />
+        <References references={ interview.reference } />
+      }
+      {
+        interview.quote.length >= 1 &&
+        <Quotes quotes={ interview.quote } />
       }
     </animated.div>
   )
 };
 
 const mapStateToProps = (state) => ({
-  interview: state.interviews.interview,
+  interview: state.interview.interview,
 });
 
 export default connect(mapStateToProps, null)(InterviewPage);

@@ -9,7 +9,7 @@ const FiveMedia = ({ images, checkTypeOfMedia }) => {
         { checkTypeOfMedia(images.source[0]) }
         { checkTypeOfMedia(images.source[1]) }
       </div>
-      <div      className="interview-page__media__images__five--one">
+      <div className="interview-page__media__images__five--one">
         <div className="interview-page__media__caption">
           { images.caption }
         </div>

@@ -45,7 +45,7 @@ const Interviews = ({
               // when the index is equal to 0, no random padding is applied to the component
               return (
                 <Interview
-                  {...interview}
+                  interview={ interview }
                   key={ interview.id }
                 />
               )
@@ -58,7 +58,7 @@ const Interviews = ({
                 reference += 1;
                 return (
                   <InterviewInvert
-                    {...interview}
+                    interview={ interview }
                     key={ interview.id }
                     randomPadding={ randomPadding() }
                   />
@@ -70,7 +70,7 @@ const Interviews = ({
                 reference = 0;
                 return (
                   <Interview
-                    {...interview}
+                    interview={ interview }
                     key={ interview.id }
                     randomPadding={ randomPadding() }
                   />
@@ -97,7 +97,7 @@ Interviews.propTypes = {
 
 const mapStateToProps = (state) => ({
   interviews: state.interviews.interviews,
-  currentPage: state.interviews.currentPage,
+  currentPage: state.pagination.currentPage,
 });
 
 const mapDispatchToProps = (dispatch) => ({
