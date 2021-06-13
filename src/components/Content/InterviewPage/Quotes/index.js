@@ -14,7 +14,7 @@ const Quotes = ({ quotes }) => {
       <h2 className="interview-page__quotes__title">
         {
           t('interviewPage:quotes')
-        }
+        } :
       </h2>
       <div className="interview-page__quotes__resources">
         {
