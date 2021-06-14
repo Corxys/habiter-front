@@ -2,6 +2,10 @@ import axios from 'axios';
 
 const HOST = 'https://habiterproject.herokuapp.com';
 
+const randomPadding = () => {
+  return Math.floor(Math.random() * (100 - 0)) + 0;
+};
+
 const habiter = (store) => (next) => (action) => {
   switch (action.type) {
     case 'INIT_DATAS':
@@ -28,11 +32,29 @@ const habiter = (store) => (next) => (action) => {
             return 0;
           });
 
+          // we declare a reference variable, which will allow us to decide
+          // if we want the component to be used Interview, or InterviewInvert
+          let reference = 0;
+
+          const interviewsStylized = interviews.map((interview) => {
+            interview.random_padding = randomPadding();
+
+            if (reference === 0) {
+              interview.position = reference;
+              reference++;
+            } else if (reference === 1) {
+              interview.position = reference;
+              reference = 0;
+            }
+
+            return interview;
+          });
+
           // handle success
           store.dispatch({
             type: 'GET_INTERVIEWS_SUCCESS',
             payload: {
-              interviews: interviews,
+              interviews: interviewsStylized,
             },
           });
         })

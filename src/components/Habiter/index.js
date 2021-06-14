@@ -9,18 +9,18 @@ import './styles.scss';
 // components import
 import Introduction from '../Introduction';
 import Content from '../Content';
+// import PopUp from '../PopUp';
 
 // component
 const Habiter = ({ showHabiter }) => {
   return (
     <div className="habiter">
-      <Route exact path="/">
-        {!showHabiter && (
-          <Introduction />
-        )}
-      </Route>
+      <Introduction />
+      {/* <PopUp /> */}
       {showHabiter && (
-        <Content showHabiter={showHabiter} />
+        <Content
+          showHabiter={ showHabiter }
+        />
       )}
     </div>
   )

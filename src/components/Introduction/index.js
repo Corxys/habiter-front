@@ -15,6 +15,7 @@ import Title from './Title';
 
 // component
 const Introduction = ({
+  showHabiter,
   showLanguages,
   showInformations,
   showTitle,
@@ -35,9 +36,9 @@ const Introduction = ({
         nbChar += line.length;
       });
 
-      nbChar *= 0.08;
+      nbChar *= 0.04;
       nbChar *= 1000;
-      nbChar = Math.round(nbChar) + 2000;
+      nbChar = Math.round(nbChar) + 3000;
     }
   
     return nbChar;
@@ -45,14 +46,19 @@ const Introduction = ({
 
   return (
     <>
-      <div
-        className="introduction__skip"
-        onClick={() => {
-          skipIntroduction();
-        }}
-      >
-        <IconSkip />
-      </div>
+      {
+        !showHabiter && (
+          <div
+            className="introduction__skip"
+            onClick={() => {
+              skipIntroduction();
+            }}
+          >
+            <IconSkip />
+          </div>
+        )
+      }
+      
       {/* si showLanguages === true, on affiche la page de choix d'une langue */}
       {showLanguages && (
         <ChooseLanguage showLanguages={ showLanguages } />
@@ -70,6 +76,7 @@ const Introduction = ({
 };
 
 const mapStateToProps = (state) => ({
+  showHabiter: state.habiter.showHabiter,
   showLanguages: state.habiter.showLanguages,
   showInformations: state.habiter.showInformations,
   showTitle: state.habiter.showTitle,

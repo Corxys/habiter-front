@@ -14,7 +14,7 @@ import habiterMiddleware from '../middlewares';
 const persistConfig = {
   key: 'root',
   storage: storage,
-  backlist: ['interviews'],
+  whitelist: ['interview'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

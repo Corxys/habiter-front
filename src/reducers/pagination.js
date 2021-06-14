@@ -4,10 +4,19 @@ const initialState = {
 
 const reducer = (oldState = initialState, action) => {
   switch (action.type) {
-    case 'CHANGE_CURRENT_PAGE':
+    case 'NEXT_PAGE':
+      const nextPage = action.payload.currentPage + 1;
+
       return {
         ...oldState,
-        currentPage: action.payload.currentPage,
+        currentPage: nextPage,
+      }
+    case 'PREVIOUS_PAGE':
+      const previousPage = action.payload.currentPage - 1;
+
+      return {
+        ...oldState,
+        currentPage: previousPage,
       }
     default: 
       return oldState;

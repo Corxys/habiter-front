@@ -1,9 +1,9 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-import introductionFR from './assets/locales/fr/introduction.json' 
-import introductionEN from './assets/locales/en/introduction.json'
-import introductionDE from './assets/locales/de/introduction.json'
+import introductionFR from './assets/locales/fr/introduction.json'; 
+import introductionEN from './assets/locales/en/introduction.json';
+import introductionDE from './assets/locales/de/introduction.json';
 
 import navbarFR from './assets/locales/fr/navbar.json';
 import navbarEN from './assets/locales/en/navbar.json';
@@ -20,6 +20,10 @@ import aboutTheArtistsDE from './assets/locales/de/about-the-artists.json';
 import interviewPageFR from './assets/locales/fr/interview-page.json';
 import interviewPageEN from './assets/locales/en/interview-page.json';
 import interviewPageDE from './assets/locales/de/interview-page.json';
+
+import popUpFR from './assets/locales/fr/pop-up.json'; 
+import popUpEN from './assets/locales/en/pop-up.json'; 
+import popUpDE from './assets/locales/de/pop-up.json'; 
 
 let lng = localStorage.getItem('language');
 
@@ -44,6 +48,7 @@ i18n
         aboutTheProject: aboutTheProjectFR,
         aboutTheArtists: aboutTheArtistsFR,
         interviewPage: interviewPageFR,
+        popUp: popUpFR,
       },
       en: { 
         introduction: introductionEN,
@@ -51,6 +56,7 @@ i18n
         aboutTheProject: aboutTheProjectEN,
         aboutTheArtists: aboutTheArtistsEN,
         interviewPage: interviewPageEN,
+        popUp: popUpEN,
       },
       de: { 
         introduction: introductionDE,
@@ -58,6 +64,7 @@ i18n
         aboutTheProject: aboutTheProjectDE,
         aboutTheArtists: aboutTheArtistsDE,
         interviewPage: interviewPageDE,
+        popUp: popUpDE,
       },
     },
   });

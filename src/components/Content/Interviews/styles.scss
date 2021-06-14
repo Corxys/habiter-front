@@ -7,6 +7,32 @@
   flex-grow: 1;
   width: calc(100vw - 126px);
   padding-bottom: 10px;
+
+  &__pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__arrow {
+    min-width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      cursor: pointer;
+      fill: vars.$color-line;
+      width: 25px;
+      height: 25px;
+      transition: 0.2s fill;
+
+      &:hover {
+        fill: vars.$color-primary;
+      }
+    }
+  }
 }
 
 .interviews-pagination__container {

@@ -41,7 +41,7 @@ const AboutTheArtists = ({ fadeInContent }) => {
           { t('aboutTheArtists:text') }
         </div> 
       </section>
-      <section className="about__contact">
+      <section id="contact" className="about__contact">
         <h2 className="about__contact__title">
           { t('aboutTheArtists:contact.title') }
         </h2>

@@ -9,7 +9,7 @@
   align-items: center;
 
   &__icon {
-    width: 13%;
+    width: 7%;
     fill: vars.$color-line;
   }
 
@@ -17,8 +17,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 60%;
-    font-size: 30px;
+    width: 55%;
+    font-size: 25px;
     margin-top: 150px;
   }
 
@@ -27,7 +27,7 @@
     transition: 0.2s color;
 
     &:hover {
-      color: vars.$color-secondary;
+      color: vars.$color-primary;
     }
   }
 }

@@ -10,29 +10,36 @@ import './styles.scss';
 // components import
 import Interview from './Interview';
 import InterviewInvert from './InterviewInvert';
-import Pagination from './Pagination';
 
-const randomPadding = () => {
-  return Math.floor(Math.random() * (100 - 0)) + 0;
-};
+// icons
+import { ReactComponent as PreviousIcon } from '../../../assets/icons/interviews-previous.svg';
+import { ReactComponent as NextIcon } from '../../../assets/icons/interviews-next.svg';
 
 // component
 const Interviews = ({
   currentPage,
-  onPageChanged,
+  nextPage,
+  previousPage,
   fadeInContent,
   interviews,
 }) => {
-  const pageLimit = 4; 
-
-  const currentInterviews = interviews.slice(
-    (currentPage - 1) * pageLimit,
-    (currentPage - 1) * pageLimit + pageLimit
-  );
+  const pageLimit = 4;
   
-  // we declare a reference variable, which will allow us to decide
-  // if we want the component to be used Interview, or InterviewInvert
-  let reference = 0;
+  const infinitePagination = (index, size, array) => {
+    // limit index to availables in length
+    const i = index % array.length;
+    // limit size to avoid showing duplicated items
+    const l = Math.min(size - 1, array.length -1);
+    const c = array.length - l;
+    const frag1 = array.slice(array.length + i - 1, array.length);
+    const frag2 = array.slice(i - 1, i);
+    const frag3 = array.slice(i, i + l);
+    const frag4 = array.slice(0, Math.max(0, i - c));
+    
+    return [...frag1, ...frag2, ...frag3, ...frag4];
+  }
+
+  const currentInterviews = infinitePagination(currentPage, pageLimit, interviews);
 
   return (
     <animated.div className="interviews-pagination__container" style={ fadeInContent }>
@@ -41,51 +48,51 @@ const Interviews = ({
           interviews && 
           // eslint-disable-next-line array-callback-return
           currentInterviews.map((interview, index) => {
-            if (index === 0) {
-              // when the index is equal to 0, no random padding is applied to the component
+            // if "interview.position" is equal to 0, we use the component InterviewInvert
+            if (interview.position === 0) {
+              return (
+                <InterviewInvert
+                  interview={ interview }
+                  key={ interview.id }
+                  randomPadding={ interview.random_padding }
+                />
+              )
+            } 
+            // if "interview.position" is equal to 1, we use the component Interview
+            else if (interview.position === 1) {
               return (
                 <Interview
                   interview={ interview }
                   key={ interview.id }
+                  randomPadding={ interview.random_padding }
                 />
               )
-            }
-            // for the following components, we apply a random padding
-            else if (index !== 0) {
-              // if "reference" is equal to 0, we use the component InterviewInvert
-              if (reference === 0) {
-                // we increment "reference"
-                reference += 1;
-                return (
-                  <InterviewInvert
-                    interview={ interview }
-                    key={ interview.id }
-                    randomPadding={ randomPadding() }
-                  />
-                )
-              } 
-              // if "reference" is equal to 1, we use the component Interview
-              else if (reference === 1) {
-                // reset "reference" to 0
-                reference = 0;
-                return (
-                  <Interview
-                    interview={ interview }
-                    key={ interview.id }
-                    randomPadding={ randomPadding() }
-                  />
-                )
-              }
             }
           })
         }
       </section>
-      <Pagination
-        currentPage={ currentPage }
-        pageLimit={ pageLimit }
-        onPageChanged={ onPageChanged }
-        interviews={ interviews }
-      />
+      <div className="interviews__pagination">
+      
+        <div 
+          className="interviews__arrow"
+          onClick={() => {
+            previousPage(currentPage)
+          }}
+        >
+          {
+            currentPage > 1 && 
+            <PreviousIcon />
+          }
+        </div>
+      <div
+        className="interviews__arrow"
+        onClick={() => {
+          nextPage(currentPage);
+        }}
+      >
+        <NextIcon />
+      </div>
+      </div>
     </animated.div>
   );
 };
@@ -101,15 +108,22 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onPageChanged: (event, page) => {
-    event.preventDefault();
-
+  nextPage: (currentPage) => {
     dispatch({
-      type: 'CHANGE_CURRENT_PAGE',
+      type: 'NEXT_PAGE',
       payload: {
-        currentPage: page,
+        currentPage: currentPage,
       }
     });
+  },
+
+  previousPage: (currentPage) => {
+    dispatch({
+      type: 'PREVIOUS_PAGE',
+      payload: {
+        currentPage: currentPage,
+      }
+    })
   },
 });
 

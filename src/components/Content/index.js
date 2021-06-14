@@ -26,7 +26,7 @@ const Content = ({ showHabiter}) => {
       height: 'calc(100% + 150px)'
     },
     config: {
-      duration: 800,
+      duration: 1000,
     },
     delay: 0,
   });
@@ -37,7 +37,7 @@ const Content = ({ showHabiter}) => {
     config: {
       duration: 600,
     },
-    delay: 3000, 
+    delay: 4000, 
   });
 
   return (
@@ -47,11 +47,11 @@ const Content = ({ showHabiter}) => {
           className="habiter__content"
         >
           {
-          showHabiter &&
-          <animated.div
-            className="line__vertical"
-            style={ lineVertical }
-          ></animated.div>
+            showHabiter &&
+            <animated.div
+              className="line__vertical"
+              style={ lineVertical }
+            ></animated.div>
           }
           <Route exact path="/">
             <Interviews fadeInContent={ fadeInContent } />

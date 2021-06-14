@@ -4,7 +4,7 @@ const initialState = {
   showInformations: false,
   showTitle: false,
   paragraph: {
-    showParagraphOne: true,
+    showParagraphOne: false,
     showParagrapheTwo: false,
     showParagraphThree: false,
     showParagraphFour: false,
@@ -27,6 +27,10 @@ const reducer = (oldState = initialState, action) => {
         ...oldState,
         showLanguages: false,
         showInformations: true,
+        paragraph: {
+          ...oldState.paragraph, 
+          showParagraphOne: true,
+        },
       }
     case 'HIDE_PARAGRAPH_ONE':
       return {

@@ -5,5 +5,4 @@
   // à cause de la barre de défilement, lorsqu'on changeait d'onglet, tout le contenu de la page se décalait
   // pour éviter ce problème, j'ai défini la largeur de la page à 100vw + 29px (taille de la barre de défilement) et ajouté un padding à droite équivalent
   width: calc(100vw + 29px);
-  padding-right: 29px;
 }

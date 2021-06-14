@@ -3,6 +3,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useSpring, animated } from 'react-spring';
+import { HashLink as Link } from 'react-router-hash-link';
 
 // styles
 import './styles.scss';
@@ -23,7 +24,7 @@ const NavBar = () => {
     config: {
       duration: 600,
     },
-    delay: 1200,
+    delay: 1800,
   });
 
   const fadeInLinks = useSpring({
@@ -32,7 +33,7 @@ const NavBar = () => {
     config: {
       duration: 600,
     },
-    delay: 1800,
+    delay: 2800,
   });
 
   const fadeInIcons = useSpring({
@@ -41,7 +42,7 @@ const NavBar = () => {
     config: {
       duration: 600,
     },
-    delay: 2400,
+    delay: 3800,
   })
 
   const lineHorizontal = useSpring({
@@ -112,13 +113,11 @@ const NavBar = () => {
           <SwitchLanguage />
           {/* open call */}
           <div className="navbar__icon">
-            <a
-              href="mailto:habiter.project@gmail.com"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to="/about-the-artists#contact"
             >
               <OpenCall fill='red' className="navbar__icon__item" />
-            </a>
+            </Link>
           </div>
         </animated.div>
       </nav>
