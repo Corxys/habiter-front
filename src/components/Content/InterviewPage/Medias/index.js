@@ -26,7 +26,7 @@ const Medias = ({ medias, mediaCopyright }) => {
       return (
         <div className="interview-page__media__image" style={{ maxWidth: `${width}%` }}>
           <div className="interview-page__media__image__legend">
-            Crédit photo : { mediaCopyright }
+            { mediaCopyright }
           </div>
           <img 
             src={media.url}

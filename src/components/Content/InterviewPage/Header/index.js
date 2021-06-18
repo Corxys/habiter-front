@@ -6,8 +6,6 @@ import './styles.scss';
 
 // component
 const Header = ({ interview }) => {
-  console.log(interview);
-
   return (
     <div className="interview-page__header">
       {/* INTRODUCTION => name, location, image */}
@@ -33,7 +31,7 @@ const Header = ({ interview }) => {
             <div 
               className="interview-page__header__intro__image__legend"
             >
-              Crédit photo : { interview.media_copyright }
+              { interview.media_copyright }
             </div>
             <img src={ interview.miniature.url } alt="" />
           </div>

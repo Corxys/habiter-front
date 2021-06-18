@@ -11,13 +11,13 @@ const SixMedia = ({ images, getRandomValue, flexDirection, checkTypeOfMedia }) =
       <div className="interview-page__media__images__six--column">
         <div className="interview-page__media__images__six--column--two">
           { checkTypeOfMedia(images.source[0], getRandomValue(75, 90)) }
-          { checkTypeOfMedia(images.source[1], 100) }
+          { checkTypeOfMedia(images.source[1]) }
         </div>
         <div className="interview-page__media__caption">
           { images.caption }
         </div>
         <div className="interview-page__media__images__six--column--two">
-          { checkTypeOfMedia(images.source[4], 100) }
+          { checkTypeOfMedia(images.source[4]) }
           { checkTypeOfMedia(images.source[5], getRandomValue(80, 95)) }
         </div>
       </div>

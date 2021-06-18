@@ -8,8 +8,11 @@ const initialState = {
     showParagrapheTwo: false,
     showParagraphThree: false,
     showParagraphFour: false,
+    showParagraphFive: false,
+    showParagraphSix: false,
   },
   showHabiter: false,
+  showPopUp: false
 };
 
 const reducer = (oldState = initialState, action) => {
@@ -59,12 +62,30 @@ const reducer = (oldState = initialState, action) => {
           showParagraphFour: true,
         }
     }
-    case 'HIDE_INFORMATIONS':
+    case 'HIDE_PARAGRAPH_FOUR':
       return {
         ...oldState,
         paragraph: {
           ...oldState.paragraph,
           showParagraphFour: false,
+          showParagraphFive: true,
+        }
+    }
+    case 'HIDE_PARAGRAPH_FIVE':
+      return {
+        ...oldState,
+        paragraph: {
+          ...oldState.paragraph,
+          showParagraphFive: false,
+          showParagraphSix: true,
+        }
+    }
+    case 'HIDE_INFORMATIONS':
+      return {
+        ...oldState,
+        paragraph: {
+          ...oldState.paragraph,
+          showParagraphSix: false,
         },
         showInformations: false,
         showTitle: true,
@@ -74,6 +95,7 @@ const reducer = (oldState = initialState, action) => {
         ...oldState,
         showTitle: false,
         showHabiter: true,
+        showPopUp: true,
       }
     case 'SKIP_INTRODUCTION': 
       return {
@@ -89,6 +111,17 @@ const reducer = (oldState = initialState, action) => {
             showParagraphFour: false,
           },
         showHabiter: true,
+        showPopUp: true,
+      }
+    case 'HIDE_POPUP':
+      return {
+        ...oldState, 
+        showPopUp: false,
+      }
+    case 'SHOW_POPUP':
+      return {
+        ...oldState,
+        showPopUp: true,
       }
     default: 
       // instead {...oldState}

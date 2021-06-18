@@ -37,46 +37,17 @@ const Title = ({ titleShown }) => {
     },
   };
 
-  const sentenceIntro = {
-    hidden: {
-      opacity: 1,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        delay: 0.5,
-        staggerChildren: 0.08,
-        delayChildren: 4.5,
-      },
-    },
-  };
-
-  const letterIntro = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-  };
-
   const fadeOutContent = useSpring({
     from: { opacity: 1 },
     to: { opacity: 0 },
     config: {
       duration: 600,
-    },
-    // 0.5 * 7 =
-    // 3500ms => delay for apparition of "habiter"
-    // 0.08 * 98 =
-    // 7840ms => delay for apparition of "intro" text
-    // 3500ms + 7840ms + 3500ms =
-    // 14840ms => delay apparition for all of the texts 
-    delay: 16500,
+    }, 
+    delay: 7840,
     onRest: () => {
-      titleShown();
+      setTimeout(() => {
+        titleShown();
+      }, 2000);
     },
   });
 
@@ -102,22 +73,6 @@ const Title = ({ titleShown }) => {
             })
           }
         </motion.h1>
-        <motion.div
-          className="introduction__title__content__intro"
-          variants={ sentenceIntro }
-          initial="hidden"
-          animate="visible"
-        >
-        {
-            content.intro.split('').map((char, index) => {
-              return (
-                <motion.span key={ char + "-" + index } variants={ letterIntro }>
-                  { char }
-                </motion.span>
-              )
-            })
-          }
-        </motion.div>
       </animated.div>
     </div>
   )
@@ -125,8 +80,6 @@ const Title = ({ titleShown }) => {
 
 const mapDispatchToProps = (dispatch) => ({
   titleShown: () => {
-    localStorage.setItem('show_title', false);
-    
     dispatch({
       type: 'HIDE_TITLE',
     });

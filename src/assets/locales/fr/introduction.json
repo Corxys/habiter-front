@@ -1,28 +1,37 @@
 {
   "title": {
-    "text": "Habiter",
-    "intro": "Comprendre comment le changement climatique affecte le monde entier, par les témoignages de ses habitants."
+    "text": "Habiter"
   },
   "paragraphs": [
     {
       "lines": [
-        "\"Les émissions anthropiques de gaz à effet de serre ont augmenté depuis l'ère préindustrielle, en grande partie sous l'effet de la croissance économique et démographique, et sont aujourd'hui plus élevées que jamais. Leurs effets, parmi d'autres facteurs anthropiques, ont été détectés dans tout le système climatique et il est extrêmement probable qu'ils aient été la cause principale du réchauffement observé depuis le milieu du 20e siècle.\"",
+        "\"La poursuite des émissions de gaz à effet de serre entraînera un nouveau réchauffement et des changements durables dans toutes les composantes du système climatique, ce qui augmentera la probabilité d'impacts graves, généralisés et irréversibles pour les populations et les écosystèmes.\"",
         "- Groupe d'experts intergouvernemental sur l'évolution du climat, 2014"
       ]
     },
     {
       "lines": [
-        "Le GIEC (Groupe d'experts intergouvernemental sur l'évolution du climat) est un organisme qui effectue une évaluation et une synthèse des travaux de recherche des laboratoires du monde entier. Lors de son dernier rapport, en 2014, le GIEC a constaté un accroissement des températures depuis 1950, dont les conséquences sont encore débattues."
+        "Nous avons localisé et interviewé de nombreuses personnes à travers le monde, déjà affectées par les effets du changement climatique."
       ]
     },
     {
       "lines": [
-        "Il est très probable que ces changements climatiques soient la cause d'événements météorologiques extrêmes plus intenses et/ou plus fréquents, comme les sécheresses, les pluies torrentielles ou les ouragans. Ces changements météorologiques transforment les manières d'habiter et impliquent souvent des déplacements humains, temporaires ou permanents."
+        "Ces personnes nous ont partagé leurs observations et expériences de ces effets à leur niveau local, ainsi que les perspectives d’adaptations de leurs communautés. "
       ]
     },
     {
       "lines": [
-        "Nous avons interviewé différentes personnes à travers le monde, déjà affectées par ces changements. Leurs témoignages pointent la gravité et la complexité des effets du changement climatique, des effets auxquels s’ajoutent des inégalités techniques, sociales et économiques. Ces témoignages exposent différentes stratégies d’adaptations plus ou moins précaires, et forment ensemble les bribes d’un futur proche."
+        "Cette exposition rassemble ces témoignages individuels et les associe à des informations factuelles - écologiques, juridiques et économiques. Ce montage de focus locaux et globaux invite à réfléchir à la gravité et la complexité du changement climatique."
+      ]
+    },
+    {
+      "lines": [
+        "Volontairement délocalisée, l’exposition sera accessible en ligne durant une année. Elle pourra être alimentée de nouveaux témoignages, qui exposent différentes situations régionales et stratégies d’adaptation."
+      ]
+    },
+    {
+      "lines": [
+        "Ensemble, ces témoignages nous invitent à réfléchir aux responsabilités que nous partageons en tant qu'habitants de la Terre."
       ]
     }
   ]

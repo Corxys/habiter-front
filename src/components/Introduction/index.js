@@ -1,12 +1,16 @@
 // import
 import React from 'react';
 import { connect } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 // styles
 import './styles.scss';
 
 // icon
 import { ReactComponent as IconSkip } from '../../assets/icons/interview-page-play.svg';
+
+// videos
+import backgroundVideo from '../../assets/videos/introduction-background.mp4';
 
 // components import
 import ChooseLanguage from './ChooseLanguage';
@@ -21,7 +25,10 @@ const Introduction = ({
   showTitle,
   skipIntroduction,
 }) => {
+  const { i18n } = useTranslation();
+
   const calculateDelayFadeOut = (text) => {
+
     let nbChar = 0;
 
     if (typeof(text) === 'string') {
@@ -46,30 +53,45 @@ const Introduction = ({
 
   return (
     <>
-      {
-        !showHabiter && (
-          <div
-            className="introduction__skip"
-            onClick={() => {
-              skipIntroduction();
-            }}
-          >
-            <IconSkip />
-          </div>
-        )
-      }
+      {!showHabiter && (
+        <div
+          className="introduction__skip"
+          onClick={() => {
+            const languageInLocalStorage = localStorage.getItem('language');
+            
+            if (languageInLocalStorage) {
+              i18n.changeLanguage(languageInLocalStorage);
+            } else {
+              i18n.changeLanguage('fr');
+              localStorage.setItem('language', 'fr');
+            }
+            
+            skipIntroduction();
+          }}
+        >
+          <IconSkip />
+        </div>
+      )}
       
       {/* si showLanguages === true, on affiche la page de choix d'une langue */}
       {showLanguages && (
         <ChooseLanguage showLanguages={ showLanguages } />
       )}
+
       {/* si showInformations === true, on affiche la page des informations scientifiques */}
       {showInformations && (
         <Informations calculateDelayFadeOut={ calculateDelayFadeOut }/>
       )}
+      
       {/* si showTitle === true, on affiche la page de titre */}
       {showTitle && (
           <Title />
+      )}
+
+      {!showHabiter && (
+        <video className='introduction__background' autoPlay loop muted>
+          <source src={ backgroundVideo } type='video/mp4' />
+        </video>
       )}
     </>
   )

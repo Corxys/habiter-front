@@ -53,7 +53,7 @@ const SwitchLanguage = ({ changeLanguage }) => {
 
 const mapDispatchToProps = (dispatch) => ({
   changeLanguage: (language) => {
-    localStorage.setItem('langue', language)
+    localStorage.setItem('language', language);
   },
 });
 

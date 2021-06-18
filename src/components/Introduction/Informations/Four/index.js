@@ -60,10 +60,8 @@ const ParagraphFour = ({
 
 const mapDispatchToProps = (dispatch) => ({
   showNextParagraph: () => {
-    localStorage.setItem('show_informations', false);
-    
     dispatch({
-      type: 'HIDE_INFORMATIONS',
+      type: 'HIDE_PARAGRAPH_FOUR',
     });
   },
 });

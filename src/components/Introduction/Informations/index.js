@@ -11,6 +11,8 @@ import ParagraphOne from './One';
 import ParagraphTwo from './Two';
 import ParagraphThree from './Three';
 import ParagraphFour from './Four';
+import ParagraphFive from './Five';
+import ParagraphSix from './Six';
 
 // component
 const Informations = ({
@@ -19,6 +21,8 @@ const Informations = ({
   showParagraphTwo,
   showParagraphThree,
   showParagraphFour,
+  showParagraphFive,
+  showParagraphSix,
 }) => {
   const { t } = useTranslation();
 
@@ -80,6 +84,22 @@ const Informations = ({
           paragraph={ paragraphs[3] }
         />
       )}
+      {showParagraphFive && (
+        <ParagraphFive
+          calculateDelayFadeOut={ calculateDelayFadeOut }
+          sentence={ sentence }
+          letter={ letter }
+          paragraph={ paragraphs[4] }
+        />
+      )}
+      {showParagraphSix && (
+        <ParagraphSix
+          calculateDelayFadeOut={ calculateDelayFadeOut }
+          sentence={ sentence }
+          letter={ letter }
+          paragraph={ paragraphs[5] }
+        />
+      )}
     </div>
   )
 };
@@ -89,6 +109,8 @@ const mapStateToProps = (state) => ({
   showParagraphTwo: state.habiter.paragraph.showParagraphTwo,
   showParagraphThree: state.habiter.paragraph.showParagraphThree,
   showParagraphFour: state.habiter.paragraph.showParagraphFour,
+  showParagraphFive: state.habiter.paragraph.showParagraphFive,
+  showParagraphSix: state.habiter.paragraph.showParagraphSix,
 });
 
 const mapDispatchToProps = (dispatch) => ({

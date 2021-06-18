@@ -42,7 +42,19 @@ const Interviews = ({
   const currentInterviews = infinitePagination(currentPage, pageLimit, interviews);
 
   return (
-    <animated.div className="interviews-pagination__container" style={ fadeInContent }>
+    <animated.div
+      className="interviews-pagination__container"
+      style={ fadeInContent }
+      onWheel={(event) => {
+        if (event.nativeEvent.wheelDelta > 0) {
+          if (currentPage > 1) {
+            previousPage(currentPage);
+          }
+        } else {
+          nextPage(currentPage);
+        }
+      }}
+    >
       <section className="interviews">
         {
           interviews && 
@@ -72,25 +84,26 @@ const Interviews = ({
         }
       </section>
       <div className="interviews__pagination">
-      
         <div 
           className="interviews__arrow"
-          onClick={() => {
-            previousPage(currentPage)
-          }}
         >
           {
             currentPage > 1 && 
-            <PreviousIcon />
+            <PreviousIcon 
+              onClick={() => {
+                previousPage(currentPage)
+              }}
+            />
           }
         </div>
       <div
         className="interviews__arrow"
-        onClick={() => {
-          nextPage(currentPage);
-        }}
       >
-        <NextIcon />
+        <NextIcon 
+          onClick={() => {
+            nextPage(currentPage);
+          }}
+        />
       </div>
       </div>
     </animated.div>

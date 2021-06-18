@@ -1,41 +1,38 @@
 // import 
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-// import { useSpring, animated } from 'react-spring';
-// import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useSpring, animated } from 'react-spring';
+import { connect } from 'react-redux';
 
 // styles
 import './styles.scss';
 
-const randomItem = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min +1)) + min;
-};
-
 // component
-const PopUp = () => {
-  const { t } = useTranslation();
+const PopUp = ({
+  calculateDelayFadeOut,
+  popUp,
+  hidePopUp,
+  showNextPopUp,
+  randomItem,
+}) => {
+  const displayBlock = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    delay: 5000,
+  });
 
-  let popUp = {};  
-  const popUps = t('popUp:pop-ups', { returnObjects: true });
-
-  const indexOfRandomPopUp = randomItem(0, popUps.length);
-
-  const getRandomPopUp = (datas) => {
-    let currentPopUp = {}; 
-
-    datas.forEach((item, index) => {
-      if (index === indexOfRandomPopUp) {
-        currentPopUp = item;
-      };
-    });
-
-    return currentPopUp;
-  };
-
-  popUp = getRandomPopUp(popUps);
-  // const { lines, source, link } = {...popUp};
+  const undisplayBlock = useSpring({
+    from: { opacity: 1 },
+    to: { opacity: 0 },
+    config: {
+      duration: 600,
+    },
+    delay: calculateDelayFadeOut(popUp) + 6000,
+    onRest: () => {
+      hidePopUp();
+      showNextPopUp(randomItem);
+    }
+  });
 
   const sentence = {
     hidden: { opacity: 1 },
@@ -44,6 +41,7 @@ const PopUp = () => {
       transition: {
         delay: 0.5,
         staggerChildren: 0.04,
+        delayChildren: 6,
       },
     },
   };
@@ -59,76 +57,139 @@ const PopUp = () => {
     },
   };
 
-
-  // const calculateDelayFadeOut = (text) => {
-  //   let nbChar = 0;
-
-  //   if (typeof(text) === 'string') {
-  //     nbChar = text.length;
-  //     nbChar *= (0.08 + 3.5);
-  //     nbChar *= 100;
-  //     nbChar = Math.round(nbChar) + 1000;
-  //   }
-
-  //   if (typeof(text) === 'object') {
-  //     text.lines.forEach((line) => {
-  //       nbChar += line.length;
-  //     });
-
-  //     nbChar *= 0.04;
-  //     nbChar *= 1000;
-  //     nbChar = Math.round(nbChar) + 3000;
-  //   }
-  
-  //   return nbChar;
-  // };
-
-  // const fadeOutParagraph = useSpring({
-  //   from: { opacity: 1 },
-  //   to: { opacity: 0 },
-  //   config: {
-  //     duration: 600,
-  //   },
-  //   delay: calculateDelayFadeOut(paragraph),
-  //   onRest: () => {
-  //     // showNextParagraph();
-  //   }
-  //   });
-
   return (
-    <div className="pop-up">
-      {/* <animated.div 
-        className="introduction__informations__paragraph"
-        // style={ fadeOutParagraph }
+    <animated.div
+      className="pop-up"
+      style={ undisplayBlock }
+    >
+      <animated.div 
+        className="pop-up__content"
+        style={ displayBlock }
       >
         <motion.div
-          className="introduction__informations__text"
+          className="pop-up__text"
           variants={ sentence }
           initial="hidden"
           animate="visible"
         >
           {
-            lines.map((line) => {
-              return (
-                <div className="introduction__informations__text__line">
+            popUp.lines.map((line) => {
+              if (popUp.link.length > 0) {
+                return (
+                  <>
+                    <div className="pop-up__text__line">
+                      <a
+                        href={ popUp.link[0] }
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {
+                          line.split('').map((char, index) => {
+                            return (
+                              <motion.span key={char + "-" + index} variants={ letter }>
+                                { char }
+                              </motion.span>
+                            )
+                          })
+                        }
+                        </a>
+                    </div>
                     {
-                      line.split('').map((char, index) => {
+                      popUp.source.map((line) => {
                         return (
-                          <motion.span key={char + "-" + index} variants={ letter }>
-                            { char }
-                          </motion.span>
+                          <>
+                            <div className="pop-up__text__line--regular">
+                            <a
+                              href={ popUp.link[0] }
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              {
+                                line.split('').map((char, index) => {
+                                  return (
+                                    <motion.span key={char + "-" + index} variants={ letter }>
+                                      { char }
+                                    </motion.span>
+                                  )
+                                })
+                              }
+                              </a>
+                            </div>
+                          </>
                         )
                       })
                     }
+                  </>
+                )
+              } else {
+                return (
+                  <div className="introduction__informations__text__line">
+                    {
+                      <>
+                      <div className="pop-up__text__line">
+                          {
+                            line.split('').map((char, index) => {
+                              return (
+                                <motion.span key={char + "-" + index} variants={ letter }>
+                                  { char }
+                                  </motion.span>
+                              )
+                            })
+                          }
+                      </div>
+                      {
+                        popUp.source.map((line) => {
+                          return (
+                            <>
+                              <div className="pop-up__text__line--regular">
+                                {
+                                  line.split('').map((char, index) => {
+                                    return (
+                                      <motion.span key={char + "-" + index} variants={ letter }>
+                                        { char }
+                                      </motion.span>
+                                    )
+                                  })
+                                }
+                              </div>
+                            </>
+                          )
+                        })
+                      }
+                    </>
+                    }
                   </div>
                 )
+              }
             })
           }
-        </motion.div>
-      </animated.div> */}
-    </div>
+        </motion.div> 
+      </animated.div>
+    </animated.div>
   )
 };
 
+const mapStateToProps = (state) => ({
+  showPopUpContent: state.habiter.showPopUpContent,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  hidePopUp: () => {
+    dispatch({
+      type: 'HIDE_POPUP',
+    });
+  },
+
+  showNextPopUp: (randomItem) => {
+    const delay = randomItem(45000, 72000);
+
+    setTimeout(() => {
+      dispatch({
+        type: 'SHOW_POPUP',
+      })
+    }, delay)
+  },
+});
+
 // export
-export default PopUp;
+export default connect(mapStateToProps, mapDispatchToProps)(PopUp);

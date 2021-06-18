@@ -1,0 +1,35 @@
+@use 'src/styles/vars';
+
+.pop-up {
+  width: 70vw;
+  z-index: 10;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  padding-left: 126px;
+  
+  &__content {
+    background-color: vars.$color-background;
+    width: 100%;
+    padding: 25px;
+  }
+  
+  &__text {
+    font-weight: bold;
+    font-size: 19px;
+    width: 100%;
+    color: vars.$color-primary;
+    padding: 25px;
+
+    &__line {
+      line-height: 1.2;
+
+      &--regular {
+        font-weight: normal;
+        font-style: oblique;
+        margin-top: 20px;
+        color: vars.$color-text;
+      }
+    }
+  }
+}

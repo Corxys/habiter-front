@@ -15,7 +15,7 @@ import Resources from './Resources';
 import InterviewPage from './InterviewPage';
 
 // component
-const Content = ({ showHabiter}) => {
+const Content = ({ showHabiter }) => {
   const lineVertical = useSpring({
     from: {
       opacity: 0,
@@ -53,6 +53,7 @@ const Content = ({ showHabiter}) => {
               style={ lineVertical }
             ></animated.div>
           }
+          {/* <PopUp popUp={ popUp } /> */}
           <Route exact path="/">
             <Interviews fadeInContent={ fadeInContent } />
           </Route>
