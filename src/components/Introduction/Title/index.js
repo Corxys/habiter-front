@@ -83,6 +83,12 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({
       type: 'HIDE_TITLE',
     });
+
+    setTimeout(() => {
+      dispatch({
+        type: 'SHOW_POPUP',
+      })
+    }, 10000);
   },
 });
 

@@ -88,7 +88,7 @@ const Introduction = ({
           <Title />
       )}
 
-      {!showHabiter && (
+      {(!showLanguages && !showHabiter) && (
         <video className='introduction__background' autoPlay loop muted>
           <source src={ backgroundVideo } type='video/mp4' />
         </video>
@@ -109,6 +109,12 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch({
       type: 'SKIP_INTRODUCTION',
     });
+
+    setTimeout(() => {
+      dispatch({
+        type: 'SHOW_POPUP',
+      })
+    }, 10000);
   },
 });
 

@@ -95,7 +95,6 @@ const reducer = (oldState = initialState, action) => {
         ...oldState,
         showTitle: false,
         showHabiter: true,
-        showPopUp: true,
       }
     case 'SKIP_INTRODUCTION': 
       return {
@@ -111,7 +110,6 @@ const reducer = (oldState = initialState, action) => {
             showParagraphFour: false,
           },
         showHabiter: true,
-        showPopUp: true,
       }
     case 'HIDE_POPUP':
       return {

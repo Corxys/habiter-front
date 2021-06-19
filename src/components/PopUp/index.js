@@ -181,7 +181,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
 
   showNextPopUp: (randomItem) => {
-    const delay = randomItem(45000, 72000);
+    const delay = randomItem(30000, 60000);
 
     setTimeout(() => {
       dispatch({

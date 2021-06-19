@@ -71,7 +71,7 @@
 
             &__unmute, &__mute {
               svg {
-                width: 30px;
+                width: 25px;
                 fill: #FFFFFF;
               }
             }
@@ -89,8 +89,8 @@
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          width: 55px;
-          height: 55px;
+          width: 45px;
+          height: 45px;
           border-radius: 100%;
           background-color: #f2f2f275;
           margin: 0px 30px;
@@ -101,7 +101,7 @@
           }
     
           svg {
-            height: 20px;
+            height: 16px;
           }
         }
       }
