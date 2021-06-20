@@ -73,11 +73,11 @@ const PopUp = ({
           animate="visible"
         >
           {
-            popUp.lines.map((line) => {
+            popUp.lines.map((line, index) => {
               if (popUp.link.length > 0) {
                 return (
-                  <>
-                    <div className="pop-up__text__line">
+                  <span key={ index }>
+                    <div key={ `pop-up-lines-${index}` } className="pop-up__text__line">
                       <a
                         href={ popUp.link[0] }
                         target="_blank"
@@ -95,10 +95,10 @@ const PopUp = ({
                         </a>
                     </div>
                     {
-                      popUp.source.map((line) => {
+                      popUp.source.map((line, index) => {
                         return (
-                          <>
-                            <div className="pop-up__text__line--regular">
+                          <span key={ index }>
+                            <div key={ `pop-up-source-${index}` } className="pop-up__text__line--regular">
                             <a
                               href={ popUp.link[0] }
                               target="_blank"
@@ -115,15 +115,15 @@ const PopUp = ({
                               }
                               </a>
                             </div>
-                          </>
+                          </span>
                         )
                       })
                     }
-                  </>
+                  </span>
                 )
               } else {
                 return (
-                  <div className="introduction__informations__text__line">
+                  <div key={ `popup-lines-${index}` }className="introduction__informations__text__line">
                     {
                       <>
                       <div className="pop-up__text__line">
@@ -141,7 +141,7 @@ const PopUp = ({
                         popUp.source.map((line) => {
                           return (
                             <>
-                              <div className="pop-up__text__line--regular">
+                              <div key={ `popup-source-${index}` }className="pop-up__text__line--regular">
                                 {
                                   line.split('').map((char, index) => {
                                     return (

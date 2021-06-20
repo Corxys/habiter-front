@@ -18,9 +18,9 @@ const Quotes = ({ quotes }) => {
       </h2>
       <div className="interview-page__quotes__resources">
         {
-          quotes.map((quote) => {
+          quotes.map((quote, index) => {
             return (
-              <div className="interview-page__quotes__resource">
+              <div key={ index } className="interview-page__quotes__resource">
                 {
                   quote.title && 
                   <div className="interview-page__quotes__resource__title">

@@ -39,7 +39,7 @@ const ParagraphOne = ({
           paragraph.lines.map((line, index) => {
             if (index === paragraph.lines.length - 1) {
               return (
-                <div className="introduction__informations__text__line--regular">
+                <div key={index} className="introduction__informations__text__line--regular">
                   {
                     line.split('').map((char, index) => {
                       return (
@@ -53,7 +53,7 @@ const ParagraphOne = ({
               )
             } else {
               return (
-                <div className="introduction__informations__text__line">
+                <div key={index} className="introduction__informations__text__line">
                   {
                     line.split('').map((char, index) => {
                       return (

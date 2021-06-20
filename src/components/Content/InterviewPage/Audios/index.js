@@ -24,6 +24,7 @@ const Audios = ({ audios }) => {
           audios.map((file) => {
             return (
               <AudioPlayer
+                key={ file.id }
                 id={ file.id }
                 caption={ file.caption }
                 source={ file.source }

@@ -51,9 +51,9 @@ const Medias = ({ medias, mediaCopyright }) => {
   return (
     <div className="interview-page__medias">
       {
-        medias.map((media) => {
+        medias.map((media, index) => {
           return (
-            <div className="interview-page__media">
+            <div key={ index } className="interview-page__media">
               {
                 media.source.length === 1 &&
                 <OneMedia

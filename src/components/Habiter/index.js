@@ -42,6 +42,7 @@ const Habiter = ({ showHabiter, showPopUp }) => {
   popUp = getRandomPopUp(popUps, indexOfRandomPopUp);
 
   const calculateDelayFadeOut = (text) => {
+    console.log(text);
     let nbChar = 0;
 
     if (typeof(text) === 'string') {

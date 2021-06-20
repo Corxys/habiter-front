@@ -18,9 +18,9 @@ const References = ({ references }) => {
       </h2>
       <div className="interview-page__resources__links">
         {
-          references.map((reference) => {
+          references.map((reference, index) => {
             return (
-              <div className="interview-page__resources__link">
+              <div key={ index } className="interview-page__resources__link">
                 <div className="interview-page__resources__link__title">
                   { reference.name }
                 </div>

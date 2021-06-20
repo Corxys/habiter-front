@@ -36,9 +36,9 @@ const ParagraphTwo = ({
         animate="visible"
       >
         {
-          paragraph.lines.map((line) => {
+          paragraph.lines.map((line, index) => {
             return (
-              <div className="introduction__informations__text__line">
+              <div key={ index } className="introduction__informations__text__line">
                 {
                   line.split('').map((char, index) => {
                     return (
