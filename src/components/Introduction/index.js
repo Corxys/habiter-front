@@ -10,7 +10,7 @@ import './styles.scss';
 import { ReactComponent as IconSkip } from '../../assets/icons/interview-page-play.svg';
 
 // videos
-import backgroundVideo from '../../assets/videos/introduction-background.mp4';
+// import backgroundVideo from '../../assets/videos/introduction-background.mp4';
 
 // components import
 import ChooseLanguage from './ChooseLanguage';
@@ -24,6 +24,7 @@ const Introduction = ({
   showInformations,
   showTitle,
   skipIntroduction,
+  backgroundIntroVideo
 }) => {
   const { i18n } = useTranslation();
 
@@ -96,7 +97,7 @@ const Introduction = ({
           autoPlay
           preload
         >
-          <source src={ backgroundVideo } type='video/mp4' />
+          <source src={ backgroundIntroVideo } type='video/mp4' />
         </video>
       )}
     </>
@@ -108,6 +109,7 @@ const mapStateToProps = (state) => ({
   showLanguages: state.habiter.showLanguages,
   showInformations: state.habiter.showInformations,
   showTitle: state.habiter.showTitle,
+  backgroundIntroVideo: state.habiter.backgroundIntroVideo,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -11,8 +11,6 @@ import Introduction from '../Introduction';
 import Content from '../Content';
 import PopUp from '../PopUp';
 
-import backgroundVideo from '../../assets/videos/introduction-background.mp4';
-
 // functions
 const randomItem = (min, max) => {
   min = Math.ceil(min);
