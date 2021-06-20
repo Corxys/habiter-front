@@ -89,7 +89,13 @@ const Introduction = ({
       )}
 
       {(!showLanguages && !showHabiter) && (
-        <video className='introduction__background' autoPlay loop muted>
+        <video
+          className='introduction__background'
+          loop
+          muted
+          autoPlay
+          preload
+        >
           <source src={ backgroundVideo } type='video/mp4' />
         </video>
       )}

@@ -12,7 +12,8 @@ const initialState = {
     showParagraphSix: false,
   },
   showHabiter: false,
-  showPopUp: false
+  showPopUp: false,
+  backgroundIntroVideo: '',
 };
 
 const reducer = (oldState = initialState, action) => {
@@ -24,6 +25,7 @@ const reducer = (oldState = initialState, action) => {
         showInformations: action.payload.showInformations,
         showTitle: action.payload.showTitle,
         showHabiter: action.payload.showHabiter,
+        backgroundIntroVideo: action.payload.backgroundIntroVideo,
       }
     case 'HIDE_LANGUAGES':
       return {

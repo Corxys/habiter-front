@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import backgroundIntroVideo from '../assets/videos/introduction-background.mp4';
+
 const HOST = 'https://habiterproject.herokuapp.com';
 
 const randomPadding = () => {
@@ -16,6 +18,7 @@ const habiter = (store) => (next) => (action) => {
           showInformations: false,
           showTitle: false,
           showHabiter: false,
+          backgroundIntroVideo: backgroundIntroVideo,
         }
       });
 
