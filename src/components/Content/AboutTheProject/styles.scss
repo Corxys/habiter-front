@@ -30,9 +30,28 @@
       flex-direction: row;
       flex-wrap: wrap;
     }
-
-    
   }
+}
 
-  
+@media all and (max-device-width: 480px) {
+  .project {
+    width: 100%;
+    padding-bottom: 30px;
+    
+    &__text {
+      width: 100%;
+      padding: 0px 25px;
+    }
+
+    &__acknowledgments {
+      left: -25px;
+      padding: 25px;
+      width: calc(100% + 25px);
+      
+      &__text {
+        width: 100%;
+        padding: 25px;
+      }
+    }
+  }
 }

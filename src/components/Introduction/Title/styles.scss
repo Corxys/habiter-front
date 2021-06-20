@@ -24,3 +24,20 @@
     }
   }
 }
+
+@media all and (max-device-width: 480px) {
+  .introduction {
+    &__title {
+      width: 100%;
+
+      &__content {
+        max-width: 100%;
+        
+        h1 {
+          font-size: 75px;
+        }
+      }
+      
+    }
+  }
+}

@@ -11,7 +11,7 @@
   &__content {
     background-color: vars.$color-background;
     width: 100%;
-    padding: 25px;
+    padding: 50px;
   }
   
   &__text {
@@ -19,7 +19,6 @@
     font-size: 19px;
     width: 100%;
     color: vars.$color-primary;
-    padding: 25px;
 
     &__line {
       line-height: 1.2;
@@ -30,6 +29,17 @@
         margin-top: 20px;
         color: vars.$color-text;
       }
+    }
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .pop-up {
+    width: 100vw;
+    padding-left: 0px;
+
+    &__content {
+      padding: 25px;
     }
   }
 }

@@ -114,3 +114,51 @@
     }
   }
 }
+
+@media all and (max-device-width: 480px) {
+  .about {
+    width: 100%;
+
+    &__artists {
+      flex-direction: column;
+    }
+
+    &__artist {
+      &--eliana {
+        max-width: 100%;
+        border-right: 0px;
+        padding-top: 30px;
+      }
+      
+      &--sita {
+        padding: 0px;
+      }
+    }
+
+    &__since {
+      left: -25px;
+      width: calc(100% + 25px);
+      padding: 100px 25px;
+
+      &__text {
+        padding-left: 25px;
+      }
+    }
+
+    &__contact {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 25px;
+
+      &__text {
+        margin: 25px 0px 0px 0px;
+      }
+    }
+
+    &__opencall {
+      left: 0px;
+      padding: 100px 25px;
+    }
+  }
+}

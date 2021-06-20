@@ -74,7 +74,7 @@ const NavBar = () => {
             className="navbar__item"
           >
             <NavLink
-              exact to="/about-the-project"
+              exact to="/about-the-exhibition"
               className="navbar__item__link"
               activeClassName="navbar__item__link--active"
             >

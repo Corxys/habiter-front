@@ -46,3 +46,18 @@
     }
   }
 }
+
+@media all and (max-device-width: 480px) {
+  .interview-page {
+    &__media {
+      &__images {
+        &__five {
+          &--two {
+            flex-direction: column;
+          }
+
+        }
+      }
+    }
+  }
+}

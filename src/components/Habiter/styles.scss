@@ -6,3 +6,9 @@
   // pour éviter ce problème, j'ai défini la largeur de la page à 100vw + 29px (taille de la barre de défilement) et ajouté un padding à droite équivalent
   width: calc(100vw + 29px);
 }
+
+@media all and (max-device-width: 480px) {
+  .habiter {
+    width: 100vw;
+  }
+}

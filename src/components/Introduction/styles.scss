@@ -29,3 +29,12 @@
     object-fit: cover;
   }
 }
+
+@media all and (max-device-width: 480px) {
+  .introduction {
+    &__skip {
+      top: 35px;
+      right: 35px;
+    }
+  }
+}

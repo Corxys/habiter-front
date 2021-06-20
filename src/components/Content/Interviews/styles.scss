@@ -8,6 +8,10 @@
   width: calc(100vw - 126px);
   padding-bottom: 10px;
 
+  &__mobile {
+    display: none;
+  }
+
   &__pagination {
     display: flex;
     flex-direction: row;
@@ -40,4 +44,14 @@
   flex-direction: column;
   justify-content: stretch;
   padding-bottom: 10px;
+}
+
+@media all and (max-device-width: 480px) {
+  .interviews-pagination__container {
+    display: none;
+  }
+
+  .interviews__mobile {
+    display: block;
+  }
 }

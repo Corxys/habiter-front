@@ -22,3 +22,15 @@
     }
   }
 }
+
+
+@media all and (max-device-width: 480px) {
+  .introduction__informations {
+    width: 100%;
+    padding: 25px;
+
+    &__text {
+      width: 100%;
+    }
+  }
+}

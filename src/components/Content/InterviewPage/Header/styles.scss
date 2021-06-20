@@ -34,7 +34,6 @@
 
       &__image {
         position: relative;
-        // width: 50%;
         padding-left: 50px;
 
         &__legend {
@@ -77,6 +76,32 @@
         flex-direction: row;
         margin-left: auto;
         max-width: 75%;
+      }
+    }
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .interview-page {
+    &__header {
+      width: 100vw;
+      padding: 0px 25px;
+
+      &__intro {
+        flex-direction: column;
+
+        &__author {
+          margin-bottom: 25px;
+        }
+
+        &__image {
+          padding: 0px;
+        }
+      }
+
+      &__text {
+        columns: 1;
+        max-width: 100%;
       }
     }
   }

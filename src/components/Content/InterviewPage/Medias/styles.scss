@@ -51,3 +51,26 @@
 
   }
 }
+
+@media all and (max-device-width: 480px) {
+  .interview-page {
+    &__medias {
+      left: 0px;
+      width: 100vw;
+      padding: 25px;
+    }
+
+    &__media {
+      &__image {
+        max-width: 100% !important;
+        margin: 0px !important;
+        margin-bottom: 25px !important;
+      }
+
+      &__caption {
+        max-width: 100% !important;
+        text-align: left !important;
+      }
+    }
+  }
+}

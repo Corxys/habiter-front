@@ -127,3 +127,29 @@ header {
     }
   }
 }
+
+@media all and (max-device-width: 480px) {
+  .header {
+    padding: 0px 25px 0px 25px;
+    height: inherit;
+
+    nav {
+      .navbar {
+        &__item {
+          &__home {
+            margin: 25px 0px;
+            font-size: 30px;
+          }
+        }
+
+        &__items {
+          display: none;
+        }
+
+        &__icons {
+          display: none;
+        }
+      }
+    }
+  }
+}

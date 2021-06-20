@@ -9,6 +9,7 @@ import './styles.scss';
 // components import
 import NavBar from './NavBar';
 import Interviews from './Interviews';
+import InterviewsMobile from './InterviewsMobile';
 import AboutTheProject from './AboutTheProject';
 import AboutTheArtists from './AboutTheArtists';
 import Resources from './Resources';
@@ -56,8 +57,9 @@ const Content = ({ showHabiter }) => {
           {/* <PopUp popUp={ popUp } /> */}
           <Route exact path="/">
             <Interviews fadeInContent={ fadeInContent } />
+            <InterviewsMobile fadeInContent={ fadeInContent } />
           </Route>
-          <Route exact path="/about-the-project">
+          <Route exact path="/about-the-exhibition">
             <AboutTheProject fadeInContent={ fadeInContent } />
           </Route>
           <Route exact path="/about-the-artists">
