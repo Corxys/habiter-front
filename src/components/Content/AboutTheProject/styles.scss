@@ -36,11 +36,10 @@
 @media all and (max-device-width: 480px) {
   .project {
     width: 100%;
-    padding-bottom: 30px;
+    padding: 30px 25px 100px 25px;
     
     &__text {
       width: 100%;
-      padding: 0px 25px;
     }
 
     &__acknowledgments {
@@ -50,7 +49,6 @@
       
       &__text {
         width: 100%;
-        padding: 25px;
       }
     }
   }

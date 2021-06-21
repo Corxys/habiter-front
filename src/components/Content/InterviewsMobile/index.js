@@ -11,7 +11,7 @@ import './styles.scss';
 import Interview from '../Interviews/Interview';
 
 // component
-const InterviewsMobile = ({ fadeInContent, interviews }) => {
+const InterviewsMobile = ({ setIsOpen, fadeInContent, interviews }) => {
   return (
     <animated.section
       className="interviews__mobile"
@@ -23,6 +23,7 @@ const InterviewsMobile = ({ fadeInContent, interviews }) => {
         interviews.map((interview) => {
           return (
             <Interview
+              setIsOpen={ setIsOpen }
               interview={ interview }
               key={ interview.id }
             />

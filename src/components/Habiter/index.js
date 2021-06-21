@@ -35,6 +35,7 @@ const Habiter = ({ showHabiter, showPopUp }) => {
   const { t } = useTranslation();
 
   let popUp = {};
+  console.log(popUp);
   const popUps = t('popUp:pop-ups', { returnObjects: true });
 
   const indexOfRandomPopUp = randomItem(0, popUps.length);

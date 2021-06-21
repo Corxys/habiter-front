@@ -43,6 +43,12 @@
       &__title, &__links {
         width: 100%;
       }
+
+      &__link {
+        &__source {
+          word-break: break-all;
+        }
+      }
     }
   }
 }

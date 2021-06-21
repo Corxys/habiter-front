@@ -102,6 +102,17 @@
       &__text {
         columns: 1;
         max-width: 100%;
+
+        &--one-column {
+          max-width: 100%;
+          margin-left: 0px;
+        }
+
+        &--two-columns {
+          max-width: 100%;
+          margin-left: 0px;
+          flex-direction: column;
+        }
       }
     }
   }

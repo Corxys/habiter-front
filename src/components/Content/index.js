@@ -1,5 +1,5 @@
 // import
-import React from 'react';
+import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { Route } from 'react-router-dom';
 
@@ -17,6 +17,8 @@ import InterviewPage from './InterviewPage';
 
 // component
 const Content = ({ showHabiter }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const lineVertical = useSpring({
     from: {
       opacity: 0,
@@ -43,7 +45,7 @@ const Content = ({ showHabiter }) => {
 
   return (
     <>
-      <NavBar />
+      <NavBar isOpen={ isOpen } setIsOpen={ setIsOpen } />
         <main
           className="habiter__content"
         >
@@ -57,7 +59,7 @@ const Content = ({ showHabiter }) => {
           {/* <PopUp popUp={ popUp } /> */}
           <Route exact path="/">
             <Interviews fadeInContent={ fadeInContent } />
-            <InterviewsMobile fadeInContent={ fadeInContent } />
+            <InterviewsMobile isOpen={ isOpen } setIsOpen={ setIsOpen } fadeInContent={ fadeInContent } />
           </Route>
           <Route exact path="/about-the-exhibition">
             <AboutTheProject fadeInContent={ fadeInContent } />

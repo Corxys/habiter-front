@@ -1,15 +1,16 @@
 // import
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 // icons
 import { ReactComponent as SwitchLanguageIcon } from '../../../../assets/icons/navbar-langue.svg';
 
 // component
-const SwitchLanguage = ({ changeLanguage }) => {
-  const [displayed, setDisplayed] = useState(false);
-
+const SwitchLanguage = ({
+  displayed,
+  setDisplayed,
+  changeLanguage
+}) => {
   const languages = ['fr', 'en', 'de'];
 
   const { i18n } = useTranslation();
@@ -51,11 +52,7 @@ const SwitchLanguage = ({ changeLanguage }) => {
   )
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  changeLanguage: (language) => {
-    localStorage.setItem('language', language);
-  },
-});
+
 
 // export
-export default connect(null, mapDispatchToProps)(SwitchLanguage);
+export default SwitchLanguage;

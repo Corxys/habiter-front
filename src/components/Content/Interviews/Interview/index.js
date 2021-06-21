@@ -7,6 +7,7 @@ import { buildInterviewUrl } from '../../../../utils/buildInterviewUrl';
 import './styles.scss';
 
 const Interview = ({ 
+  setIsOpen,
   interview,
   randomPadding,
   getInterviewById,
@@ -33,6 +34,7 @@ const Interview = ({
                   id={ id }
                   onClick={(event) => {
                     getInterviewById(event, interview);
+                    setIsOpen(false);
                   }}
                   src={ miniature.url }
                   alt=""
@@ -57,6 +59,7 @@ const Interview = ({
                 className="interview__text__title"
                 onClick={(event) => {
                   getInterviewById(event, interview);
+                  setIsOpen(false);
                 }}
               >
                 { author } 
