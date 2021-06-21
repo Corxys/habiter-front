@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import Div100vh from 'react-div-100vh';
 
 // styles
 import './styles.scss';
@@ -53,7 +54,7 @@ const Introduction = ({
   };
 
   return (
-    <>
+    <Div100vh style={ showHabiter ? { display: 'none' } : { display: 'block' } }>
       {!showHabiter && (
         <div
           className="introduction__skip"
@@ -86,7 +87,7 @@ const Introduction = ({
       
       {/* si showTitle === true, on affiche la page de titre */}
       {showTitle && (
-          <Title />
+        <Title />
       )}
 
       {(!showLanguages && !showHabiter) && (
@@ -101,7 +102,7 @@ const Introduction = ({
           <source src={ backgroundIntroVideo } type='video/mp4' />
         </video>
       )}
-    </>
+    </Div100vh>
   )
 };
 

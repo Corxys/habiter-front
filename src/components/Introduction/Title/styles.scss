@@ -29,6 +29,7 @@
   .introduction {
     &__title {
       width: 100%;
+      height: inherit;
 
       &__content {
         max-width: 100%;

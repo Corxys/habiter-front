@@ -83,7 +83,7 @@ const Habiter = ({ showHabiter, showPopUp }) => {
           )}
 
       </div>
-      {showPopUp && (
+      {popUp && showPopUp && (
         <PopUp
           popUp={ popUp }
           calculateDelayFadeOut={ calculateDelayFadeOut }

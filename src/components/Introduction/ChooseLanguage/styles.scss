@@ -35,6 +35,7 @@
 @media all and (max-device-width: 480px) {
   .introduction__choose-langue {
     width: 100%;
+    height: inherit;
     
     &__langues {
       flex-direction: column;
