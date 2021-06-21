@@ -54,8 +54,23 @@
         &__five {
           &--two {
             flex-direction: column;
+
+            .interview-page__media__image {
+              margin-bottom: 25px !important;
+
+              &:last-child {
+                margin-bottom: 0px !important;
+              }
+            }
           }
 
+          &--one {
+            flex-direction: column;
+
+            .interview-page__media__caption {
+              padding: 0px 0px 25px 0px; 
+            }
+          }
         }
       }
     }

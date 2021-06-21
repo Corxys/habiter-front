@@ -16,3 +16,16 @@
     }
   }
 }
+
+@media all and (max-device-width: 480px) {
+  .interview-page {
+    &__audios {
+      width: 100%;
+      padding: 0px 25px;
+
+      &__title {
+        margin: 0px 0px 50px 0px;
+      }
+    }
+  }
+}

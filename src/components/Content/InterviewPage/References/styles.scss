@@ -32,3 +32,17 @@
     }
   }
 }
+
+@media all and (max-device-width: 480px) {
+  .interview-page {
+    &__resources {
+      width: 100vw;
+      flex-direction: column;
+      padding: 0px 25px;
+
+      &__title, &__links {
+        width: 100%;
+      }
+    }
+  }
+}

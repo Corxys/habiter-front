@@ -95,6 +95,7 @@ const Introduction = ({
           loop
           muted
           autoPlay
+          playsInline
           preload="true"
         >
           <source src={ backgroundIntroVideo } type='video/mp4' />

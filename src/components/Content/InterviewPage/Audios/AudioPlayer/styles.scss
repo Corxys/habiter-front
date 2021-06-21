@@ -108,3 +108,19 @@
     }
   }
 }
+
+@media all and (max-device-width: 480px) {
+  .interview-page {
+    &__audio {
+      &__file {
+        &__controls {
+          &__buttons {
+            &__sound {
+              left: 10px; 
+            }
+          }
+        }
+      }
+    }
+  }
+}

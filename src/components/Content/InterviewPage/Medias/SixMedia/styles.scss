@@ -39,3 +39,49 @@
     }
   }
 }
+
+@media all and (max-device-width: 480px) {
+  .interview-page {
+    &__media {
+      &__images {
+        &__six {
+          flex-direction: column !important;
+
+          &--column {
+            max-width: 100%;
+            margin: 0px;
+
+            .interview-page__media__caption {
+              margin: 25px 0px;
+            }
+
+            .interview-page__media__image {
+              margin-bottom: 25px !important;
+
+              &:last-child {
+                margin-bottom: 0px !important;
+              }
+            }
+            
+            .interview-page__media__caption {
+              margin-top: 0px !important;
+            }
+
+            &--two {
+              margin-bottom: 25px;
+
+              .interview-page__media__image {
+                margin-bottom: 25px !important;
+  
+                &:last-child {
+                  margin-bottom: 0px !important;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
