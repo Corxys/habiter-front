@@ -1,5 +1,6 @@
 const initialState = {
   interviews: [],
+  loaded: undefined,
 };
 
 const reducer = (oldState = initialState, action) => {
@@ -8,6 +9,7 @@ const reducer = (oldState = initialState, action) => {
       return {
         ...oldState,
         interviews: action.payload.interviews,
+        loaded: true,
       };
     default: 
       return oldState;

@@ -1,7 +1,9 @@
 // import
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { useSpring, animated } from 'react-spring';
 import { Route } from 'react-router-dom';
+import ReactLoading from "react-loading";
 
 // styles
 import './styles.scss';
@@ -16,7 +18,7 @@ import Resources from './Resources';
 import InterviewPage from './InterviewPage';
 
 // component
-const Content = ({ showHabiter }) => {
+const Content = ({ loaded, showHabiter }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const lineVertical = useSpring({
@@ -56,10 +58,22 @@ const Content = ({ showHabiter }) => {
               style={ lineVertical }
             ></animated.div>
           }
-          {/* <PopUp popUp={ popUp } /> */}
           <Route exact path="/">
-            <Interviews fadeInContent={ fadeInContent } setIsOpen={ setIsOpen }/>
-            <InterviewsMobile isOpen={ isOpen } setIsOpen={ setIsOpen } fadeInContent={ fadeInContent } />
+            {!loaded ?
+              <div className="habiter__loading">
+                <ReactLoading
+                  type={ 'bubbles' }
+                  color={ '#0000FF' }
+                  height={ 75 }
+                  width={ 75 }
+                />
+              </div>
+              :
+              <>
+                <Interviews fadeInContent={ fadeInContent } setIsOpen={ setIsOpen }/>
+                <InterviewsMobile isOpen={ isOpen } setIsOpen={ setIsOpen } fadeInContent={ fadeInContent } />
+              </>
+            }
           </Route>
           <Route exact path="/about-the-exhibition">
             <AboutTheProject fadeInContent={ fadeInContent } />
@@ -78,5 +92,8 @@ const Content = ({ showHabiter }) => {
   )
 };
 
-// export
-export default Content;
+const mapStateToProps = (state) => ({
+  loaded: state.interviews.loaded,
+});
+
+export default connect(mapStateToProps, null)(Content);

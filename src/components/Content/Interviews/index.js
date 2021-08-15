@@ -22,7 +22,7 @@ const Interviews = ({
   previousPage,
   fadeInContent,
   interviews,
-  setIsOpen,
+  setIsOpen
 }) => {
   const pageLimit = 4;
   
@@ -56,6 +56,7 @@ const Interviews = ({
         }
       }}
     >
+
       <section className="interviews">
         {
           interviews && 
@@ -86,6 +87,7 @@ const Interviews = ({
           })
         }
       </section>
+      
       <div className="interviews__pagination">
         <div 
           className="interviews__arrow"

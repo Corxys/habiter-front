@@ -19,6 +19,13 @@
     height: 0%;
     background-color: vars.$color-line;
   }
+
+  &__loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media all and (max-device-width: 480px) {
