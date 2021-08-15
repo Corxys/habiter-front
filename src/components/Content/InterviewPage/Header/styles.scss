@@ -34,13 +34,13 @@
 
       &__image {
         position: relative;
-        padding-left: 50px;
+        margin-left: 50px;
 
         &__legend {
           display: none;
           position: absolute;
           bottom: 10px;
-          right: 20px;
+          left: 20px;
           transition: 0.2s display;
           font-size: 16px;
           font-family: vars.$font-primary;

@@ -65,6 +65,19 @@ const habiter = (store) => (next) => (action) => {
           // handle error
           console.log(error);
         })
+
+        axios.get(`${HOST}/references`)
+          .then((response) => {
+            store.dispatch({
+              type: 'GET_REFERENCES_SUCCESS',
+              payload: {
+                references: response.data,
+              },
+            });
+          })
+          .catch((error) => {
+            console.log(error);
+          })
       break;
     default: 
       next(action);

@@ -58,7 +58,7 @@ const Content = ({ showHabiter }) => {
           }
           {/* <PopUp popUp={ popUp } /> */}
           <Route exact path="/">
-            <Interviews fadeInContent={ fadeInContent } />
+            <Interviews fadeInContent={ fadeInContent } setIsOpen={ setIsOpen }/>
             <InterviewsMobile isOpen={ isOpen } setIsOpen={ setIsOpen } fadeInContent={ fadeInContent } />
           </Route>
           <Route exact path="/about-the-exhibition">

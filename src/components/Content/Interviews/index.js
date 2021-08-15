@@ -22,6 +22,7 @@ const Interviews = ({
   previousPage,
   fadeInContent,
   interviews,
+  setIsOpen,
 }) => {
   const pageLimit = 4;
   
@@ -67,6 +68,7 @@ const Interviews = ({
                   interview={ interview }
                   key={ interview.id }
                   randomPadding={ interview.random_padding }
+                  setIsOpen={ setIsOpen }
                 />
               )
             } 
@@ -77,6 +79,7 @@ const Interviews = ({
                   interview={ interview }
                   key={ interview.id }
                   randomPadding={ interview.random_padding }
+                  setIsOpen={ setIsOpen }
                 />
               )
             }

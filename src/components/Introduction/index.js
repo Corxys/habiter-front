@@ -93,7 +93,6 @@ const Introduction = ({
       {(!showLanguages && !showHabiter) && (
         <video
           className='introduction__background'
-          loop
           muted
           autoPlay
           playsInline

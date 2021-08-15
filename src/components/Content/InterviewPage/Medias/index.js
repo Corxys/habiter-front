@@ -24,12 +24,12 @@ const Medias = ({ medias, mediaCopyright }) => {
   const checkTypeOfMedia = ( media, width ) => {
     if (media.provider_metadata.resource_type === 'image') {
       return (
-        <div className="interview-page__media__image" style={{ maxWidth: `${width}%` }}>
+        <div className="interview-page__media__image">
           <div className="interview-page__media__image__legend">
             { mediaCopyright }
           </div>
           <img 
-            src={media.url}
+            src={ media.url }
             alt=""
             style={{ width: '100%' }}
           />
@@ -59,7 +59,7 @@ const Medias = ({ medias, mediaCopyright }) => {
                 <OneMedia
                   image={ media }
                   width={ getRandomValue(50, 70) }
-                  flexDirection={ getRandomValue(0, 1) }
+                  // flexDirection={ getRandomValue(0, 1) }
                   checkTypeOfMedia= { checkTypeOfMedia }
                 />
               }
@@ -98,7 +98,7 @@ const Medias = ({ medias, mediaCopyright }) => {
                 <SixMedia 
                   images={ media }
                   getRandomValue={ getRandomValue }
-                  flexDirection={ getRandomValue(0, 1) }
+                  // flexDirection={ getRandomValue(0, 1) }
                   checkTypeOfMedia={ checkTypeOfMedia }
                 />
               }

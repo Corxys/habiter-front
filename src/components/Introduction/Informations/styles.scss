@@ -27,7 +27,7 @@
 @media all and (max-device-width: 480px) {
   .introduction__informations {
     width: 100%;
-    height: 100%;
+    height: inherit;
     padding: 25px;
 
     &__text {

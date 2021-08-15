@@ -10,6 +10,7 @@ const InterviewInvert = ({
   interview,
   randomPadding,
   getInterviewById,
+  setIsOpen,
 }) => {
   const [hovered, setHovered] = useState(false);
   const { id, miniature, author, location, language } = {...interview};
@@ -26,7 +27,7 @@ const InterviewInvert = ({
         className="interview__text"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        style={textStyle}
+        style={ textStyle }
       >
         <Link
           to={ author ? buildInterviewUrl(author) : author }
@@ -36,6 +37,7 @@ const InterviewInvert = ({
             className="interview__text__title"
             onClick={(event) => {
               getInterviewById(event, interview);
+              setIsOpen(false);
             }}
           >
             { author }
@@ -59,6 +61,7 @@ const InterviewInvert = ({
               id={ id }
               onClick={(event) => {
                 getInterviewById(event, interview);
+                setIsOpen(false);
               }}
               src={ miniature.url }
               alt=""
