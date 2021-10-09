@@ -46,15 +46,6 @@ const Interviews = ({
     <animated.div
       className="interviews-pagination__container"
       style={ fadeInContent }
-      onWheel={(event) => {
-        if (event.nativeEvent.wheelDelta > 0) {
-          if (currentPage > 1) {
-            previousPage(currentPage);
-          }
-        } else {
-          nextPage(currentPage);
-        }
-      }}
     >
 
       <section className="interviews">

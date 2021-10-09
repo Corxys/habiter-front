@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useSpring, animated } from 'react-spring';
 import { Route } from 'react-router-dom';
-import ReactLoading from "react-loading";
+import ReactLoading from 'react-loading';
 
 // styles
 import './styles.scss';
@@ -59,7 +59,7 @@ const Content = ({ loaded, showHabiter }) => {
             ></animated.div>
           }
           <Route exact path="/">
-            {!loaded ?
+            {showHabiter && !loaded ?
               <div className="habiter__loading">
                 <ReactLoading
                   type={ 'bubbles' }

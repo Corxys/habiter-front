@@ -73,7 +73,7 @@ const PopUp = ({
           animate="visible"
         >
           {
-            popUp.lines.map((line, index) => {
+            popUp && popUp.lines.map((line, index) => {
               if (popUp.link.length > 0) {
                 return (
                   <span key={ index }>
@@ -95,7 +95,7 @@ const PopUp = ({
                         </a>
                     </div>
                     {
-                      popUp.source.map((line, index) => {
+                      popUp && popUp.source.map((line, index) => {
                         return (
                           <span key={ index }>
                             <div key={ `pop-up-source-${index}` } className="pop-up__text__line--regular">
@@ -138,7 +138,7 @@ const PopUp = ({
                           }
                       </div>
                       {
-                        popUp.source.map((line) => {
+                        popUp && popUp.source.map((line) => {
                           return (
                             <>
                               <div key={ `popup-source-${index}` }className="pop-up__text__line--regular">

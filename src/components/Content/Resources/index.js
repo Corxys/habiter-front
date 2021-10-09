@@ -12,9 +12,9 @@ const Resources = ({ references, fadeInContent }) => {
     <animated.article className="resources" style={ fadeInContent }>
       <section className="resources__list">
         {
-          references.map((reference) => {
+          references && references.map((reference) => {
             return (
-              <div className="resources__item">
+              <div key={ reference.id } className="resources__item">
                 { reference.title }
                 <br />
                 <a href={ reference.link }

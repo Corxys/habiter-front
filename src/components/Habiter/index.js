@@ -35,7 +35,6 @@ const Habiter = ({ showHabiter, showPopUp }) => {
   const { t } = useTranslation();
 
   let popUp = {};
-  console.log(popUp);
   const popUps = t('popUp:pop-ups', { returnObjects: true });
 
   const indexOfRandomPopUp = randomItem(0, popUps.length);
@@ -43,7 +42,6 @@ const Habiter = ({ showHabiter, showPopUp }) => {
   popUp = getRandomPopUp(popUps, indexOfRandomPopUp);
 
   const calculateDelayFadeOut = (text) => {
-    console.log(text);
     let nbChar = 0;
 
     if (typeof(text) === 'string') {
@@ -70,6 +68,7 @@ const Habiter = ({ showHabiter, showPopUp }) => {
     }
   
     return nbChar;
+
   };
 
   return (

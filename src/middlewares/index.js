@@ -68,10 +68,36 @@ const habiter = (store) => (next) => (action) => {
 
         axios.get(`${HOST}/references`)
           .then((response) => {
+            const references = response.data.sort((a, b) => {
+              if (a.title[0] === '“') {
+                if (a.title[1] < b.title) {
+                  return -1;
+                }
+                if (a.title[1] > b.title) {
+                  return 1;
+                }
+              }
+              if (b.title[0] === '“') {
+                if (a.title < b.title[1]) {
+                  return -1;
+                }
+                if (a.title > b.title[1]) {
+                  return 1;
+                }
+              }
+              if (a.title < b.title) {
+                return -1;
+              } else if (a.title > b.title) {
+                return 1;
+              }
+
+              return 0;
+            });
+
             store.dispatch({
               type: 'GET_REFERENCES_SUCCESS',
               payload: {
-                references: response.data,
+                references: references,
               },
             });
           })
