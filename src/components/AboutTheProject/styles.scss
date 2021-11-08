@@ -1,0 +1,31 @@
+@use 'src/styles/vars';
+
+.project {
+  &__header {
+    margin: 30px 0px;
+  }
+
+  &__content {
+    z-index: -10;
+    position: relative;
+    left: -167px;
+    background-color: vars.$color-primary;
+    padding-left: 167px;
+    width: 90%;
+
+    &__text-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 100px 0px;
+    }
+
+    &__text {
+      width: 40%;
+    }
+  }
+
+  &__subtitle {
+    margin: 100px 0px 35px 0px;
+  }
+}

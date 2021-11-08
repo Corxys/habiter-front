@@ -1,0 +1,22 @@
+@use 'src/styles/vars';
+
+.interviews {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.interviews::-webkit-scrollbar {
+  width: 18px;
+}
+
+.interviews::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.interviews::-webkit-scrollbar-thumb {
+  background-color: vars.$color-primary;
+  border-radius: 20px;
+  border: 5px solid #000000;
+}
