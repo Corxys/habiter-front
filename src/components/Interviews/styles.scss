@@ -1,22 +1,21 @@
 @use 'src/styles/vars';
 
-.container__interviews {
-  height: 100%;
+.interviews {
   display: flex;
   flex-direction: row;
   overflow: hidden;
   overflow-x: scroll;
 }
 
-.container__interviews::-webkit-scrollbar {
+.interviews::-webkit-scrollbar {
   width: 18px;
 }
 
-.container__interviews::-webkit-scrollbar-track {
+.interviews::-webkit-scrollbar-track {
   background: #000000;
 }
 
-.container__interviews::-webkit-scrollbar-thumb {
+.interviews::-webkit-scrollbar-thumb {
   background-color: vars.$color-primary;
   border-radius: 20px;
   border: 5px solid #000000;

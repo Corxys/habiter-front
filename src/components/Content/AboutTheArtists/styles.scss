@@ -1,0 +1,165 @@
+@use 'src/styles/vars';
+
+.about {
+  padding-bottom: 100px;
+  
+  &__artists {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 45px;
+  }
+  
+  &__artist {
+    &__name {
+      margin-bottom: 30px;
+    }
+    
+    &__text {
+      padding-bottom: 85px;
+    }
+
+    &--eliana {
+      max-width: 50%;
+      padding: 30px 45px 0px 0px;
+      border-right: 1px solid #FFFFFF;
+    }
+
+    &--sita {
+      padding: 30px 0px 0px 45px;
+    }
+  }
+
+  &__since {
+    position: relative;
+    left: -157px;
+    font-family: vars.$font-primary;
+    font-size: 25px;
+    line-height: 1.2;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: vars.$color-primary;
+    padding: 100px 100px 100px 30%;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 100px;
+    padding-left: 45px;
+    
+    &__text {
+      font-family: vars.$font-primary;
+      margin-left: 60px;
+
+      &__mail {
+        font-size: 25px;
+        text-decoration: underline;
+        transition: 0.2s color;
+        font-family: vars.$font-secondary;
+
+        &:hover {
+          color: vars.$color-secondary;
+        }
+      }
+    }
+  }
+
+  &__opencall {
+    position: relative;
+    right: 0px;
+    font-size: 25px;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: vars.$color-primary;
+    padding: 100px 0px 100px 90px;
+    
+    &__wrapper {
+      &__title {
+        margin-bottom: 35px;
+        max-width: 650px;
+        white-space: pre-wrap;
+      }
+      
+      &__content {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    
+        &__text {
+          font-family: vars.$font-primary;
+          display: flex;
+          flex-direction: column;
+          max-width: 500px;
+          
+          &--underline {
+            margin: 20px 0px;
+            font-family: vars.$font-secondary;
+          }
+    
+          & a {
+            text-decoration: underline;
+            transition: 0.2s color;
+
+            &:hover {
+              color: vars.$color-secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .about {
+    width: 100%;
+
+    &__artists {
+      flex-direction: column;
+      padding: 0px 25px 0px 25px;
+    }
+
+    &__artist {
+      &--eliana {
+        max-width: 100%;
+        border-right: 0px;
+        padding: 30px 0px 0px 0px;
+      }
+      
+      &--sita {
+        padding: 0px;
+      }
+    }
+
+    &__since {
+      left: -25px;
+      width: calc(100% + 25px);
+      padding: 100px 25px;
+
+      &__text {
+        padding-left: 25px;
+      }
+    }
+
+    &__contact {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 25px;
+
+      &__text {
+        margin: 25px 0px 0px 0px;
+      }
+    }
+
+    &__opencall {
+      left: 0px;
+      padding: 100px 25px;
+    }
+  }
+}

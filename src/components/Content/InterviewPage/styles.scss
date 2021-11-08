@@ -1,0 +1,33 @@
+@use 'src/styles/vars';
+
+.interview-page {
+  padding-bottom: 100px;
+
+  &__content {
+    position: relative;
+    right: 0px;
+    margin-top: 150px;
+    background-color: vars.$color-primary;
+    padding: 25px 0px;
+    width: 105.2%;
+
+    &__media {
+      display: flex;
+      flex-direction: row;
+      margin: 25px;
+
+      &__quote {
+        font-family: vars.$font-primary;
+        font-size: 29px;
+        padding: 0px 25px;
+        max-width: 35%;
+      }
+    }
+  }
+
+  // container of the "audio" section of an interview
+  &__audio {
+    width: 60%;
+    padding-left: 45px;
+  }
+}

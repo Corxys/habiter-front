@@ -1,0 +1,44 @@
+.introduction {
+  &__title {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+      max-width: 50%;
+      margin: auto;
+
+      h1 {
+        color: #FFFFFF;
+        font-size: 150px;
+      }
+
+      &__intro {
+        font-weight: bold;
+        line-height: 1.5;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .introduction {
+    &__title {
+      width: 100%;
+      height: inherit;
+
+      &__content {
+        max-width: 100%;
+        
+        h1 {
+          font-size: 75px;
+        }
+      }
+      
+    }
+  }
+}

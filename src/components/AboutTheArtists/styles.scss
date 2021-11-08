@@ -1,73 +1,53 @@
 @use 'src/styles/vars';
 
 .about {
-  padding-left: 30px;
-
   &__artists {
     display: flex;
     flex-direction: row;
   }
   
   &__artist {
+    &__name {
+      margin-bottom: 30px;
+    }
+    
     &--eliana {
-      max-width: 750px;
-      padding-right: 90px;
-      padding-top: 90px;
+      max-width: 45%;
+      padding: 30px 90px 00px 0px;
+      border-right: 1px solid #FFFFFF;
     }
 
     &--sita {
-      max-width: 392px;
-      border-left: 1px solid #FFFFFF;
-      padding-left: 30px;
-      padding-top: 200px;
-      padding-bottom: 85px;
+      max-width: 24%;
+      padding: 140px 0px 85px 30px;
     }
 
     &__text {
-      font-size: 18px;
-      line-height: 1.4;
-
       &--eliana {
-        max-width: 500px;
+        max-width: 85%;
         columns: 2;
+        padding-bottom: 85px;
       }
     }
   }
 
   &__since {
     position: relative;
-    min-height: 390px;
+    left: -157px;
     font-family: vars.$font-primary;
     font-size: 29px;
     margin-bottom: 45px;
-    
-    &__background {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      z-index: -10;
-      position: absolute;
-      width: 100%;;
-      height: 100%;
-      left: -156px;
-      background-color: vars.$color-primary;
-    }
-
-    &__text {
-      padding: 0px 160px 0px 430px;
-    }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: vars.$color-primary;
+    padding: 100px 200px 100px 40%;
   }
 
   &__contact {
     display: flex;
     flex-direction: row;
     margin-bottom: 130px;
-    
-    &__title {
-      font-family: vars.$font-primary;
-      font-size: 64px;
-      font-weight: bold;
-    }
     
     &__text {
       font-family: vars.$font-primary;
@@ -101,46 +81,36 @@
   }
 
   &__opencall {
+    position: relative;
+    left: -90px;
+    font-size: 29px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    position: relative;
-    min-height: 803px;
-    
-    &__background {
-      z-index: -10;
-      position: absolute;
-      width: 105%;;
-      height: 803px;
-      right: 0px;
-      background-color: vars.$color-primary;
-    }
+    background-color: vars.$color-primary;
+    padding: 100px 0px 100px 90px;
+    width: 105.2%;
     
     &__wrapper {
       &__title {
-        font-family: vars.$font-primary;
-        font-size: 64px;
-        padding-bottom: 95px;
-        
-        &--bold {
-          font-weight: bold;
-        }
+        margin-bottom: 95px;
+        max-width: 650px;
       }
       
       &__content {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
+        margin-left: 200px;
 
         &__icon {
-          width: 225px;
+          width: 175px;
           fill: #FFFFFF;
           margin-right: 55px;
         }
     
         &__text {
           font-family: vars.$font-primary;
-          font-size: 32px;
           display: flex;
           flex-direction: column;
           max-width: 500px;

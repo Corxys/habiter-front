@@ -1,0 +1,25 @@
+@use 'src/styles/vars';
+
+@media all and (max-device-width: 480px) {
+  .interviews__mobile {
+    display: flex;
+    flex-direction: column;
+
+    .interview {
+      width: 100vw;
+      min-height: inherit;
+      margin-bottom: 25px;
+  
+      &:last-child {
+        margin-bottom: 0px;
+      }
+  
+      &__image {
+        & img {
+          width: 100%;
+          height: 267px;
+        }
+      }
+    }
+  }
+}

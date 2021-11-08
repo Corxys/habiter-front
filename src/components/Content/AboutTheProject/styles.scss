@@ -1,0 +1,55 @@
+@use 'src/styles/vars';
+
+.project {
+  padding-top: 30px;
+
+  &__text {
+    width: 50%;
+    margin-bottom: 50px;
+  }
+
+  &__acknowledgments {
+    z-index: -10;
+    position: relative;
+    left: -167px;
+    background-color: vars.$color-primary;
+    padding: 100px 100px 100px 167px;
+    width: 100%;
+
+    &__subtitle {
+      margin-bottom: 35px;
+    }
+
+    &__text {
+      width: 60%;
+      margin-left: auto;
+    }
+
+    &__text-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .project {
+    width: 100%;
+    padding: 30px 25px 100px 25px;
+    
+    &__text {
+      width: 100%;
+    }
+
+    &__acknowledgments {
+      left: -25px;
+      padding: 25px;
+      width: calc(100% + 25px);
+      
+      &__text {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@use 'src/styles/vars';
+
+.introduction {
+  &__skip {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 17px;
+    cursor: pointer;
+
+    svg {
+      fill: vars.$color-line;
+      transition: 0.2s fill;
+
+      &:hover {
+        fill: vars.$color-primary;
+      }
+    }
+  }
+
+  &__background {
+    z-index: -10;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    object-fit: cover;
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .introduction {
+    &__skip {
+      top: 35px;
+      right: 35px;
+    }
+
+    &__background {
+      height: inherit;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@use 'src/styles/vars';
+
+.interview-page {
+  &__media {
+    &__images {
+      &__one {
+        display: flex;
+
+        .interview-page__media__caption {
+          padding: 0px 25px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .interview-page {
+    &__media {
+      &__images {
+        &__one {
+          flex-direction: column !important;
+          max-width: 100% !important;
+          
+          .interview-page__media__caption {
+            padding: 25px 0px 0px 0px; 
+          }
+        }
+      }
+    }
+  }
+}

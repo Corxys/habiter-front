@@ -1,0 +1,37 @@
+.introduction__informations {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 125px;
+
+  &__text {
+    font-weight: bold;
+    font-size: 20px;
+    width: 65%;
+
+    &__line {
+      line-height: 1.2;
+
+      &--regular {
+        font-weight: normal;
+        font-style: oblique;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+
+@media all and (max-device-width: 480px) {
+  .introduction__informations {
+    width: 100%;
+    height: inherit;
+    padding: 25px;
+
+    &__text {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@use 'src/styles/vars';
+
+.pop-up {
+  width: 40vw;
+  z-index: 10;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  padding-left: 126px;
+  
+  &__content {
+    background-color: vars.$color-background;
+    width: 100%;
+    padding: 50px;
+  }
+  
+  &__text {
+    font-weight: bold;
+    font-size: 19px;
+    width: 100%;
+    color: vars.$color-secondary;
+
+    &__line {
+      line-height: 1.2;
+
+      &--regular {
+        font-weight: normal;
+        font-style: oblique;
+        margin-top: 20px;
+        color: vars.$color-text;
+      }
+    }
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .pop-up {
+    width: 100vw;
+    padding-left: 0px;
+
+    &__content {
+      padding: 25px;
+    }
+  }
+}

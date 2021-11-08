@@ -22,27 +22,27 @@ const InterviewInvert = ({
 
   return (
     <div
-      className="container__interview container__interview--invert"
+      className="interview interview--invert"
       style={{ paddingBottom: randomPadding }}
     >
       <div
-        className="container__interview__text"
+        className="interview__text"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         style={textStyle}
       >
         <Link
-          to={author ? buildInterviewUrl(author) : author}
+          to={ author ? buildInterviewUrl(author) : author }
           >
           <div
-            id={id}
-            className="container__interview__text__title"
-            onClick={getInterviewById}
+            id={ id }
+            className="interview__text__title"
+            onClick={ getInterviewById }
           >
             { author }
           </div>
         </Link>
-        <div className="container__interview__text__location">
+        <div className="interview__text__location">
           { location }
           <br />
           <br />
@@ -50,20 +50,20 @@ const InterviewInvert = ({
         </div>
       </div>
       
-      <div className="container__interview__image">
+      <div className="interview__image">
         {
           miniature &&
           <Link
-          to={author ? buildInterviewUrl(author) : author}
+          to={ author ? buildInterviewUrl(author) : author }
           >
             <img
-              id={id}
-              onClick={getInterviewById}
-              src={miniature.url}
+              id={ id }
+              onClick={ getInterviewById }
+              src={ miniature.url }
               alt=""
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
-              style={imageStyle}
+              style={ imageStyle }
             />
           </Link>
         }
@@ -77,7 +77,7 @@ const mapDispatchToProps = (dispatch) => ({
     const id = parseInt(event.target.id, 10);
     
     dispatch({
-      type: 'SEND_INTERVIEW_REQUEST',
+      type: 'GET_INTERVIEW',
       payload: {
         id: id,
       },

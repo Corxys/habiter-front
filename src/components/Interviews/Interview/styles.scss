@@ -1,9 +1,10 @@
 @use 'src/styles/vars';
 
-.container__interview {
+.interview {
   max-width: 222px;
-  min-height: 670px;
+  min-height: 100%;
   margin: 0px 42px;
+  height: 100%;
 
   // the first one has no margin on the left
   &:first-child {
@@ -29,6 +30,7 @@
       height: 167px;
       transition: 0.2s opacity;
       filter: grayscale(100%);
+      object-fit: cover;
       
       &:hover {
         filter: grayscale(100%);

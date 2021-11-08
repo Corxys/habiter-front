@@ -1,0 +1,51 @@
+@use 'src/styles/vars';
+
+.resources {
+  &__list {
+    font-family: vars.$font-primary;
+    font-size: 18px;
+    padding-top: 30px;
+  }
+
+  &__item {
+    width: 45%;
+    margin: 35px 0px;
+
+    &:first-child {
+      margin-top: 0px;
+    }
+    
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    &--italic {
+      font-style: oblique;
+    }
+    
+    &__link {
+      color: vars.$color-primary;
+      text-decoration: underline;
+      transition: 0.2s color;
+
+      &:hover {
+        color: vars.$color-secondary;
+      }
+    }
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .resources {
+    width: 100%;
+    padding: 0px 25px 100px 25px;
+
+    &__item {
+      width: 100%;
+
+      &__link {
+        word-break: break-all;
+      }
+    }
+  }
+}

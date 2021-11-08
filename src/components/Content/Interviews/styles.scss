@@ -1,0 +1,57 @@
+@use 'src/styles/vars';
+
+.interviews {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+  width: calc(100vw - 126px);
+  padding-bottom: 10px;
+
+  &__mobile {
+    display: none;
+  }
+
+  &__pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__arrow {
+    min-width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      cursor: pointer;
+      fill: vars.$color-line;
+      width: 25px;
+      height: 25px;
+      transition: 0.2s fill;
+
+      &:hover {
+        fill: vars.$color-primary;
+      }
+    }
+  }
+}
+
+.interviews-pagination__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  padding-bottom: 10px;
+}
+
+@media all and (max-device-width: 480px) {
+  .interviews-pagination__container {
+    display: none;
+  }
+
+  .interviews__mobile {
+    display: block;
+  }
+}

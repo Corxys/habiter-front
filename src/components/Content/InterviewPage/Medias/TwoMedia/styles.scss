@@ -1,0 +1,48 @@
+.interview-page {
+  &__media {
+    &__images {
+      &__two {
+        display: flex;
+        flex-direction: row;
+
+        &--one {
+          max-width: 55%;
+        }
+
+        &--column {
+          display: flex;
+          flex-direction: column;
+          margin-left: 25px;
+
+          .interview-page__media__caption {
+            margin-bottom: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .interview-page {
+    &__media {
+      &__images {
+        &__two {
+          flex-direction: column;
+
+          &--one {
+            max-width: 100%;
+          }
+
+          &--column {
+            margin-left: 0px;
+
+            .interview-page__media__caption {
+              margin-top: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,16 +1,14 @@
-.container__content {
-  // padding: 50px 0px;
-  margin-left: 125px;
-  border-left: 1px solid #FFFFFF;
-  padding-bottom: 100px;
+@use 'src/styles/vars';
+
+.habiter {
+  min-height: 100%;
+  // à cause de la barre de défilement, lorsqu'on changeait d'onglet, tout le contenu de la page se décalait
+  // pour éviter ce problème, j'ai défini la largeur de la page à 100vw + 29px (taille de la barre de défilement) et ajouté un padding à droite équivalent
+  width: calc(100vw + 29px);
 }
 
-.line {
-  z-index: 10;
-  position: absolute;
-  top: 0px;
-  left: 125px;
-  width: 1px;
-  height: 150px;
-  background-color: #FFFFFF;
+@media all and (max-device-width: 480px) {
+  .habiter {
+    width: 100vw;
+  }
 }

@@ -10,32 +10,35 @@ const AboutTheProject = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="project">
-      <div className="project__title">
-        Habiter
-      </div>
-      <div className="project__content">
-        <div className="project__content__background"></div>
-        <div className="project__content__texts">
-          <div className="project__content__text">
+    <article className="project">
+      <section className="project__header">
+        {/* PROJECT => title */}
+        <h1 className="project__title">
+          Habiter
+        </h1>
+      </section>
+      <section className="project__content">
+        <div className="project__content__text-container">
+          {/* PROJECT => introduction */}
+          <p className="project__content__text">
             { t('about-the-project.text') }
-          </div>
-          <div className="project__content__text">
-          </div>
-          <div className="project__content__text">
-          </div>
+          </p>
+          <div className="project__content__text"></div>
+          <div className="project__content__text"></div>
+          {/* PROJECT => acknowledgments */}
           <div className="project__content__text">
             <h2 className="project__subtitle">
               { t('about-the-project.acknowledgments.title') }
             </h2>
-            <div className="project__text container__project__text">
+            <p className="project__text container__project__text">
               { t('about-the-project.acknowledgments.text') }
-            </div>
+            </p>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 
+// export
 export default AboutTheProject;

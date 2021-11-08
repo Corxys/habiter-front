@@ -1,3 +1,4 @@
+// import
 @use '../../node_modules/destyle.css/destyle.css';
 @use './vars';
 
@@ -5,6 +6,7 @@ body {
   background-color: #000000;
   color: #FFFFFF;
   font-family: vars.$font-secondary;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -20,14 +22,32 @@ body::-webkit-scrollbar-thumb {
   border: 5px solid #000000;
 }
 
+// semantic markup
 h1 {
   font-family: vars.$font-primary;
-  font-size: 97px;
+  font-size: 45px;
   font-weight: bold;
   color: vars.$color-primary;
 }
 
 h2 {
   font-family: vars.$font-primary;
-  font-size: 64px
+  font-size: 45px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.project, .resources {
+  padding: 0px 45px 100px 45px;
+}
+
+@media all and (max-device-width: 480px) {
+  h1, h2 {
+    font-size: 35px;
+  }
 }

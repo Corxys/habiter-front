@@ -8,11 +8,13 @@ import thunk from 'redux-thunk';
 // reducer
 import rootReducer from '../reducers';
 
+// middlewares
 import habiterMiddleware from '../middlewares';
 
 const persistConfig = {
   key: 'root',
   storage: storage,
+  whitelist: ['interview'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -1,0 +1,76 @@
+@use 'src/styles/vars';
+
+.interview-page {
+  &__medias {
+    position: relative;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    font-family: vars.$font-primary;
+    font-size: 25px;
+    background-color: vars.$color-primary;
+    padding: 25px 40px 25px 0px;
+    margin-top: 100px;
+    width: calc(100vw - 125px);
+  }
+
+  &__media {
+    margin-top: 25px;
+  
+    &:first-child {
+      margin-top: 0px;
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    &__caption {
+      min-width: 30%;
+      max-width: 70%;
+    }
+    
+    &__image {
+      position: relative;
+
+      &__legend {
+        display: none;
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        transition: 0.2s display;
+        font-size: 16px;
+        font-family: vars.$font-primary;
+        max-width: 80%;
+      }
+
+      &:hover &__legend {
+        display: block;
+      }
+    }
+
+  }
+}
+
+@media all and (max-device-width: 480px) {
+  .interview-page {
+    &__medias {
+      left: 0px;
+      width: 100vw;
+      padding: 25px;
+    }
+
+    &__media {
+      &__image {
+        max-width: 100% !important;
+        margin: 0px !important;
+        // margin-bottom: 25px !important;
+      }
+
+      &__caption {
+        max-width: 100% !important;
+        text-align: left !important;
+      }
+    }
+  }
+}
